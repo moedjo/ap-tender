@@ -1,0 +1,28 @@
+name: Tests
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+
+jobs:
+  phpUnitTests:
+    runs-on: ubuntu-latest
+    strategy:
+      max-parallel: 6
+      matrix:
+        phpVersions: ['7.2', '7.3', '7.4', '8.0']
+      fail-fast: false
+    name: PHP ${{ matrix.phpVersions }}
+    steps:
+      - name: Checkout changes
+        uses: actions/checkout@v1
+      - name: Install PHP
+        uses: shivammathur/setup-php@master
+        with:
+          php-version: ${{ matrix.phpVersions }}
+      - name: Install Composer dependencies
+        run: composer install --no-interaction --no-progress --no-suggest --no-scripts
+      - name: Run Tests
+        run: ./vendor/bin/phpunit ./tests
