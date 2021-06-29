@@ -1,0 +1,10 @@
+name: Positions
+form: $/ap/tender/models/position/fields.yaml
+modelClass: Ap\Tender\Models\Position
+defaultRedirect: ap/tender/positions
+create:
+    redirect: 'ap/tender/positions/update/:id'
+    redirectClose: ap/tender/positions
+update:
+    redirect: ap/tender/positions
+    redirectClose: ap/tender/positions

@@ -1,0 +1,23 @@
+columns:
+    id:
+        label: 'ap.tender::lang.field.id'
+        type: number
+    name:
+        label: 'ap.tender::lang.field.name'
+        type: text
+        searchable: true
+        sortable: true
+    test:
+        label: 'Test'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'ap.tender::lang.field.description'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime

@@ -1,0 +1,18 @@
+columns:
+    id:
+        label: 'ap.tender::lang.summary.id'
+        type: number
+    name:
+        label: 'ap.tender::lang.summary.name'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'ap.tender::lang.summary.description'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime

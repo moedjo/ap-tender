@@ -1,0 +1,12 @@
+list: $/ap/tender/models/company/columns.yaml
+modelClass: Ap\Tender\Models\Company
+title: Companies
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/companies/update/:id'

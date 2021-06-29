@@ -1,0 +1,13 @@
+list: $/ap/tender/models/summary/columns.yaml
+modelClass: Ap\Tender\Models\Summary
+title: Summaries
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/summaries/update/:id'
+recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"

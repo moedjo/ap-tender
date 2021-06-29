@@ -1,0 +1,10 @@
+name: Summaries
+form: $/ap/tender/models/summary/fields.yaml
+modelClass: Ap\Tender\Models\Summary
+defaultRedirect: ap/tender/summaries
+create:
+    redirect: 'ap/tender/summaries/update/:id'
+    redirectClose: ap/tender/summaries
+update:
+    redirect: ap/tender/summaries
+    redirectClose: ap/tender/summaries

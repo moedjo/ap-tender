@@ -1,0 +1,46 @@
+plugin:
+    name: 'ap.tender::lang.plugin.name'
+    description: 'ap.tender::lang.plugin.description'
+    author: Ap
+    icon: oc-icon-plane
+    homepage: ''
+permissions:
+    ap_tender_access_fields:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_fields'
+    ap_tender_access_summaries:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_summaries'
+    ap_tender_access_positions:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_positions'
+    ap_tender_access_tests:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: Test
+navigation:
+    master:
+        label: 'Master Data'
+        url: /
+        icon: icon-align-left
+        permissions:
+            - access_summaries
+            - access_fields
+        sideMenu:
+            summaries:
+                label: 'ap.tender::lang.summary.list'
+                url: ap/tender/summaries
+                icon: icon-sitemap
+                permissions:
+                    - access_summaries
+            fields:
+                label: 'ap.tender::lang.field.list'
+                url: ap/tender/fields
+                icon: icon-sitemap
+                permissions:
+                    - access_fields
+            positions:
+                label: 'ap.tender::lang.position.list'
+                url: /
+                icon: icon-user-secret
+                permissions:
+                    - ap_tender_access_positions

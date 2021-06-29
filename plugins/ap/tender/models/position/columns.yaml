@@ -1,0 +1,9 @@
+columns:
+    id:
+        label: 'ap.tender::lang.position.id'
+        type: number
+        sortable: true
+    name:
+        label: 'ap.tender::lang.position.name'
+        type: text
+        searchable: true

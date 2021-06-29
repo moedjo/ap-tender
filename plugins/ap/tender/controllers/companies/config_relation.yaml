@@ -1,0 +1,8 @@
+person:
+    label: Person
+    view:
+        form: $/acme/user/models/region/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/acme/user/models/region/fields.yaml
+        list: $/acme/user/models/region/columns.yaml

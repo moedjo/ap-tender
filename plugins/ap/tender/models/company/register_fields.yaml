@@ -1,0 +1,65 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.info'
+        type: section
+    business_entity:
+        label: 'ap.tender::lang.global.business_entity'
+        type: relation
+        span: left
+    name:
+        label:  'ap.tender::lang.company.name'
+        type: text
+        span: left
+    npwp:
+        label: 'ap.tender::lang.company.npwp'
+        type: text
+        span: right
+    collaborate:
+        label: 'ap.tender::lang.company.collaborate'
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.global.no'
+            1: 'ap.tender::lang.global.yes'
+    _section2:
+        label: 'ap.tender::lang.company.address'
+        type: section
+    address:
+        label: 'ap.tender::lang.company.address'
+        type: textarea
+        size: small
+        span: left
+    region:
+        label: 'ap.tender::lang.region.singular'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/region/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        span: right
+    phone_number:
+        label: 'ap.tender::lang.company.phone_number'
+        type: text
+        span: left
+    fax_number:
+        label: 'ap.tender::lang.company.fax_number'
+        type: text
+        span: right
+    email:
+        label: 'ap.tender::lang.company.email'
+        type: text
+        span: left
+    _section3:
+        label: 'ap.tender::lang.company.contact'
+        type: section
+    contact_full_name:
+        label: 'ap.tender::lang.company.contact_full_name'
+        type: text
+        span: left
+    contact_position:
+        label: 'ap.tender::lang.company.contact_position'
+        type: relation
+        span: left
+    contact_phone_number:
+        label: 'ap.tender::lang.company.contact_phone_number'
+        type: text
+        span: right

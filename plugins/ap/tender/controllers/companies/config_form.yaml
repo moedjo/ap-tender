@@ -1,0 +1,10 @@
+name: Companies
+form: $/ap/tender/models/company/fields.yaml
+modelClass: Ap\Tender\Models\Company
+defaultRedirect: ap/tender/companies
+create:
+    redirect: 'ap/tender/companies/update/:id'
+    redirectClose: ap/tender/companies
+update:
+    redirect: ap/tender/companies
+    redirectClose: ap/tender/companies

@@ -1,0 +1,7 @@
+columns:
+    id:
+        label: 'ap.tender::lang.region.id'
+        type: number
+    name:
+        label: 'ap.tender::lang.region.name'
+        type: text

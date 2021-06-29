@@ -1,0 +1,10 @@
+name: Fields
+form: $/ap/tender/models/field/fields.yaml
+modelClass: Ap\Tender\Models\Field
+defaultRedirect: ap/tender/fields
+create:
+    redirect: 'ap/tender/fields/update/:id'
+    redirectClose: ap/tender/fields
+update:
+    redirect: ap/tender/fields
+    redirectClose: ap/tender/fields

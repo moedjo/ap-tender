@@ -1,0 +1,4 @@
+columns:
+    id:
+        label: AAa
+        type: number

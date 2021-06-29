@@ -1,0 +1,56 @@
+<?php
+    $type = $tabs->section;
+
+    $navCss = '';
+    $contentCss = '';
+    $paneCss = '';
+
+    if ($tabs->stretch) {
+        $navCss = 'layout-row min-size';
+        $contentCss = 'layout-row';
+        $paneCss = 'layout-cell';
+    }
+?>
+<div class="<?= $navCss ?>">
+    <ul class="nav nav-tabs"  <?= $tabs->linkable ? 'data-linkable' : '' ?>>
+        <?php $index = 0; foreach ($tabs as $name => $fields): ?>
+        <?php
+            $isActive = $index++ === 0;
+            $isLazy = !$isActive && $tabs->isLazy($name);
+        ?>
+            <li class="<?= $isActive ? 'active' : '' ?> <?= $isLazy ? 'tab-lazy' : '' ?>">
+                <a
+                    href="#<?= $type . 'tab-' . ($tabs->linkable ? str_slug($name) : $index) ?>"
+                    <?php if ($isLazy): ?>
+                        data-tab-name="<?= e($name) ?>"
+                        data-tab-section="<?= $type ?>"
+                        data-tab-lazy-handler="<?= $this->getEventHandler('onLazyLoadTab') ?>"
+                    <?php endif ?>
+                >
+                    <?php if ($tabs->getIcon($name)): ?>
+                        <span class="<?= $tabs->getIcon($name) ?>"></span>
+                    <?php endif ?>
+                    <?= e(trans($name)) ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</div>
+
+<div class="tab-content <?= $contentCss ?>">
+    <?php $index = 0; foreach ($tabs as $name => $fields): ?>
+        <?php
+            $isActive = $index++ === 0;
+            $isLazy = !$isActive && $tabs->isLazy($name);
+        ?>
+            <div
+                class="tab-pane <?= $isLazy ? 'is-lazy' : '' ?> <?= e($tabs->getPaneCssClass($index, $name)) ?> <?= $isActive ? 'active' : '' ?> <?= $paneCss ?>"
+                id="<?= $type . 'tab-' . $index ?>">
+                <?php if ($isLazy): ?>
+                    <?= $this->makePartial('form_fields_lazy', ['fields' => $fields]) ?>
+                <?php else: ?>
+                    <?= $this->makePartial('form_fields', ['fields' => $fields]) ?>
+                <?php endif ?>
+            </div>
+    <?php endforeach ?>
+</div>

@@ -1,0 +1,14 @@
+fields:
+    name:
+        label: 'ap.tender::lang.summary.name'
+        oc.commentPosition: above
+        span: full
+        placeholder: 'ap.tender::lang.summary.name'
+        type: text
+    description:
+        label: 'ap.tender::lang.summary.description'
+        size: ''
+        oc.commentPosition: above
+        span: full
+        placeholder: 'ap.tender::lang.summary.description'
+        type: textarea

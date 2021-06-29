@@ -1,0 +1,27 @@
+fields:
+    name:
+        label: 'ap.tender::lang.field.name'
+        oc.commentPosition: above
+        span: full
+        placeholder: 'ap.tender::lang.field.name'
+        type: text
+    test:
+        label: 'Test'
+        oc.commentPosition: above
+        span: full
+        placeholder: 'ap.tender::lang.field.name'
+        type: text
+        invisible: true
+    description:
+        label: 'ap.tender::lang.field.description'
+        size: ''
+        oc.commentPosition: above
+        span: full
+        placeholder: 'ap.tender::lang.field.description'
+        type: textarea
+    image:
+        label: Image
+        type: fileupload
+        mode: image
+        imageHeight: 260
+        imageWidth: 260
