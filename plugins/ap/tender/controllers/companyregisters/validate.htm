@@ -3,10 +3,11 @@
     <?= Form::open(['class' => 'layout']) ?>
 
         <div class="layout-row">
-      
-                TODO masukin token
-
-                lalu redirect
+        
+                    <div class="form-group span-left">
+                        <label>TOKEN</label>
+                        <input type="text" name="token" class="form-control" />
+                    </div>
 
         </div>
 
@@ -14,12 +15,12 @@
             <div class="loading-indicator-container">
                 <button 
                     type="button"
-                    data-request="onSave"
+                    data-request="onValidate"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
                     class="btn btn-primary">
-                    <?= e(trans('ap.tender::lang.global.register')) ?>
+                    Send
                 </button>
                 <span class="btn-text">
                     <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('ap/tender/companies') ?>">          <?= e(trans('ap.tender::lang.global.back')) ?></a></a>
