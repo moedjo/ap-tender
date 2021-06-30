@@ -34,6 +34,7 @@ class CompanyRegisters extends Controller
     }
 
     public function validate(){
+        
     }
 
 
