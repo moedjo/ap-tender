@@ -8,3 +8,9 @@ superadmin
 comercial
 - finance
 - legal
+
+
+test@angkasapura.com
+1C65DB436EC359124438A4BA6CAACAC0197D
+smtp.elasticemail.com
+2525

@@ -27,6 +27,7 @@ class BuilderTableCreateApTenderCompanies extends Migration
 
             $table->string('status')->nullable();
             $table->string('token')->nullable();
+            $table->string('token_url')->nullable();
 
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();

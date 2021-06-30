@@ -20,31 +20,7 @@ class Companies extends Controller
     public $relationConfig = 'config_relation.yaml';
     
     public $requiredPermissions = [
-        'access_fields'
+        ''
     ];
-    public $publicActions = [
-        'register'
-    ];
-
-    public function __construct()
-    {
-        $this->formConfig = 'register_config_form.yaml';
-        parent::__construct();
-    }
-
-    public function register()
-    {
-        $this->layout = 'public/default';
-        $this->formConfig = 'register_config_form.yaml';
-        $this->asExtension('FormController')->create();
-    }
-
-    public function register_onSave()
-    {
-
-        $model = $this->formGetModel();
-        $this->asExtension('FormController')->create_onSave();
-        Event::fire('company.register', [$model]);
-
-    }
+  
 }

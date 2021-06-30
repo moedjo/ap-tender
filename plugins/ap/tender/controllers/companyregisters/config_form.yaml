@@ -1,0 +1,6 @@
+name: Companies
+form: $/ap/tender/models/companyregister/fields.yaml
+modelClass: Ap\Tender\Models\CompanyRegister
+create:
+    redirect: 'ap/tender/companyregisters/success'
+    redirectClose: 'ap/tender/companyregisters/success'
