@@ -38,7 +38,7 @@ use DateTime;
  * - cms.enable_asset_minify - Compress assets using minification
  * - cms.enable_asset_deep_hashing - Advanced caching of imports
  *
- * @method static MediaLibrary instance()
+ * @method static CombineAssets instance()
  *
  * @see System\Classes\SystemController System controller
  * @see https://octobercms.com/docs/services/session Session service

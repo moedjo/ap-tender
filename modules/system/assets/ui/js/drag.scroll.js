@@ -472,7 +472,8 @@
 
         this.el.removeData('oc.dragScroll');
 
-        window.removeEventListener('touchmove', onTouchMove, {passive: false})
+        // Causing breakage "onTouchMove" not defined -sg
+        // window.removeEventListener('touchmove', onTouchMove, {passive: false})
 
         this.el = null;
         BaseProto.dispose.call(this);

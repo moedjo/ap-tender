@@ -272,7 +272,6 @@ class FormController extends ControllerBehavior
         Flash::success($this->getCustomLang('flashCreate'));
 
         if ($redirect = $this->makeRedirect('create', $model)) {
-
             return $redirect;
         }
     }

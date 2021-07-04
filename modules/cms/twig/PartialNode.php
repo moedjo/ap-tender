@@ -4,16 +4,25 @@ use Twig\Node\Node as TwigNode;
 use Twig\Compiler as TwigCompiler;
 
 /**
- * Represents a partial node
+ * PartialNode
  *
  * @package october\cms
  * @author Alexey Bobkov, Samuel Georges
  */
 class PartialNode extends TwigNode
 {
-    public function __construct(TwigNode $nodes, $paramNames, $lineno, $tag = 'partial')
+    /**
+     * __construct
+     */
+    public function __construct(TwigNode $nodes, $paramNames, $body, $lineno, $tag = 'partial')
     {
-        parent::__construct(['nodes' => $nodes], ['names' => $paramNames], $lineno, $tag);
+        $nodes = ['nodes' => $nodes];
+
+        if ($body) {
+            $nodes['body'] = $body;
+        }
+
+        parent::__construct($nodes, ['names' => $paramNames], $lineno, $tag);
     }
 
     /**
@@ -26,6 +35,14 @@ class PartialNode extends TwigNode
         $compiler->addDebugInfo($this);
 
         $compiler->write("\$context['__cms_partial_params'] = [];\n");
+
+        if ($this->hasNode('body')) {
+            $compiler
+                ->addDebugInfo($this)
+                ->write('ob_start();')
+                ->subcompile($this->getNode('body'))
+                ->write("\$context['__cms_partial_params']['body'] = ob_get_clean();");
+        }
 
         for ($i = 1; $i < count($this->getNode('nodes')); $i++) {
             $compiler->write("\$context['__cms_partial_params']['".$this->getAttribute('names')[$i-1]."'] = ");
