@@ -1,0 +1,19 @@
+fields:
+    year:
+        label: 'ap.tender::lang.finance.year'
+        span: left
+        type: number
+    total_income:
+        label: 'ap.tender::lang.finance.total_income'
+        span: right
+        type: number
+    doc_finance:
+        label: 'ap.tender::lang.doc.finance'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: full

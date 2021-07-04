@@ -1,26 +1,33 @@
-<?php namespace Ap\Tender\Controllers;
+<?php
+
+namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 
 class Summaries extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
-    
+    public $implement = [
+        'Backend\Behaviors\ListController',
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ReorderController'
+    ];
+
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
+    public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'access_summaries' 
+        'access_summaries'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'master','summaries');
+        BackendMenu::setContext('Ap.Tender', 'master', 'summaries');
     }
 
-    
+
     public function onCreateForm()
     {
         $this->asExtension('FormController')->create();

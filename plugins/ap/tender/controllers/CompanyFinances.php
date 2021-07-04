@@ -6,7 +6,7 @@ use Backend\Classes\Controller;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class CompanyExperiences extends Controller
+class CompanyFinances extends Controller
 {
     public $implement = [        
         'Backend\Behaviors\FormController',

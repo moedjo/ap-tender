@@ -11,4 +11,13 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
     }
+
+    public function registerListColumnTypes()
+    {
+        return [
+            'currency_idr' => function ($value) {
+                return "Rp " . number_format($value, 0, ",", ".");
+            }
+        ];
+    }
 }

@@ -1,0 +1,9 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.summary'
+        type: section
+        comment: 'ap.tender::lang.company.summary_comment'
+    summaries:
+        context: [create, update]
+        label: 'ap.tender::lang.company.summary'
+        type: checkboxlist

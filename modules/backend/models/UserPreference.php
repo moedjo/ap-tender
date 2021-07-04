@@ -38,13 +38,10 @@ class UserPreference extends PreferencesBase
     {
         $user = BackendAuth::getUser();
         if (!$user) {
-            
             $user = BackendAuth::findUserByLogin('guest');
-
             if(!$user) {
                 throw new SystemException(trans('backend::lang.user.preferences.not_authenticated'));
             }
-
         }
 
         return $user;

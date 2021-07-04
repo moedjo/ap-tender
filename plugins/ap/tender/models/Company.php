@@ -1,4 +1,6 @@
-<?php namespace Ap\Tender\Models;
+<?php
+
+namespace Ap\Tender\Models;
 
 use Model;
 
@@ -8,7 +10,7 @@ use Model;
 class Company extends Model
 {
     use \October\Rain\Database\Traits\Validation;
-    
+
 
     /**
      * @var string The database table used by the model.
@@ -18,8 +20,7 @@ class Company extends Model
     /**
      * @var array Validation rules
      */
-    public $rules = [
-    ];
+    public $rules = [];
 
     public $belongsTo = [
         'business_entity' => 'Ap\Tender\Models\BusinessEntity',
@@ -29,6 +30,22 @@ class Company extends Model
     ];
 
     public $hasMany = [
-        'experiences' => ['Ap\Tender\Models\Experience' ,'key' => 'company_id']
+        'experiences' => [
+            'Ap\Tender\Models\Experience',
+            'key' => 'company_id'
+        ],
+        'finances' => [
+            'Ap\Tender\Models\Finance',
+            'key' => 'company_id'
+        ]
+    ];
+
+    public $belongsToMany = [
+        'summaries' => [
+            'Ap\Tender\Models\Summary',
+            'table' => 'ap_tender_companies_summaries',
+            'key'      => 'company_id',
+            'otherKey' => 'summary_id'
+        ]
     ];
 }

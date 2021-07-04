@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class CompanyFinancial extends Company
+class CompanyFinance extends Company
 {
  
     public $rules = [

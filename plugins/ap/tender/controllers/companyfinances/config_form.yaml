@@ -1,0 +1,6 @@
+name: Companies
+form: $/ap/tender/models/companyfinance/fields.yaml
+modelClass: Ap\Tender\Models\CompanyFinance
+update:
+    redirect: ap/tender/companysummaries/update/:id
+    redirectClose: ap/tender/companysummaries/update/:id

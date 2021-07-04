@@ -1,0 +1,10 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.info'
+        type: section
+    finances:
+        span: full
+        path: field_finances
+        context:
+            - update
+        type: partial

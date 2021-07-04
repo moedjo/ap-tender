@@ -15,6 +15,8 @@ class BuilderTableCreateApTenderSummaries extends Migration
             $table->timestamp('updated_at')->nullable();
             $table->string('name');
             $table->text('description');
+
+            $table->integer('sort_order')->default(0);
    
         });
     }

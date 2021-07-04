@@ -1,0 +1,8 @@
+finances:
+    label: 'kju.express::lang.experience.singular'
+    manage:
+        form: $/ap/tender/models/finance/fields.yaml
+        list: $/ap/tender/models/finance/columns.yaml
+    view:
+        list: $/ap/tender/models/finance/columns.yaml
+        toolbarButtons: create|delete
