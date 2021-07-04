@@ -9,18 +9,13 @@
                 <div class="mainmenu-item-container">
                     <span class="nav-icon">
                        <div class="mainmenu-account-avatar">
-                            <img
-                                src="#"
-                                loading="lazy"
-                                width="80"
-                                height="80"
-                            />
+                           
                         </div>
                     </span>
 
                     <span class="nav-label">
-                        <div class="company-name"><?= e(Backend\Models\BrandSetting::get('app_name')) ?></div>
-                        <div class="user-name">#</div>
+                      
+                        <div class="user-name"> TODO nanti di isi</div>
                     </span>
                 </div>
             </div>
@@ -28,7 +23,7 @@
 
         <div class="scrollable-panel-container">
             <ul class="mainmenu-items hover-effects scrollable">
-          
+                <?= $this->makeLayoutPartial('mainmenu_items', ['context' => $context]) ?>
             </ul>
         </div>
     </nav>

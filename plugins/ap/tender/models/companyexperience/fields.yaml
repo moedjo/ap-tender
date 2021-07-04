@@ -1,0 +1,10 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.info'
+        type: section
+    experiences:
+        span: full
+        path: field_experiences
+        context:
+            - update
+        type: partial

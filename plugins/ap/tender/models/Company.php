@@ -25,5 +25,10 @@ class Company extends Model
         'business_entity' => 'Ap\Tender\Models\BusinessEntity',
         'contact_position' => 'Ap\Tender\Models\Position',
         'region' => 'Ap\Tender\Models\Region',
+        'verification_office' => 'Ap\Tender\Models\Office',
+    ];
+
+    public $hasMany = [
+        'experiences' => ['Ap\Tender\Models\Experience' ,'key' => 'company_id']
     ];
 }

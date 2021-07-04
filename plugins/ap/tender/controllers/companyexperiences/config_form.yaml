@@ -1,0 +1,6 @@
+name: Companies
+form: $/ap/tender/models/companyexperience/fields.yaml
+modelClass: Ap\Tender\Models\CompanyExperience
+update:
+    redirect: ap/tender/companies
+    redirectClose: ap/tender/companies

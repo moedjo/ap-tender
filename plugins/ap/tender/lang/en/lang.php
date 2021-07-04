@@ -11,6 +11,7 @@
             'access_fields' => 'Access Fields',
             'access_summaries' => 'Access Summaries',
             'access_positions' => 'Access Positions',
+            'access_offices' => 'Akses Kantor',
         ],
     ],
     'field' => [
@@ -32,7 +33,8 @@
         'yes' => 'Ya',
         'no' => 'Tidak',
         'register' => 'Daftar',
-        'back' => 'Kembali'
+        'back' => 'Kembali',
+        'doc_appointment'=>'Dokumen Perjanjian'
     ],
     'position' => [
         'list' => 'Daftar Jabatan',

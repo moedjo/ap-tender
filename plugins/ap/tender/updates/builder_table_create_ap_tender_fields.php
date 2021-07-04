@@ -11,11 +11,11 @@ class BuilderTableCreateApTenderFields extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->text('description');
-            $table->text('test');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->string('name');
+            $table->text('description');
+
         });
     }
     

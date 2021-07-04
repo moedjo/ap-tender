@@ -11,10 +11,11 @@ class BuilderTableCreateApTenderSummaries extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->text('description');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            $table->string('name');
+            $table->text('description');
+   
         });
     }
     

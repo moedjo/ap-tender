@@ -1,0 +1,8 @@
+experiences:
+    label: 'kju.express::lang.experience.singular'
+    manage:
+        form: $/ap/tender/models/experience/fields.yaml
+        list: $/ap/tender/models/experience/columns.yaml
+    view:
+        list: $/ap/tender/models/experience/columns.yaml
+        toolbarButtons: create|delete

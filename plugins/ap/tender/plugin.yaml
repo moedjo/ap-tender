@@ -14,9 +14,9 @@ permissions:
     ap_tender_access_positions:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_positions'
-    ap_tender_access_tests:
+    ap_tender_access_offices:
         tab: 'ap.tender::lang.permission.tab.default'
-        label: Test
+        label: 'ap.tender::lang.permission.label.access_offices'
 navigation:
     master:
         label: 'Master Data'
@@ -44,3 +44,7 @@ navigation:
                 icon: icon-user-secret
                 permissions:
                     - ap_tender_access_positions
+            office:
+                label: 'Menu Item'
+                url: /
+                icon: icon-sitemap

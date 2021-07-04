@@ -5,7 +5,7 @@ use Model;
 /**
  * Model
  */
-class CompanyRegister extends Company
+class CompanySummary extends Company
 {
  
     public $rules = [

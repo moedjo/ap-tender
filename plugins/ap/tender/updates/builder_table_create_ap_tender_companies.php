@@ -11,6 +11,9 @@ class BuilderTableCreateApTenderCompanies extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id')->unsigned();
+            $table->timestamp('created_at')->nullable();
+            $table->timestamp('updated_at')->nullable();
+            
             $table->string('name');
             $table->string('npwp');
 
@@ -29,8 +32,7 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->string('token')->nullable();
             $table->string('token_url')->nullable();
 
-            $table->timestamp('created_at')->nullable();
-            $table->timestamp('updated_at')->nullable();
+
 
             $table->integer('business_entity_id')->unsigned()->nullable();
             $table->foreign('business_entity_id')->references('id')
@@ -39,6 +41,10 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->integer('contact_position_id')->unsigned()->nullable();
             $table->foreign('contact_position_id')->references('id')
                 ->on('ap_tender_positions');
+
+            $table->integer('verification_office_id')->unsigned()->nullable();
+            $table->foreign('verification_office_id')->references('id')
+                ->on('ap_tender_offices');
 
             $table->integer('region_id')->unsigned()->nullable();
             $table->foreign('region_id')->references('id')

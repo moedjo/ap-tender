@@ -5,10 +5,9 @@ use Model;
 /**
  * Model
  */
-class CompanyRegister extends Company
+class CompanyBasicInfo extends Company
 {
  
     public $rules = [
-        
     ];
 }
