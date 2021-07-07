@@ -1,4 +1,4 @@
-title: 'kju.express::lang.service.plural'
+title: 'ap.tender::lang.summary.order'
 modelClass: Ap\Tender\Models\Summary
 toolbar:
     buttons: reorder_toolbar

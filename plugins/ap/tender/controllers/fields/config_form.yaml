@@ -1,4 +1,4 @@
-name: Fields
+name: 'ap.tender::lang.field.singular'
 form: $/ap/tender/models/field/fields.yaml
 modelClass: Ap\Tender\Models\Field
 defaultRedirect: ap/tender/fields

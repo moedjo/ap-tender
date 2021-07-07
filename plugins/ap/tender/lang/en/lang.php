@@ -8,37 +8,51 @@
             'default' => 'Tender',
         ],
         'label' => [
-            'access_fields' => 'Access Fields',
-            'access_summaries' => 'Access Summaries',
-            'access_positions' => 'Access Positions',
+            'access_fields' => 'Akses Bidang',
+            'access_summaries' => 'Akses Kesimpulan',
+            'access_positions' => 'Akses Posisi',
             'access_offices' => 'Akses Kantor',
         ],
     ],
     'field' => [
-        'id' => 'Field Id',
+        'singular' => 'Bidang',
+        'plural' => 'Daftar Bidang',
+
+        'id' => 'Id Bidang',
         'name' => 'Nama Bidang',
-        'description' => 'Field Description',
-        'list' => 'Daftar Bidang',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Bidang',
+        'update' => 'Ubah Bidang',
+        'delete' => 'Hapus Bidang',
+        'order' => 'Urutan Bidang'
     ],
     'summary' => [
-        'id' => 'Summary Id',
-        'name' => 'Summary Name',
-        'description' => 'Summary Description',
-        'list' => 'Summary List',
+        'singular' => 'Kesimpulan',
+        'plural' => 'Daftar Kesimpulan',
+
+        'id' => 'Id Kesimpulan',
+        'name' => 'Nama Kesimpulan',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Kesimpulan',
+        'update' => 'Ubah Kesimpulan',
+        'delete' => 'Hapus Kesimpulan',
+        'order' => 'Urutan Kesimpulan'
     ],
     'global' => [
         'id' => 'Id',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
         'business_entity' => 'Badan Usaha',
-        'yes' => 'Ya', 
+        'yes' => 'Ya',
         'no' => 'Tidak',
         'register' => 'Daftar',
         'back' => 'Kembali'
     ],
     'doc' => [
-        'appointment'=>'Dokumen Perjanjian' ,
-        'finance'=>'Laporan Keuangan' ,
+        'appointment' => 'Dokumen Perjanjian',
+        'finance' => 'Laporan Keuangan',
     ],
     'position' => [
         'list' => 'Daftar Jabatan',
@@ -58,7 +72,7 @@
         'contact' => 'Kontak Perusahaan',
         'address' => 'Alamat Perusahaan',
 
-        
+
         'summary' => 'Kesimpulan',
         'summary_comment' => 'Silahkan cek statement yang telah tersedia pada tabel di bawah ini, kemudian klik SIMPAN untuk menyimpan
         dan dilanjutkan mengusulkan jadwal Verifikasi Dokumen.',

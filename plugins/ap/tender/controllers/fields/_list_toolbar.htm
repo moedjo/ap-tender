@@ -1,4 +1,10 @@
 <div data-control="toolbar">
     <a href="#" data-control="popup" data-handler="onCreateForm" data-request-data="comment_mode: 1"
-        class="btn btn-primary oc-icon-plus">New Field</a>
+        class="btn btn-primary oc-icon-plus">
+        <?= e(trans('ap.tender::lang.field.create')) ?>
+    </a>
+
+    <a href="<?= Backend::url('ap/tender/fields/reorder') ?>" class="btn btn-default oc-icon-list">
+        <?= e(trans('ap.tender::lang.field.order')) ?>
+    </a>
 </div>

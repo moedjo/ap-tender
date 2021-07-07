@@ -1,23 +1,30 @@
-<?php namespace Ap\Tender\Controllers;
+<?php
+
+namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
 use BackendMenu;
 
 class Fields extends Controller
 {
-    public $implement = [        'Backend\Behaviors\ListController',        'Backend\Behaviors\FormController'    ];
-    
+    public $implement = [
+        'Backend\Behaviors\ListController',
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\ReorderController'
+    ];
+
     public $listConfig = 'config_list.yaml';
     public $formConfig = 'config_form.yaml';
+    public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'access_fields' 
+        'ap_tender_access_fields'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'master','fields');
+        BackendMenu::setContext('Ap.Tender', 'master', 'fields');
     }
 
 
@@ -51,9 +58,6 @@ class Fields extends Controller
     public function onDelete()
     {
         $this->asExtension('FormController')->update_onDelete(post('record_id'));
-        return array_merge($this->listRefresh('tags'), $this->listRefresh('comments'));
+        return $this->listRefresh();
     }
-
-
-
 }

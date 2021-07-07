@@ -27,19 +27,19 @@ navigation:
             - access_fields
         sideMenu:
             summaries:
-                label: 'ap.tender::lang.summary.list'
+                label: 'ap.tender::lang.summary.plural'
                 url: ap/tender/summaries
                 icon: icon-sitemap
                 permissions:
                     - access_summaries
             fields:
-                label: 'ap.tender::lang.field.list'
+                label: 'ap.tender::lang.field.plural'
                 url: ap/tender/fields
                 icon: icon-sitemap
                 permissions:
                     - access_fields
             positions:
-                label: 'ap.tender::lang.position.list'
+                label: 'ap.tender::lang.position.plural'
                 url: /
                 icon: icon-user-secret
                 permissions:
