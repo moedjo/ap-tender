@@ -1,0 +1,7 @@
+scopes:
+    type:
+        label: 'ap.tender::lang.region.type'
+        type: group
+        conditions: type in (:filtered)
+        modelClass: Ap\Tender\Models\Region
+        options: getTypeOptions

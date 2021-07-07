@@ -61,10 +61,19 @@
 
         'id' => 'Id Wilayah',
         'name' => 'Nama Wilayah',
+        'lat' => 'Latitude',
+        'long' => 'Longitude',
+        'type' => 'Tipe Wilayah',
+        'postal_codes'=> 'Kode Pos',
+        'parent' => 'Induk Wilayah',
 
         'create' => 'Buat Wilayah',
         'update' => 'Ubah Wilayah',
-        'delete' => 'Hapus Wilayah'
+        'delete' => 'Hapus Wilayah',
+
+        'province' => 'Provinsi',
+        'regency' => 'Kota/Kabupaten',
+        'district' => 'Kecamatan'
     ],
     'business_entity' => [
         'singular' => 'Badan Usaha',

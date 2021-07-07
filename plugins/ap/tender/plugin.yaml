@@ -62,7 +62,7 @@ navigation:
                 icon: icon-home
                 permissions:
                     - ap_tender_access_offices
-            side-menu-item:
+            regions:
                 label: 'ap.tender::lang.region.plural'
                 url: ap/tender/regions
                 icon: icon-area-chart

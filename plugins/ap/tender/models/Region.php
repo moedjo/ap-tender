@@ -2,7 +2,9 @@
 
 namespace Ap\Tender\Models;
 
+use Backend\Facades\BackendAuth;
 use Model;
+use Session;
 
 /**
  * Model
@@ -24,7 +26,10 @@ class Region extends Model
      */
     public $rules = [
         'name' => 'required|unique:ap_tender_regions',
-        'description' => 'required'
+    ];
+
+    public $belongsTo = [
+        'parent' => ['Ap\Tender\Models\Region', 'key' => 'parent_id']
     ];
 
 
@@ -37,5 +42,38 @@ class Region extends Model
     public function getRevisionableUser()
     {
         return BackendAuth::getUser();
+    }
+
+    public function getDisplayTypeAttribute()
+    {
+        return e(trans('ap.tender::lang.region.' . $this->type));
+    }
+
+    public function getTypeOptions()
+    {
+        return [
+            'province' => 'ap.tender::lang.region.province',
+            'regency' => 'ap.tender::lang.region.regency',
+            'district' => 'ap.tender::lang.region.district',
+        ];
+    }
+
+    public function scopeParent($query)
+    {
+        $type = post('Region[type]');
+
+        if (isset($type)) {
+            Session::put('Region[type]', $type);
+        } else {
+            $type = Session::get('Region[type]');
+        }
+
+        if ($type == 'regency') {
+            return $query->where('type', 'province');
+        }
+
+        if ($type == 'district') {
+            return $query->where('type', 'regency');
+        }
     }
 }
