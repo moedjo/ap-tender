@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.office.singular'
+form: $/ap/tender/models/office/fields.yaml
+modelClass: Ap\Tender\Models\Office
+defaultRedirect: ap/tender/offices
+create:
+    redirect: 'ap/tender/offices/update/:id'
+    redirectClose: ap/tender/offices
+update:
+    redirect: ap/tender/offices
+    redirectClose: ap/tender/offices

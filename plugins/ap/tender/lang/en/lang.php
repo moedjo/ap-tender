@@ -12,6 +12,7 @@
             'access_summaries' => 'Akses Kesimpulan',
             'access_positions' => 'Akses Posisi',
             'access_offices' => 'Akses Kantor',
+            'access_business_entities' => 'Akses Bidang Usaha',
         ],
     ],
     'field' => [
@@ -40,6 +41,32 @@
         'delete' => 'Hapus Kesimpulan',
         'order' => 'Urutan Kesimpulan'
     ],
+    'office' => [
+        'singular' => 'Kantor',
+        'plural' => 'Daftar Kantor',
+
+        'id' => 'Id Kantor',
+        'name' => 'Nama Kantor',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Kantor',
+        'update' => 'Ubah Kantor',
+        'delete' => 'Hapus Kantor',
+        'order' => 'Urutan Kantor'
+    ],
+    'business_entity' => [
+        'singular' => 'Badan Usaha',
+        'plural' => 'Daftar Badan Usaha',
+
+        'id' => 'Id Badan Usaha',
+        'name' => 'Nama Badan Usaha',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Badan Usaha',
+        'update' => 'Ubah Badan Usaha',
+        'delete' => 'Hapus Badan Usaha',
+        'order' => 'Urutan Badan Usaha'
+    ],
     'global' => [
         'id' => 'Id',
         'created_at' => 'Created At',
@@ -55,9 +82,17 @@
         'finance' => 'Laporan Keuangan',
     ],
     'position' => [
-        'list' => 'Daftar Jabatan',
+        'singular' => 'Jabatan',
+        'plural' => 'Daftar Jabatan',
+
         'id' => 'Id Jabatan',
         'name' => 'Nama Jabatan',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Jabatan',
+        'update' => 'Ubah Jabatan',
+        'delete' => 'Hapus Jabatan',
+        'order' => 'Urutan Jabatan'
     ],
     'region' => [
         'singular' => 'Wilayah',

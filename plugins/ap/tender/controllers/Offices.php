@@ -5,7 +5,7 @@ namespace Ap\Tender\Controllers;
 use Backend\Classes\Controller;
 use BackendMenu;
 
-class Positions extends Controller
+class Offices extends Controller
 {
     public $implement = [
         'Backend\Behaviors\ListController',
@@ -18,13 +18,13 @@ class Positions extends Controller
     public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'ap_tender_access_positions'
+        'ap_tender_access_offices'
     ];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'master', 'positions');
+        BackendMenu::setContext('Ap.Tender', 'master', 'offices');
     }
 
 

@@ -1,0 +1,4 @@
+title: 'ap.tender::lang.position.order'
+modelClass: Ap\Tender\Models\Position
+toolbar:
+    buttons: reorder_toolbar

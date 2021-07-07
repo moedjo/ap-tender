@@ -1,6 +1,6 @@
-list: $/ap/tender/models/position/columns.yaml
-modelClass: Ap\Tender\Models\Position
-title: 'ap.tender::lang.position.plural'
+list: $/ap/tender/models/businessentity/columns.yaml
+modelClass: Ap\Tender\Models\BusinessEntity
+title: 'ap.tender::lang.business_entity.plural'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false
@@ -9,5 +9,5 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/positions/update/:id'
+recordUrl: 'ap/tender/businessentities/update/:id'
 recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"

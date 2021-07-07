@@ -1,9 +1,9 @@
-name: Positions
+name: 'ap.tender::lang.position.singular'
 form: $/ap/tender/models/position/fields.yaml
 modelClass: Ap\Tender\Models\Position
 defaultRedirect: ap/tender/positions
 create:
-    redirect: 'ap/tender/positions/update/:id'
+    redirect: 'ap/tender/position/update/:id'
     redirectClose: ap/tender/positions
 update:
     redirect: ap/tender/positions

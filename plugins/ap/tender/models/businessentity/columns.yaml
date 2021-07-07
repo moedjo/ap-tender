@@ -1,14 +1,14 @@
 columns:
     id:
-        label: 'ap.tender::lang.position.id'
+        label: 'ap.tender::lang.business_entity.id'
         type: number
     name:
-        label: 'ap.tender::lang.position.name'
+        label: 'ap.tender::lang.business_entity.name'
         type: text
         searchable: true
         sortable: true
     description:
-        label: 'ap.tender::lang.position.description'
+        label: 'ap.tender::lang.business_entity.description'
         type: text
     created_at:
         label: 'ap.tender::lang.global.created_at'
