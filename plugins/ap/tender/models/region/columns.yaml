@@ -5,3 +5,13 @@ columns:
     name:
         label: 'ap.tender::lang.region.name'
         type: text
+        searchable: true
+        sortable: true
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

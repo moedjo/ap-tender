@@ -1,0 +1,13 @@
+list: $/ap/tender/models/region/columns.yaml
+modelClass: Ap\Tender\Models\Region
+title: 'ap.tender::lang.region.plural'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/regions/update/:id'
+recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"

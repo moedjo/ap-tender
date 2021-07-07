@@ -6,5 +6,5 @@ create:
     redirect: 'ap/tender/offices/update/:id'
     redirectClose: ap/tender/offices
 update:
-    redirect: ap/tender/offices
+    redirect: ap/tender/positions
     redirectClose: ap/tender/offices

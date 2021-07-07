@@ -10,11 +10,21 @@ class BuilderTableCreateApTenderRegions extends Migration
         Schema::create('ap_tender_regions', function($table)
         {
             $table->engine = 'InnoDB';
-            $table->increments('id')->unsigned();
+            $table->integer('id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+
             $table->string('name');
-            $table->string('description');
+        
+            $table->enum('type', ['province', 'regency', 'district']);
+
+            $table->string('postal_codes')->nullable();
+            $table->decimal('lat', 10, 7)->nullable();
+            $table->decimal('long', 10, 7)->nullable();
+
+            $table->integer('parent_id')->unsigned()->nullable();
+
+            $table->primary('id');
 
         });
     }

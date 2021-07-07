@@ -20,6 +20,9 @@ permissions:
     ap_tender_access_business_entities:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_business_entities'
+    ap_tender_access_regions:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_regions'
 navigation:
     master:
         label: 'Master Data'
@@ -59,3 +62,9 @@ navigation:
                 icon: icon-home
                 permissions:
                     - ap_tender_access_offices
+            side-menu-item:
+                label: 'ap.tender::lang.region.plural'
+                url: ap/tender/regions
+                icon: icon-area-chart
+                permissions:
+                    - ap_tender_access_regions

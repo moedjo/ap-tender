@@ -13,6 +13,7 @@
             'access_positions' => 'Akses Posisi',
             'access_offices' => 'Akses Kantor',
             'access_business_entities' => 'Akses Bidang Usaha',
+            'access_regions' => 'Akses Wilayah',
         ],
     ],
     'field' => [
@@ -54,6 +55,17 @@
         'delete' => 'Hapus Kantor',
         'order' => 'Urutan Kantor'
     ],
+    'region' => [
+        'singular' => 'Wilayah',
+        'plural' => 'Daftar Wilayah',
+
+        'id' => 'Id Wilayah',
+        'name' => 'Nama Wilayah',
+
+        'create' => 'Buat Wilayah',
+        'update' => 'Ubah Wilayah',
+        'delete' => 'Hapus Wilayah'
+    ],
     'business_entity' => [
         'singular' => 'Badan Usaha',
         'plural' => 'Daftar Badan Usaha',
@@ -93,11 +105,6 @@
         'update' => 'Ubah Jabatan',
         'delete' => 'Hapus Jabatan',
         'order' => 'Urutan Jabatan'
-    ],
-    'region' => [
-        'singular' => 'Wilayah',
-        'name' => 'Nama Wilayah',
-        'id' => 'Id Wilayah',
     ],
     'company' => [
         'name' => 'Nama Perusahaan',
