@@ -6,6 +6,7 @@ use Ap\Tender\Models\Company;
 use Backend\Classes\Controller;
 use Event;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 use October\Rain\Support\Facades\Flash;
 
@@ -55,6 +56,8 @@ class CompanyRegisters extends Controller
         $company = Company::where('token', $token)->first();
 
         if (isset($company)) {
+
+            Session::put('company_id', $company->id);
             return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
         } else {
             Flash::success('not valid');
