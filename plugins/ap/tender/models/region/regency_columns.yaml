@@ -1,0 +1,9 @@
+columns:
+    name:
+        label: 'ap.tender::lang.region.name'
+        type: text
+        searchable: true
+        sortable: true
+    parent[name]:
+        label: 'ap.tender::lang.region.parent'
+        type: text

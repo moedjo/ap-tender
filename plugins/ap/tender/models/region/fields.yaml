@@ -1,21 +1,21 @@
 fields:
-    id:
-        label: 'ap.tender::lang.region.id'
-        oc.commentPosition: above
-        span: full
-        placeholder: 'ap.tender::lang.region.id'
-        type: number
+    # id:
+    #     label: 'ap.tender::lang.region.id'
+    #     oc.commentPosition: above
+    #     span: full
+    #     placeholder: 'ap.tender::lang.region.id'
+    #     type: number
     name:
         label: 'ap.tender::lang.region.name'
         oc.commentPosition: above
         span: full
         placeholder: 'ap.tender::lang.region.name'
         type: text
-    type:
-        label: 'ap.tender::lang.region.type'
-        span: full
-        placeholder: 'ap.tender::lang.region.type'
-        type: balloon-selector
+    # type:
+    #     label: 'ap.tender::lang.region.type'
+    #     span: full
+    #     placeholder: 'ap.tender::lang.region.type'
+    #     type: balloon-selector
     lat:
         label: 'ap.tender::lang.region.lat'
         span: left
@@ -26,17 +26,17 @@ fields:
         span: right
         placeholder: 'ap.tender::lang.region.long'
         type: number
-    parent:
-        label: 'ap.tender::lang.region.parent'
-        span: full
-        placeholder: 'ap.tender::lang.region.parent'
-        type: recordfinder
-        list: ~/plugins/ap/tender/models/region/columns.yaml
-        modelClass: Ap\Tender\Models\Region
-        nameFrom: name
-        scope: parent
-        dependsOn: type
-        trigger:
-            action: show
-            field: type
-            condition: 'value[regency]|value[district]'
+    # parent:
+    #     label: 'ap.tender::lang.region.parent'
+    #     span: full
+    #     placeholder: 'ap.tender::lang.region.parent'
+    #     type: recordfinder
+    #     list: ~/plugins/ap/tender/models/region/columns.yaml
+    #     modelClass: Ap\Tender\Models\Region
+    #     nameFrom: name
+    #     scope: parent
+    #     dependsOn: type
+    #     trigger:
+    #         action: show
+    #         field: type
+    #         condition: 'value[regency]|value[district]'

@@ -14,6 +14,7 @@
             'access_offices' => 'Akses Kantor',
             'access_business_entities' => 'Akses Bidang Usaha',
             'access_regions' => 'Akses Wilayah',
+            'access_experience_categories' => 'Akses Kategori Pengalaman'
         ],
     ],
     'field' => [
@@ -75,6 +76,20 @@
         'regency' => 'Kota/Kabupaten',
         'district' => 'Kecamatan'
     ],
+    'experience_category' => [
+        'singular' => 'Kategori Pengalaman',
+        'plural' => 'Daftar Kategori Pengalaman',
+
+        'id' => 'Id Kategori Pengalaman',
+        'name' => 'Nama Kategori Pengalaman',
+        'description' => 'Keterangan',
+
+
+        'create' => 'Buat Kategori Pengalaman',
+        'update' => 'Ubah Kategori Pengalaman',
+        'delete' => 'Hapus Kategori Pengalaman',
+        'order' => 'Urutan Kategori Pengalaman'
+    ],
     'business_entity' => [
         'singular' => 'Badan Usaha',
         'plural' => 'Daftar Badan Usaha',
@@ -98,10 +113,6 @@
         'register' => 'Daftar',
         'back' => 'Kembali'
     ],
-    'doc' => [
-        'appointment' => 'Dokumen Perjanjian',
-        'finance' => 'Laporan Keuangan',
-    ],
     'position' => [
         'singular' => 'Jabatan',
         'plural' => 'Daftar Jabatan',
@@ -115,13 +126,37 @@
         'delete' => 'Hapus Jabatan',
         'order' => 'Urutan Jabatan'
     ],
+    'company_experience' => [
+
+        'singular' => 'Pengalaman Perusahaan',
+
+        'name' => 'Nama Pengalaman',
+        'region_area' => 'Luas Area (m2)',
+        'region' => 'Wilayah',
+        'total_income' => 'Total Pendapatan (Rp.)',
+        'cooperation_period' => 'Masa Kerjasama',
+        'operational_hour' => 'Jam Operasional',
+        'cooperation_period_start' => 'Masa Kerjasama (Awal)',
+        'cooperation_period_end' => 'Masa Kerjasama (Akhir)',
+        'operational_hour_start' => 'Jam Operasional (Awal)',
+        'operational_hour_end' => 'Jam Operasional (Awal)',
+        'doc_experience' => 'Dokumen Perjanjian',
+
+        'create' => 'Buat Pengalaman Perusahaan',
+        'update' => 'Ubah Pengalaman Perusahaan',
+        'delete' => 'Hapus Pengalaman Perusahaan',
+    ],
     'company' => [
         'name' => 'Nama Perusahaan',
         'npwp' => 'NPWP Tahun Terakhir',
         'collaborate' => 'Telah Bekerjasama dengan Angkasa Pura I sebelumnya?',
+
         'info' => 'Informasi Perusahaan',
         'contact' => 'Kontak Perusahaan',
         'address' => 'Alamat Perusahaan',
+        
+        'experience' => 'Pengalaman Perusahaan',
+        'financial_ability' => 'Kemampuan Keuangan',
 
 
         'summary' => 'Kesimpulan',
@@ -137,8 +172,11 @@
         'fax_number' => 'Nomor Fax',
         'email' => 'Email',
     ],
-    'finance' => [
+    'company_finance' => [
+        'singular' => 'Keuangan Perusahaan',
+
         'year' => 'Tahun',
-        'total_income' => 'Total Penghasilan (Rp.)'
+        'total_income' => 'Total Penghasilan (Rp.)',
+        'doc_finance' => 'Laporan Keuangan',
     ]
 ];

@@ -1,0 +1,4 @@
+title: 'ap.tender::lang.experience_category.order'
+modelClass: Ap\Tender\Models\ExperienceCategory
+toolbar:
+    buttons: reorder_toolbar

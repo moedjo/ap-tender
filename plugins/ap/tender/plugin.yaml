@@ -23,6 +23,9 @@ permissions:
     ap_tender_access_regions:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_regions'
+    ap_tender_access_experience_categories:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label._access_experience_categories'
 navigation:
     master:
         label: 'Master Data'
@@ -68,3 +71,9 @@ navigation:
                 icon: icon-area-chart
                 permissions:
                     - ap_tender_access_regions
+            experience_categories:
+                label: 'ap.tender::lang.experience_category.singular'
+                url: ap/tender/experiencecategories
+                icon: icon-tasks
+                permissions:
+                    - ap_tender_access_experience_categories

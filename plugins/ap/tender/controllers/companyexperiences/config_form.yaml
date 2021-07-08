@@ -1,4 +1,4 @@
-name: Companies
+name: 'ap.tender::lang.company.experience'
 form: $/ap/tender/models/companyexperience/fields.yaml
 modelClass: Ap\Tender\Models\CompanyExperience
 update:

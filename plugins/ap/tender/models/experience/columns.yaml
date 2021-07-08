@@ -1,13 +1,44 @@
 columns:
     id:
-        label: id
+        label: 'ap.tender::lang.global.id'
         type: number
-    created_at:
-        label: created_at
-        type: datetime
-    updated_at:
-        label: updated_at
-        type: datetime
+        invisible: true
     name:
-        label: name
+        label: 'ap.tender::lang.company_experience.name'
         type: text
+        
+    experience_category[name]:
+        label: 'ap.tender::lang.experience_category.singular'
+        type: text
+    region[displayName]:
+        label: 'ap.tender::lang.company_experience.region'
+        type: text
+    region_area:
+        label: 'ap.tender::lang.company_experience.region_area'
+        type: number
+    total_income:
+        label: 'ap.tender::lang.company_experience.total_income'
+        type: currency_idr
+        align: right
+    _operational_hour:
+        label: 'ap.tender::lang.company_experience.operational_hour'
+        type: text
+        valueFrom: operationalHour
+    _cooperation_period:
+        label: 'ap.tender::lang.company_experience.cooperation_period'
+        type: text
+        valueFrom: cooperationPeriod
+    _doc_experience:
+        label: 'ap.tender::lang.company_experience.doc_experience'
+        relation: doc_experience
+        select: file_name
+
+
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

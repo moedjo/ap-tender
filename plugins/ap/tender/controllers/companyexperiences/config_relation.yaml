@@ -1,5 +1,5 @@
 experiences:
-    label: 'kju.express::lang.experience.singular'
+    label: 'ap.tender::lang.company_experience.singular'
     manage:
         form: $/ap/tender/models/experience/fields.yaml
         list: $/ap/tender/models/experience/columns.yaml

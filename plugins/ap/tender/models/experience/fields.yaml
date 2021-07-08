@@ -1,10 +1,52 @@
 fields:
     name:
-        label: Text
-        span: auto
+        label: 'ap.tender::lang.company_experience.name'
+        span: left
         type: text
-    doc_appointment:
-        label: 'ap.tender::lang.global.doc_appointment'
+        placeholder: 'ap.tender::lang.company_experience.name'
+    experience_category:
+        label: 'ap.tender::lang.experience_category.singular'
+        span: right
+        type: relation
+        placeholder: 'ap.tender::lang.experience_category.singular'
+    region:
+        label: 'ap.tender::lang.company_experience.region'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/region/regency_columns.yaml
+        recordsPerPage: 10
+        nameFrom: displayName
+        span: left
+    region_area:
+        label: 'ap.tender::lang.company_experience.region_area'
+        span: right
+        type: number
+        placeholder: 'ap.tender::lang.company_experience.region_area'
+    total_income:
+        label: 'ap.tender::lang.company_experience.total_income'
+        type: number
+        span: left
+    cooperation_period_start:
+        label: 'ap.tender::lang.company_experience.cooperation_period_start'
+        type: datepicker
+        mode: date
+        span: left
+    cooperation_period_end:
+        label: 'ap.tender::lang.company_experience.cooperation_period_end'
+        type: datepicker
+        mode: date
+        span: right
+    operational_hour_start:
+        label: 'ap.tender::lang.company_experience.operational_hour_start'
+        type: datepicker
+        mode: time
+        span: left
+    operational_hour_end:
+        label: 'ap.tender::lang.company_experience.operational_hour_end'
+        type: datepicker
+        mode: time
+        span: right
+    doc_experience:
+        label: 'ap.tender::lang.company_experience.doc_experience'
         type: fileupload
         mode: file
         useCaption: false
@@ -12,3 +54,4 @@ fields:
         mimeTypes: pdf
         maxFilesize: 1
         attachOnUpload: true
+        span: left

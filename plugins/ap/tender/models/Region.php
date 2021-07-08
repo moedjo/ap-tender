@@ -58,6 +58,15 @@ class Region extends Model
         ];
     }
 
+
+    public function getDisplayNameAttribute()
+    {
+        if (isset($this->parent)) {
+            return "{$this->name}, {$this->parent->name}";
+        }
+        return $this->name;
+    }
+
     public function scopeParent($query)
     {
         $type = post('Region[type]');

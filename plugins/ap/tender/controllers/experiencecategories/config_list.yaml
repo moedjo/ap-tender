@@ -1,0 +1,13 @@
+list: $/ap/tender/models/experiencecategory/columns.yaml
+modelClass: Ap\Tender\Models\ExperienceCategory
+title: 'ap.tender::lang.experience_category.plural'
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: false
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/experiencecategories/update/:id'
+recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"

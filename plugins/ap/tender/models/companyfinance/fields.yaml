@@ -1,6 +1,6 @@
 fields:
     _section1:
-        label: 'ap.tender::lang.company.info'
+        label: 'ap.tender::lang.company.financial_ability'
         type: section
     finances:
         span: full
