@@ -24,12 +24,23 @@ class Experience extends Model
 
         'operational_hour_start',
         'operational_hour_end'
-];
+    ];
 
     /**
      * @var array Validation rules
      */
-    public $rules = [];
+    public $rules = [
+        'name' => 'required',
+        'experience_category' => 'required',
+        'region' => 'required',
+        'region_area' => 'required|numeric',
+        'total_income' => 'required|numeric',
+        'cooperation_period_start' => 'required|date',
+        'cooperation_period_end' => 'required|date|after:cooperation_period_start',
+        'operational_hour_start' => 'required|date',
+        'operational_hour_end' => 'required|date|after:operational_hour_start',
+        'doc_experience' => 'required',
+    ];
 
     public $belongsTo = [
         'company' => [
@@ -53,13 +64,19 @@ class Experience extends Model
 
     public function getOperationalHourAttribute()
     {
-        return $this->operational_hour_start->format('H:i').' - '. $this->operational_hour_end->format('H:i');
+
+        if (isset($this->operational_hour_start) && isset($this->operational_hour_end)) {
+            return $this->operational_hour_start->format('H:i') . ' - ' . $this->operational_hour_end->format('H:i');
+        }
+        return null;
     }
 
     public function getCooperationPeriodAttribute()
     {
-        return $this->cooperation_period_start->format('d M Y').' - '. $this->cooperation_period_end->format('d M Y');
+
+        if (isset($this->cooperation_period_start) && isset($this->cooperation_period_end)) {
+            return $this->cooperation_period_start->format('d M Y') . ' - ' . $this->cooperation_period_end->format('d M Y');
+        }
+        return null;
     }
-
-
 }

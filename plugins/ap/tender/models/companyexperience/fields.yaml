@@ -3,6 +3,7 @@ fields:
         label: 'ap.tender::lang.company.experience'
         type: section
     experiences:
+        label: 'ap.tender::lang.company.experience'
         span: full
         path: field_experiences
         context:

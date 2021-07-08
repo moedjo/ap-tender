@@ -1,4 +1,6 @@
-<?php namespace Ap\Tender\Models;
+<?php
+
+namespace Ap\Tender\Models;
 
 use Model;
 
@@ -7,8 +9,8 @@ use Model;
  */
 class CompanyExperience extends Company
 {
- 
+
     public $rules = [
-  
+        'experiences' => 'required',
     ];
 }

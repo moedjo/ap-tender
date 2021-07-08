@@ -19,7 +19,9 @@ class Finance extends Model
      * @var array Validation rules
      */
     public $rules = [
-        'year' => 'required|numeric|between:1970,2022'
+        'year' => 'required|numeric|between:1970,2022',
+        'total_income' => 'required|numeric',
+        'doc_finance' => 'required',
     ];
 
 

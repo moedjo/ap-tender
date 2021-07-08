@@ -111,7 +111,8 @@
         'yes' => 'Ya',
         'no' => 'Tidak',
         'register' => 'Daftar',
-        'back' => 'Kembali'
+        'back' => 'Kembali',
+        'doc_comment' => 'File (*pdf - max 50MB)'
     ],
     'position' => [
         'singular' => 'Jabatan',
@@ -139,7 +140,7 @@
         'cooperation_period_start' => 'Masa Kerjasama (Awal)',
         'cooperation_period_end' => 'Masa Kerjasama (Akhir)',
         'operational_hour_start' => 'Jam Operasional (Awal)',
-        'operational_hour_end' => 'Jam Operasional (Awal)',
+        'operational_hour_end' => 'Jam Operasional (Akhir)',
         'doc_experience' => 'Dokumen Perjanjian',
 
         'create' => 'Buat Pengalaman Perusahaan',
@@ -177,6 +178,13 @@
 
         'year' => 'Tahun',
         'total_income' => 'Total Penghasilan (Rp.)',
-        'doc_finance' => 'Laporan Keuangan',
+        'doc_finance' => 'Dokumen Keuangan',
+
+        'doc_finance_sppkp' => 'Surat Pengukuhan Pengusaha Kena Pajak (SPPKP)',
+        'doc_finance_spt' => 'SPT Pajak Tahunan',
+        'doc_finance_blp' => 'Bukti Lapor Pajak',
+        'doc_finance_bsp' => 'Bukti Setoran Pajak',
+        'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
+        'doc_finance_other' => 'Lainnya',
     ]
 ];

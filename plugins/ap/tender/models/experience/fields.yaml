@@ -55,3 +55,4 @@ fields:
         maxFilesize: 1
         attachOnUpload: true
         span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
