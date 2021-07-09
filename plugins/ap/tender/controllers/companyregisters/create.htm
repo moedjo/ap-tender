@@ -8,20 +8,21 @@
 
         <div class="form-buttons">
             <div class="loading-indicator-container">
+                <button type="button" class="btn btn-danger">
+                    <a href="<?= Backend::url('ap/tender/companies') ?>" style="color: white;">
+                        <?= e(trans('ap.tender::lang.global.back')) ?>
+                    </a>
+                </button>            
                 <button 
+                    style="background-color: #219653; color: white;"
                     type="button"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
-                    class="btn btn-primary">
+                    class="btn ">
                     <?= e(trans('ap.tender::lang.global.register')) ?>
                 </button>
-                <span class="btn-text">
-                    <?= e(trans('backend::lang.form.or')) ?> 
-                    <a href="<?= Backend::url('ap/tender/companies') ?>">
-                        <?= e(trans('ap.tender::lang.global.back')) ?></a></a>
-                </span>
             </div>
         </div>
 
