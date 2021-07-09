@@ -1,0 +1,4 @@
+title: 'ap.tender::lang.field.order'
+modelClass: Ap\Tender\Models\Field
+toolbar:
+    buttons: reorder_toolbar

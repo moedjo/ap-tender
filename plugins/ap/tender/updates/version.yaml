@@ -7,8 +7,8 @@
     - builder_table_create_ap_tender_regions.php
     - builder_table_create_ap_tender_offices.php
     - builder_table_create_ap_tender_companies.php
+    - builder_table_create_ap_tender_experience_categories.php
     - builder_table_create_ap_tender_experiences.php
     - builder_table_create_ap_tender_finances.php
     - builder_table_create_ap_tender_companies_summaries.php
     - seeder.php
-

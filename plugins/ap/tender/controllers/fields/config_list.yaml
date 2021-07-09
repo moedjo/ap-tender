@@ -1,6 +1,6 @@
 list: $/ap/tender/models/field/columns.yaml
 modelClass: Ap\Tender\Models\Field
-title: Fields
+title: 'ap.tender::lang.field.plural'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false

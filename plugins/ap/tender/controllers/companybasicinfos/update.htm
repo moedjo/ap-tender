@@ -23,7 +23,7 @@
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
                     data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
-                    class="btn btn-default">
+                    class="btn btn-default pull-right">
                     <?= e(trans('backend::lang.form.save_and_close')) ?>
                 </button>
                 <button
@@ -43,5 +43,5 @@
 
 <?php else: ?>
     <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-    <p><a href="<?= Backend::url('ap/tender/companies') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+    <p><a href="<?= url('/') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
 <?php endif ?>

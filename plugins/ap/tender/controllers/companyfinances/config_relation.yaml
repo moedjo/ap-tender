@@ -1,5 +1,5 @@
 finances:
-    label: 'kju.express::lang.experience.singular'
+    label: 'ap.tender::lang.company_finance.singular'
     manage:
         form: $/ap/tender/models/finance/fields.yaml
         list: $/ap/tender/models/finance/columns.yaml

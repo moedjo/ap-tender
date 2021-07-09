@@ -17,6 +17,15 @@ permissions:
     ap_tender_access_offices:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_offices'
+    ap_tender_access_business_entities:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_business_entities'
+    ap_tender_access_regions:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_regions'
+    ap_tender_access_experience_categories:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label._access_experience_categories'
 navigation:
     master:
         label: 'Master Data'
@@ -27,24 +36,44 @@ navigation:
             - access_fields
         sideMenu:
             summaries:
-                label: 'ap.tender::lang.summary.list'
+                label: 'ap.tender::lang.summary.plural'
                 url: ap/tender/summaries
-                icon: icon-sitemap
+                icon: icon-book
                 permissions:
-                    - access_summaries
+                    - ap_tender_access_summaries
             fields:
-                label: 'ap.tender::lang.field.list'
+                label: 'ap.tender::lang.field.plural'
                 url: ap/tender/fields
-                icon: icon-sitemap
+                icon: icon-legal
                 permissions:
-                    - access_fields
+                    - ap_tender_access_fields
+            business-entities:
+                label: 'ap.tender::lang.business_entity.plural'
+                url: ap/tender/businessentities
+                icon: icon-star
+                permissions:
+                    - ap_tender_access_business_entities
             positions:
-                label: 'ap.tender::lang.position.list'
-                url: /
+                label: 'ap.tender::lang.position.plural'
+                url: ap/tender/positions
                 icon: icon-user-secret
                 permissions:
                     - ap_tender_access_positions
-            office:
-                label: 'Menu Item'
-                url: /
-                icon: icon-sitemap
+            offices:
+                label: 'ap.tender::lang.office.plural'
+                url: ap/tender/offices
+                icon: icon-home
+                permissions:
+                    - ap_tender_access_offices
+            regions:
+                label: 'ap.tender::lang.region.plural'
+                url: ap/tender/regions
+                icon: icon-area-chart
+                permissions:
+                    - ap_tender_access_regions
+            experience_categories:
+                label: 'ap.tender::lang.experience_category.singular'
+                url: ap/tender/experiencecategories
+                icon: icon-tasks
+                permissions:
+                    - ap_tender_access_experience_categories

@@ -18,7 +18,7 @@ class Summaries extends Controller
     public $reorderConfig = 'config_reorder.yaml';
 
     public $requiredPermissions = [
-        'access_summaries'
+        'ap_tender_access_summaries'
     ];
 
     public function __construct()
@@ -56,6 +56,6 @@ class Summaries extends Controller
     public function onDelete()
     {
         $this->asExtension('FormController')->update_onDelete(post('record_id'));
-        return array_merge($this->listRefresh('tags'), $this->listRefresh('comments'));
+        return $this->listRefresh();
     }
 }

@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.region.singular'
+form: $/ap/tender/models/region/fields.yaml
+modelClass: Ap\Tender\Models\Region
+defaultRedirect: ap/tender/regions
+create:
+    redirect: 'ap/tender/regions/update/:id'
+    redirectClose: ap/tender/regions
+update:
+    redirect: ap/tender/regions
+    redirectClose: ap/tender/regions

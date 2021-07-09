@@ -1,12 +1,13 @@
 list: $/ap/tender/models/position/columns.yaml
 modelClass: Ap\Tender\Models\Position
-title: Positions
+title: 'ap.tender::lang.position.plural'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
-showCheckboxes: true
+showCheckboxes: false
 recordsPerPage: 20
 toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
 recordUrl: 'ap/tender/positions/update/:id'
+recordOnClick: "$.popup({ handler: 'onUpdateForm', extraData: {record_id: ':id' } })"

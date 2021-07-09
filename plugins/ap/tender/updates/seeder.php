@@ -32,20 +32,6 @@ class Seeder extends UpdatesSeeder{
             'description' => 'CEO'
         ]);
 
-
-        Region::create([
-
-            'name' => 'jakarta',
-            'description' => 'CEO'
-        ]);
-
-        Region::create([
-
-            'name' => 'Bogor',
-            'description' => 'CEO'
-        ]);
-
-
         // Summary
         Summary::create([
             'name' => 'Pajak',

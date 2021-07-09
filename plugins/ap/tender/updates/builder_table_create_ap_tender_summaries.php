@@ -13,6 +13,7 @@ class BuilderTableCreateApTenderSummaries extends Migration
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            
             $table->string('name');
             $table->text('description');
 

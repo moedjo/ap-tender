@@ -1,4 +1,4 @@
-name: Companies
+name: 'ap.tender::lang.company.financial_ability'
 form: $/ap/tender/models/companyfinance/fields.yaml
 modelClass: Ap\Tender\Models\CompanyFinance
 update:

@@ -1,4 +1,4 @@
-name: Summaries
+name: 'ap.tender::lang.summary.singular'
 form: $/ap/tender/models/summary/fields.yaml
 modelClass: Ap\Tender\Models\Summary
 defaultRedirect: ap/tender/summaries

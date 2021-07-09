@@ -1,0 +1,20 @@
+columns:
+    id:
+        label: 'ap.tender::lang.office.id'
+        type: number
+    name:
+        label: 'ap.tender::lang.office.name'
+        type: text
+        searchable: true
+        sortable: true
+    description:
+        label: 'ap.tender::lang.office.description'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

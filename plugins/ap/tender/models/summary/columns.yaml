@@ -13,6 +13,8 @@ columns:
     created_at:
         label: 'ap.tender::lang.global.created_at'
         type: datetime
+        invisible: true
     updated_at:
         label: 'ap.tender::lang.global.updated_at'
         type: datetime
+        invisible: true

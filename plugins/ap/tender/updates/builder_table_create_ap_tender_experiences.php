@@ -17,19 +17,27 @@ class BuilderTableCreateApTenderExperiences extends Migration
 
             $table->string('name');
 
-            $table->time('operational_hour_start')->nullable();
-            $table->time('operational_hour_end')->nullable();
+            $table->timestamp('operational_hour_start')->nullable();
+            $table->timestamp('operational_hour_end')->nullable();
 
-            $table->date('cooperation_period_start')->nullable();
-            $table->date('cooperation_period_end')->nullable();
+            $table->timestamp('cooperation_period_start')->nullable();
+            $table->timestamp('cooperation_period_end')->nullable();
 
             $table->unsignedDecimal('total_income', 15, 0)->nullable();
 
+            $table->integer('region_id')->unsigned()->nullable();
+            $table->foreign('region_id')->references('id')
+                ->on('ap_tender_regions');
 
+            $table->integer('region_area')->unsigned()->nullable();
 
             $table->integer('company_id')->unsigned()->nullable();
             $table->foreign('company_id')->references('id')
                 ->on('ap_tender_companies');
+
+            $table->integer('experience_category_id')->unsigned()->nullable();
+            $table->foreign('experience_category_id')->references('id')
+                ->on('ap_tender_experience_categories');
         });
     }
 

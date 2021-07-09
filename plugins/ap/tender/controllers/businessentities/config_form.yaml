@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.business_entity.singular'
+form: $/ap/tender/models/businessentity/fields.yaml
+modelClass: Ap\Tender\Models\BusinessEntity
+defaultRedirect: ap/tender/businessentities
+create:
+    redirect: 'ap/tender/businessentities/update/:id'
+    redirectClose: ap/tender/businessentities
+update:
+    redirect: ap/tender/businessentities
+    redirectClose: ap/tender/businessentities

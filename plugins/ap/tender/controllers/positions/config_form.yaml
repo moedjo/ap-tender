@@ -1,4 +1,4 @@
-name: Positions
+name: 'ap.tender::lang.position.singular'
 form: $/ap/tender/models/position/fields.yaml
 modelClass: Ap\Tender\Models\Position
 defaultRedirect: ap/tender/positions

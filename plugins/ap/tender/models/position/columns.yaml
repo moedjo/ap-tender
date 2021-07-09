@@ -2,8 +2,19 @@ columns:
     id:
         label: 'ap.tender::lang.position.id'
         type: number
-        sortable: true
     name:
         label: 'ap.tender::lang.position.name'
         type: text
         searchable: true
+        sortable: true
+    description:
+        label: 'ap.tender::lang.position.description'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

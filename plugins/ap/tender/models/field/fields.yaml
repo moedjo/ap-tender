@@ -5,13 +5,6 @@ fields:
         span: full
         placeholder: 'ap.tender::lang.field.name'
         type: text
-    test:
-        label: 'Test'
-        oc.commentPosition: above
-        span: full
-        placeholder: 'ap.tender::lang.field.name'
-        type: text
-        invisible: true
     description:
         label: 'ap.tender::lang.field.description'
         size: ''
@@ -19,9 +12,3 @@ fields:
         span: full
         placeholder: 'ap.tender::lang.field.description'
         type: textarea
-    image:
-        label: Image
-        type: fileupload
-        mode: image
-        imageHeight: 260
-        imageWidth: 260

@@ -1,6 +1,6 @@
 list: $/ap/tender/models/summary/columns.yaml
 modelClass: Ap\Tender\Models\Summary
-title: Summaries
+title: 'ap.tender::lang.summary.plural'
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: false

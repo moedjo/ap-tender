@@ -13,8 +13,11 @@ class BuilderTableCreateApTenderFields extends Migration
             $table->increments('id')->unsigned();
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
+            
             $table->string('name');
             $table->text('description');
+
+            $table->integer('sort_order')->default(0);
 
         });
     }

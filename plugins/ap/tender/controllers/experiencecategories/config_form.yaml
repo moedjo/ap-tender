@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.experience_category.singular'
+form: $/ap/tender/models/experiencecategory/fields.yaml
+modelClass: Ap\Tender\Models\ExperienceCategory
+defaultRedirect: ap/tender/experiencecategories
+create:
+    redirect: 'ap/tender/experiencecategories/update/:id'
+    redirectClose: ap/tender/experiencecategories
+update:
+    redirect: ap/tender/experiencecategories
+    redirectClose: ap/tender/experiencecategories

@@ -48,4 +48,13 @@ class Company extends Model
             'otherKey' => 'summary_id'
         ]
     ];
+
+    public $attachOne = [
+        'doc_finance_sppkp' => ['System\Models\File', 'public' => false],
+        'doc_finance_spt' => ['System\Models\File', 'public' => false],
+        'doc_finance_blp' => ['System\Models\File', 'public' => false],
+        'doc_finance_bsp' => ['System\Models\File', 'public' => false],
+        'doc_finance_sklp' => ['System\Models\File', 'public' => false],
+        'doc_finance_other' => ['System\Models\File', 'public' => false],
+    ];
 }

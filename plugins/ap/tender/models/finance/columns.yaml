@@ -2,14 +2,23 @@ columns:
     id:
         label: 'ap.tender::lang.global.id'
         type: number
+        invisible: true
     year:
-        label: 'ap.tender::lang.finance.year'
+        label: 'ap.tender::lang.company_finance.year'
         type: number
     total_income:
-        label: 'ap.tender::lang.finance.total_income'
+        label: 'ap.tender::lang.company_finance.total_income'
         type: currency_idr
         align: right
     doc_finance:
-        label: 'ap.tender::lang.doc.finance'
+        label: 'ap.tender::lang.company_finance.doc_finance'
         relation: doc_finance
         select: file_name
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

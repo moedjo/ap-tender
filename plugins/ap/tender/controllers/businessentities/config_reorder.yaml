@@ -1,0 +1,4 @@
+title: 'ap.tender::lang.business_entity.order'
+modelClass: Ap\Tender\Models\BusinessEntity
+toolbar:
+    buttons: reorder_toolbar
