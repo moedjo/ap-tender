@@ -13,8 +13,8 @@ class CompanyRegister extends Company
         'address' => 'required',
         'fax_number' => 'required',
         'contact_full_name' => 'required',
-        'email' => 'required|email|unique:users',
-        'npwp' => 'required|min:15|numeric|unique:users',
+        'email' => 'required|email',
+        'npwp' => 'required|min:15|numeric',
         'contact_phone_number' => 'required|min:10|numeric',
         'phone_number' => 'required|min:10|numeric'
     ];
