@@ -60,11 +60,6 @@ class CompanyBasicInfos extends Controller
 
     }
 
-    public function listExtendQuery($query)
-    {
-        return $this->extendQuery($query);
-    }
-
     public function formExtendQuery($query)
     {
         return $this->extendQuery($query);

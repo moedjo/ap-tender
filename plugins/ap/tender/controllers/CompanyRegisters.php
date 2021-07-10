@@ -44,23 +44,21 @@ class CompanyRegisters extends Controller
     {
         $model->token = Str::random(6);
         $model->token_url = url('/backend/ap/tender/companyregisters/validate');
-        
         $model->status = 'register';
     }
 
     public function onValidate()
     {
-
         $token = input('token');
-
         $company = Company::where('token', $token)->first();
-
         if (isset($company)) {
-
             Session::put('company_id', $company->id);
             return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
         } else {
-            Flash::success('not valid');
+
+            //TODO see lang.php
+            Flash::success('invalid token');
+        
         }
     }
 
