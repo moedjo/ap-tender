@@ -26,6 +26,29 @@ class BuilderTableCreateApTenderCompanies extends Migration
 
             $table->string('contact_full_name');
             $table->string('contact_phone_number');
+            $table->string('contact_email');
+            $table->integer('contact_position_id')->unsigned()->nullable();
+            $table->foreign('contact_position_id')->references('id')
+                ->on('ap_tender_positions');
+
+
+            $table->string('pic_full_name')->nullable();
+            $table->string('pic_phone_number')->nullable();
+            $table->string('pic_email')->nullable();
+            $table->string('pic_ktp')->nullable();
+            $table->integer('pic_position_id')->unsigned()->nullable();
+            $table->foreign('pic_position_id')->references('id')
+                ->on('ap_tender_positions');
+
+            
+            $table->json('qualification')->nullable();
+
+            $table->json('commissioner')->nullable();
+            $table->json('director')->nullable();
+
+            $table->string('website')->nullable();
+
+            $table->boolean('konsorsium')->default(false);
 
 
             $table->string('status')->nullable();
@@ -38,9 +61,7 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->foreign('business_entity_id')->references('id')
                 ->on('ap_tender_business_entities');
 
-            $table->integer('contact_position_id')->unsigned()->nullable();
-            $table->foreign('contact_position_id')->references('id')
-                ->on('ap_tender_positions');
+          
 
             $table->integer('verification_office_id')->unsigned()->nullable();
             $table->foreign('verification_office_id')->references('id')

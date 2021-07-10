@@ -76,4 +76,10 @@ class Company extends Model
         'doc_basic_tdp' => ['System\Models\File', 'public' => false],
         'doc_basic_domisili' => ['System\Models\File', 'public' => false],
     ];
+
+    protected $jsonable = [
+        'qualification',
+        'commissioner',
+        'director',
+    ]; 
 }

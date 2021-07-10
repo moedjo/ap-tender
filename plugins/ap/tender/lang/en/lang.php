@@ -192,7 +192,8 @@
         'doc_basic_other' => 'Lainnya',
 
 
-        'doc_legal' => 'Dokumen Legal Perusahaan'
+        'doc_legal' => 'Dokumen Legal Perusahaan',
+        'single' => 'Untuk Perusahaan Tunggal'
     ],
     'company_finance' => [
         'singular' => 'Keuangan Perusahaan',
