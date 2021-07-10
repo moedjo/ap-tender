@@ -1,4 +1,6 @@
-<?php namespace Ap\Tender\Models;
+<?php
+
+namespace Ap\Tender\Models;
 
 use Model;
 
@@ -7,8 +9,13 @@ use Model;
  */
 class CompanyRegister extends Company
 {
- 
+
     public $rules = [
+        'business_entity' => 'required',
+        'verification_office' => 'required',
+        'contact_position' => 'required',
+        'region' => 'required',
+        'collaborate' => 'required',
         'name' => 'required',
         'address' => 'required',
         'fax_number' => 'required',
