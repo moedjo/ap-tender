@@ -53,6 +53,7 @@ class CompanyRegisters extends Controller
         $company = Company::where('token', $token)->first();
         if (isset($company)) {
             Session::put('company_id', $company->id);
+            Flash::success('Aktivasi Akun Anda berhasil');
             return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
         } else {
 
