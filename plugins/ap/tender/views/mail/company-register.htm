@@ -1,20 +1,22 @@
-subject = "Welcome to {{ appName|raw }}"
-layout = "ap-default"
-description = "Invite new admin to the site"
+subject = "Registrasi Perusahaan {{name}}"
+layout = "ap-tender-registration"
+description = "Email Registrasi"
 ==
-Hi {{ name }}
+Yth. Bapak/Ibu **{{business_entity.name}} {name}}**
 
-A user account has been created for you on **{{ appName }}**.
+Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha PT Angkasa Pura I (Persero). Silahkan lengkapi Informasi Perusahaan Anda pada Tenant Management System E-Selection.
 
-{% partial 'panel' body %}
-- Login: `{{ login ?: 'sample' }}`
-- Password: `{{ (password ?: '********')|raw }}`
+Masukkan kode registrasi Anda  **{{token}}** melalui laman berikut:	{{token_url}}
+
+Atau Anda juga dapat melakukan verifikasi dengan klik tombol dibawah ini:
+
+{% partial 'button' url=token_url body %}
+    Klik disini
 {% endpartial %}
 
-You can use the following link to sign in:
 
-{% partial 'button' url=link body %}
-    Sign in to admin area
-{% endpartial %}
+Petunjuk penggunaan dapat dilihat pada Website E-Selection - PT Angkasa Pura I (Persero).
+Apabila Anda memiliki pertanyaan, dapat dikirimkan melalui surel/email ke tms@ap1.co.id atau menghubungi Helpdesk Non Aeronautical Business kami dinomor:
+Telp. 021-6541961 ext. 2235
 
-After signing in you should change your password by clicking your name on the top right corner of the administration area.
+-----

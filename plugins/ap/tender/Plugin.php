@@ -31,7 +31,7 @@ class Plugin extends PluginBase
 
     public function registerMailLayouts(){
         return [
-            'ap-tender-default'    => 'ap.tender::layouts.default',
+            'ap-tender-registration'    => 'ap.tender::layouts.registration',
         ];
     }
 
