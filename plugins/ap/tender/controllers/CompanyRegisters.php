@@ -57,7 +57,7 @@ class CompanyRegisters extends Controller
             return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
         } else {
             //TODO see lang.php
-            Flash::success('invalid token');
+            Flash::error('invalid token');
         }
     }
 

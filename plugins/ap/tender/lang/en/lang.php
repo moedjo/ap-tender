@@ -175,6 +175,24 @@
         'phone_number' => 'Nomor Telepon',
         'fax_number' => 'Nomor Fax',
         'email' => 'Email',
+
+       
+    ],
+    'company_basic_info' => [
+
+        
+
+        'doc_basic_akta' => 'Akta Perusahaan',
+        'doc_basic_siup' =>'Surat Izin Usaha Perdagangan (SIUP)',
+        'doc_basic_tdp' => 'Tanda Daftar Perusahaan (TDP)',
+        'doc_basic_domisili' => 'Surat Keterangan Domisili tahun terakhir',
+        'doc_basic_npwp' => 'Nomor Pokok Wajib Pajak (NPWP)',
+        'doc_basic_ktp' => 'KTP Penanggung Jawab',
+        'doc_basic_sk' => 'Surat Kuasa',
+        'doc_basic_other' => 'Lainnya',
+
+
+        'doc_legal' => 'Dokumen Legal Perusahaan'
     ],
     'company_finance' => [
         'singular' => 'Keuangan Perusahaan',
@@ -189,5 +207,7 @@
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
         'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
         'doc_finance_other' => 'Lainnya',
+
+        
     ]
 ];

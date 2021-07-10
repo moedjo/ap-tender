@@ -60,5 +60,20 @@ class Company extends Model
         'doc_finance_bsp' => ['System\Models\File', 'public' => false],
         'doc_finance_sklp' => ['System\Models\File', 'public' => false],
         'doc_finance_other' => ['System\Models\File', 'public' => false],
+
+
+        
+        'doc_basic_npwp' => ['System\Models\File', 'public' => false],
+        'doc_basic_ktp' => ['System\Models\File', 'public' => false],
+        'doc_basic_sk' => ['System\Models\File', 'public' => false],
+        'doc_basic_other' => ['System\Models\File', 'public' => false],
+        
+    ];
+
+    public $attachMany = [
+        'doc_basic_akta' => ['System\Models\File', 'public' => false],
+        'doc_basic_siup' => ['System\Models\File', 'public' => false],
+        'doc_basic_tdp' => ['System\Models\File', 'public' => false],
+        'doc_basic_domisili' => ['System\Models\File', 'public' => false],
     ];
 }

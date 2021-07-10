@@ -63,3 +63,95 @@ fields:
         label: 'ap.tender::lang.company.contact_phone_number'
         type: text
         span: right
+    _section4:
+        label: 'ap.tender::lang.company_basic_info.doc_legal'
+        type: section
+    doc_basic_akta:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_akta'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        maxFiles: 5
+    doc_basic_siup:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_siup'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_tdp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_tdp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_domisili:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_domisili'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_npwp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_npwp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_ktp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_ktp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_sk:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_sk'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_other:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_other'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
