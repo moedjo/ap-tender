@@ -24,18 +24,30 @@ fields:
     _section2:
         label: 'ap.tender::lang.company.address'
         type: section
+    verification_office:
+        label: 'ap.tender::lang.company.verification_office'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/office/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        descriptionFrom: description
+        span: left
     address:
         label: 'ap.tender::lang.company.address'
         type: textarea
         size: small
         span: left
     region:
-        label: 'ap.tender::lang.region.singular'
+        label: 'ap.tender::lang.company.region'
         type: recordfinder
-        list: ~/plugins/ap/tender/models/region/columns.yaml
+        list: ~/plugins/ap/tender/models/region/regency_columns.yaml
         recordsPerPage: 10
-        nameFrom: name
+        nameFrom: displayName
         span: right
+    email:
+        label: 'ap.tender::lang.company.email'
+        type: text
+        span: left
     phone_number:
         label: 'ap.tender::lang.company.phone_number'
         type: text
@@ -44,10 +56,6 @@ fields:
         label: 'ap.tender::lang.company.fax_number'
         type: text
         span: right
-    email:
-        label: 'ap.tender::lang.company.email'
-        type: text
-        span: left
     _section3:
         label: 'ap.tender::lang.company.contact'
         type: section

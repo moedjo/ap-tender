@@ -10,4 +10,14 @@ Event::listen('company.register', function ($company) {
 });
 
 
+Event::listen('company.before.signup', function ($company) {
+   trace_log('send to mail -> ap.tender:company.before.signup');
+
+   Mail::queue('ap.tender::company.before.signup', $company->toArray(), function ($message) use ($company) {
+      $message->to($company->email, $company->name);
+   });
+   
+});
+
+
 

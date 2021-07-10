@@ -163,6 +163,8 @@
         'summary' => 'Kesimpulan',
         'summary_comment' => 'Silahkan cek statement yang telah tersedia pada tabel di bawah ini, kemudian klik SIMPAN untuk menyimpan
         dan dilanjutkan mengusulkan jadwal Verifikasi Dokumen.',
+        'verification_office' => 'Lokasi Verifikasi Data',
+        'region' => 'Wilayah',
 
 
 

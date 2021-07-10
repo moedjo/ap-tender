@@ -3,9 +3,11 @@
 namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
+use Event;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
 use Response;
+use Illuminate\Support\Str;
 
 class CompanySummaries extends Controller
 {
@@ -54,17 +56,28 @@ class CompanySummaries extends Controller
     {
         $company_id = Session::get('company_id');
         return $query->where('id', $company_id);
-
-    }
-
-    public function listExtendQuery($query)
-    {
-        return $this->extendQuery($query);
     }
 
     public function formExtendQuery($query)
     {
         return $this->extendQuery($query);
+    }
+
+    public function formBeforeCreate($model)
+    {
+        $model->token = Str::random(6);
+        $model->token_url = url('/backend/ap/tender/companyregisters/validate');
+        $model->status = 'signup';
+    }
+
+
+    public function formAfterCreate($model)
+    {
+        Event::fire('company.before.signup', [$model]);
+    }
+
+    public function success(){
+        
     }
 
 }
