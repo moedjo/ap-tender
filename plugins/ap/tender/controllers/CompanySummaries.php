@@ -23,7 +23,7 @@ class CompanySummaries extends Controller
     ];
 
     public $publicActions = [
-        'update' 
+        'update' ,'success'
     ];
 
     public function __construct()

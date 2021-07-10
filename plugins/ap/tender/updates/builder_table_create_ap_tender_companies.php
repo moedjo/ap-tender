@@ -15,18 +15,18 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->timestamp('updated_at')->nullable();
             
             $table->string('name');
-            $table->string('npwp');
+            $table->string('npwp')->nullable();
 
-            $table->boolean('collaborate');
+            $table->boolean('collaborate')->default(false);
 
-            $table->string('address');
-            $table->string('phone_number');
-            $table->string('fax_number');
-            $table->string('email');
+            $table->string('address')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('fax_number')->nullable();
+            $table->string('email')->nullable();
 
-            $table->string('contact_full_name');
-            $table->string('contact_phone_number');
-            $table->string('contact_email');
+            $table->string('contact_full_name')->nullable();
+            $table->string('contact_phone_number')->nullable();
+            $table->string('contact_email')->nullable();
             $table->integer('contact_position_id')->unsigned()->nullable();
             $table->foreign('contact_position_id')->references('id')
                 ->on('ap_tender_positions');
