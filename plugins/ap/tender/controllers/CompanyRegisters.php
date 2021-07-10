@@ -53,13 +53,11 @@ class CompanyRegisters extends Controller
         $company = Company::where('token', $token)->first();
         if (isset($company)) {
             Session::put('company_id', $company->id);
-            Flash::success('Aktivasi Akun Anda berhasil');
+            Flash::success(e(trans('ap.tender::lang.global.success_activation')));
             return Redirect::to("backend/ap/tender/companybasicinfos/update/$company->id");
         } else {
-
             //TODO see lang.php
             Flash::success('invalid token');
-        
         }
     }
 

@@ -1,45 +1,44 @@
 <?php if (!$this->fatalError): ?>
-    
-    <h3>AKTIVASI AKUN</h3>
-    <hr style="display: block; height: 1px;
+
+<?= Form::open(['class' => 'layout']) ?>
+
+<h3>AKTIVASI AKUN</h3>
+<hr style="display: block; height: 1px;
     border: 0; border-top: 1px solid #56CCF2;
     margin: 1em 0; padding: 0; ">
 
-    <p>Terima kasih telah melakukan Registrasi sebagai Calon Mitra Usaha PT Angkasa Pura I (Persero).
-    Silahkan lengkapi Informasi Profil Perusahaan, Pengalaman Perusahaan dan Kemampuan Keuangan Perusahaan setelah melakukan aktivasi akun Anda.</p>
+<p>Terima kasih telah melakukan Registrasi sebagai Calon Mitra Usaha PT Angkasa Pura I (Persero).
+    Silahkan lengkapi Informasi Profil Perusahaan, Pengalaman Perusahaan dan Kemampuan Keuangan Perusahaan setelah
+    melakukan aktivasi akun Anda.</p>
 
-    <p>Petunjuk penggunaan dapat dilihat pada Website E-Selection - PT Angkasa Pura I (Persero).
-    Apabila Anda memiliki pertanyaan, dapat dikirimkan melalui surel/email ke tms@ap1.co.id atau menghubungi Helpdesk Non Aeronautical Business kami dinomor:
+<p>Petunjuk penggunaan dapat dilihat pada Website E-Selection - PT Angkasa Pura I (Persero).
+    Apabila Anda memiliki pertanyaan, dapat dikirimkan melalui surel/email ke tms@ap1.co.id atau menghubungi Helpdesk
+    Non Aeronautical Business kami dinomor:
     Telp. 021-6541961 ext. 2235</p>
+<div class="layout-row">
+    <div class="form-group ">
+        <label>Masukkan Kode Registrasi</label>
+        <input type="text" name="token" class="form-control" placeholder="Masukkan Kode Registrasi" />
+    </div>
+</div>
 
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button type="button" style="background-color: #219653; color: white; float: right;" data-request="onValidate"
+            data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>" class="btn">
+            Daftar
+        </button>
+    </div>
+</div>
 
-    <?= Form::open(['class' => 'layout']) ?>
-
-        <div class="layout-row">    
-            <div class="form-group ">
-                <label>Masukkan Kode Registrasi</label>
-                <input type="text" name="token" class="form-control" placeholder="Masukkan Kode Registrasi" />
-            </div>
-        </div>
-
-        <div class="form-buttons">
-            <div class="loading-indicator-container">
-                <button 
-                    type="button"
-                    style="background-color: #219653; color: white; float: right;"
-                    data-request="onValidate"
-                    data-request-data="close:1"
-                    data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
-                    class="btn">
-                    Daftar
-                </button>
-            </div>
-        </div>
-
-    <?= Form::close() ?>
+<?= Form::close() ?>
 
 <?php else: ?>
-    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-    <p><a href="<?= Backend::url('ap/tender/companies') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+<p class="flash-message static error">
+    <?= e(trans($this->fatalError)) ?>
+</p>
+<p><a href="<?= Backend::url('ap/tender/companies') ?>" class="btn btn-default">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a></p>
 <?php endif ?>
