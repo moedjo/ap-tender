@@ -5,60 +5,9 @@
     $context = BackendMenu::getContext();
 ?>
 <div class="main-menu-container">
-    <nav class="navbar control-toolbar navbar-mode-<?= $navbarMode ?> flex" role="navigation">
-        <div class="toolbar-item">
-            <div data-control="toolbar" <?php if (isset($isVerticalMenu)): ?>data-vertical="true"<?php endif ?>>
-                <ul class="mainmenu-items mainmenu-general" data-main-menu>
-                    <?= $this->makeLayoutPartial('mainmenu_items', [
-                        'context' => $context,
-                        'showTooltip' => $navbarMode === BrandSetting::MENU_ICONS
-                    ]) ?>
-                </ul>
-            </div>
-        </div>
-        <div class="toolbar-item fix-width">
-            <ul class="mainmenu-items mainmenu-extras" data-main-menu>
-                <li class="mainmenu-item mainmenu-preview">
-                    <a
-                        href="<?= Url::to('/') ?>"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        <?php if (!isset($isVerticalMenu)): ?>
-                            data-tooltip-text="<?= e(trans('backend::lang.tooltips.preview_website')) ?>"
-                        <?php endif ?>
-                    >
-                        <span class="nav-icon">
-                            <i class="octo-icon-location-target"></i>
-                        </span>
-
-                        <?php if (isset($isVerticalMenu)): ?>
-                            <span class="nav-label">
-                                <?= e(trans('backend::lang.tooltips.preview_website')) ?>
-                            </span>
-                        <?php endif ?>
-                    </a>
-                </li>
-                <li class="mainmenu-item mainmenu-account has-subitems <?php if (!isset($isVerticalMenu)): ?>hidden-xs<?php endif?>" data-submenu-index="account">
-                    <a href="javascript:;">
-                        <span class="nav-icon">
-                            <div class="mainmenu-account-avatar">
-                                
-                            </div>
-                        </span>
-                        <?php if (isset($isVerticalMenu)): ?>
-                            <span class="nav-label">
-                               TODO nanti di isi
-                            </span>
-                        <?php endif ?>
-                    </a>
-                </li>
-                <?php if (!isset($isVerticalMenu)): ?>
-                    <li class="mainmenu-item mainmenu-toggle">
-                        <a href="javascript:;">☰</a>
-                    </li>
-                <?php endif ?>
-            </ul>
-        </div>
+    <nav class="navbar control-toolbar navbar-mode-<?= $navbarMode ?> flex" role="navigation" style="background-color: #F2F2F2;">
+        <img src="http://127.0.0.1:8000/storage/app/media/assets/images/image2.png" alt="Description Image" style="margin-left: 37px; margin-top: 21px; margin-bottom: 5px;" />
+        <h1 style="color: #000000; left: 47px; font-family: Roboto;font-size: 20px; margin-left: 60px; margin-top: 21px">PENDAFTARAN CALON MITRA USAHA PT ANGKASA PURA I (PERSERO)</h1>
     </nav>
 </div>
 
