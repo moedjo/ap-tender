@@ -112,7 +112,8 @@
         'no' => 'Tidak',
         'register' => 'Daftar',
         'back' => 'Kembali',
-        'doc_comment' => 'File (*pdf - max 50MB)'
+        'doc_comment' => 'File (*pdf - max 50MB)',
+        'success_activation' => 'Aktivasi sukses'
     ],
     'position' => [
         'singular' => 'Jabatan',
