@@ -1,6 +1,8 @@
 <?php
 
 use Ap\Tender\Models\BusinessEntity;
+use Ap\Tender\Models\Field;
+use Ap\Tender\Models\Office;
 use Ap\Tender\Models\Position;
 use Ap\Tender\Models\Region;
 use Ap\Tender\Models\Summary;
@@ -59,6 +61,16 @@ class Seeder extends UpdatesSeeder{
         Summary::create([
             'name' => 'Permasalahan Hukum',
             'description' => 'Perusahaan peserta tender tidak memiliki catatan permasalahan hukum dan tidak dalam blacklist pada tender sejenis dalam 5 (lima) tahun',
+        ]);
+
+        Office::create([
+            'name' => 'AP1',
+            'description' => 'Angkasa Pura 1',
+        ]);
+
+        Field::create([
+            'name' => 'Pertanian',
+            'description' => 'Nyangkul pake pacul versi manual',
         ]);
     }
 

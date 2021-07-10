@@ -1,6 +1,5 @@
 <?php namespace Ap\Tender;
 
-use System\Classes\MailManager;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -23,13 +22,19 @@ class Plugin extends PluginBase
     }
 
 
-    protected function registerMailer()
+    public function registerMailTemplates()
     {
-        MailManager::instance()->registerCallback(function ($manager) {
-            $manager->registerMailTemplates([
-                // 'backend::mail.invite',
-                // 'backend::mail.restore',
-            ]);
-        });
+        return [
+            'ap.tender::mail.company-register',
+        ];
     }
+
+    public function registerMailLayouts(){
+        return [
+            'ap-tender-default'    => 'ap.tender::layouts.default',
+        ];
+    }
+
+    public function registerMailPartials(){}
+
 }
