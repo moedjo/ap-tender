@@ -1,4 +1,31 @@
+<div class="container">
 <?php if (!$this->fatalError): ?>
+    
+    <div class="container" style="margin-bottom: 30px;">
+        <div class="row">
+            <a href="javascript:window.location.reload(true)">
+                <div class="col-md-3 thumbnail">
+                    <!-- <img src="{{ 'assets/images/Traffic.png'|media }}" /> -->
+                    <img src="http://127.0.0.1:8000/storage/app/media/assets/images/Traffic.png" height="84" width="200" />
+                </div>
+            </a>
+            <div class="col-md-3 thumbnail">
+                <img src="http://127.0.0.1:8000/storage/app/media/assets/images/traffic-1.png" height="84" width="200"/>
+                <!-- <small>Registrasi Awal</small>
+                <h4>Pengalaman</h4> -->
+            </div>
+            <div class="col-md-3 thumbnail">
+                <img src="http://127.0.0.1:8000/storage/app/media/assets/images/traffic-2.png" height="84" width="200"/>
+<!--                 <small>Registrasi Awal</small>
+                <h4>Kemampuan Keuangan</h4> -->
+            </div>
+            <div class="col-md-3 thumbnail">
+                <img src="http://127.0.0.1:8000/storage/app/media/assets/images/traffic-3.png" height="84" width="200"/>
+<!--                 <small>Registrasi Awal</small>
+                <h4>Ringkasan</h4> -->
+            </div>
+        </div>
+    </div>
 
     <?= Form::open(['class' => 'layout']) ?>
 
@@ -10,33 +37,25 @@
             <div class="loading-indicator-container">
                 <button
                     type="submit"
+                    style="background-color: #FF5252; color: #FFFFFF; font-family: Roboto; font-weight: bold;font-size: 14px;line-height: 20px;" 
                     data-request="onSave"
                     data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
                     data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
-                    class="btn btn-primary">
-                    <?= e(trans('backend::lang.form.save')) ?>
+                    class="btn btn-icon">
+                    Kembali
                 </button>
                 <button
                     type="button"
+                    style="background-color: #2F80ED; color: #FFFFFF; font-family: Roboto; font-weight: bold;font-size: 14px;line-height: 20px;"
+                    class="btn btn-icon danger pull-right"
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
-                    class="btn btn-default pull-right">
-                    <?= e(trans('backend::lang.form.save_and_close')) ?>
-                </button>
-                <button
-                    type="button"
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="<?= e(trans('backend::lang.form.deleting')) ?>"
-                    data-request-confirm="<?= e(trans('backend::lang.form.confirm_delete')) ?>">
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>">
+                    Selanjutnya
                 </button>
 
-                <span class="btn-text">
-                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('ap/tender/companies') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
-                </span>
             </div>
         </div>
     <?= Form::close() ?>
@@ -45,3 +64,4 @@
     <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
     <p><a href="<?= url('/') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
 <?php endif ?>
+</div>
