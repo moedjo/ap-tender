@@ -1,4 +1,4 @@
-name: Companies
+name: 'ap.tender::lang.company.info'
 form: $/ap/tender/models/companybasicinfo/fields.yaml
 modelClass: Ap\Tender\Models\CompanyBasicInfo
 update:

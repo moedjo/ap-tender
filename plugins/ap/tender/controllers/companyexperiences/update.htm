@@ -5,15 +5,14 @@
 <div class="layout-row">
     <?= $this->formRender() ?>
 </div>
-
 <div class="form-buttons">
     <div class="loading-indicator-container">
         <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
             data-load-indicator="<?= e(trans('ap.tender::lang.global.next')) ?>" class="btn btn-primary pull-right">
             <?= e(trans('ap.tender::lang.global.next')) ?>
         </button>
-
-        <a href="<?= Backend::url('') ?>" class="btn btn-warning">
+        
+        <a href="<?= Backend::url('ap/tender/companybasicinfos/update/'.$formModel->id) ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.global.back')) ?>
         </a>
     </div>
