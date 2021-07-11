@@ -22,8 +22,8 @@ function onStart()
                 </div>
                 <div class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav" style="float:right;">
-                        <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="http://127.0.0.1:8000/backend/ap/tender/companyregisters/create" style="color:white">Sign up</a></li>
-                        <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="http://127.0.0.1:8000/backend" style="color:white">Log in</a></li>
+                        <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{''|page}}/backend/ap/tender/companyregisters/create" style="color:white">Sign up</a></li>
+                        <li class="{% if this.page.id == 'plugins' %}active{% endif %}"><a href="{{''|page}}/backend" style="color:white">Log in</a></li>
                         {% if backendUrl %}
                             <li><a href="{{ backendUrl }}" target="backend">Backend Area</a></li>
                         {% endif %}
