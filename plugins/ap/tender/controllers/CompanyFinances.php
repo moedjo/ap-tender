@@ -27,6 +27,14 @@ class CompanyFinances extends Controller
     public function __construct()
     {
         $this->layout = 'public/default';
+        $url = url()->current();
+        $search = "companyfinances";
+        $active = preg_match("/{$search}/i", $url);
+        if ($active == 1) {
+            $this->vars['dataActive'] = 'active';
+        }else{
+            $this->vars['dataActive'] = 'failed';
+        }
         parent::__construct();
     }
 

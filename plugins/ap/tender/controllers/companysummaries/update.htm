@@ -27,7 +27,11 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <?php if ($dataActive == 'active'): ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card-active"  style="max-width: 28rem;">
+    <?php else: ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <?php endif ?>
         <div class="card-header">
             <a href="#">
                 <div class="circle">4</div>
