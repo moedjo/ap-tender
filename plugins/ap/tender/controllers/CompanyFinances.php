@@ -62,4 +62,17 @@ class CompanyFinances extends Controller
         return $this->extendQuery($query);
     }
 
+    public function formExtendFields($host, $fields)
+    {
+        $context = $host->getContext();
+        $model = $host->model;
+
+
+        if ($context == 'update') {
+            if($model->collaborate){
+                $fields['doc_finance_collaborate']->hidden = false;
+            }
+        }
+    }
+
 }

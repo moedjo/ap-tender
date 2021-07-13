@@ -2,33 +2,42 @@ fields:
     _section1:
         label: 'ap.tender::lang.company.info'
         type: section
-    business_entity:
-        label: 'ap.tender::lang.global.business_entity'
-        type: relation
-        span: left
     name:
         label:  'ap.tender::lang.company.name'
+        placeholder: 'ap.tender::lang.company.name'
         type: text
         span: left
     npwp:
         label: 'ap.tender::lang.company.npwp'
         type: text
         span: right
-    collaborate:
-        label: 'ap.tender::lang.company.collaborate'
+    konsorsium:
+        label: 'ap.tender::lang.company_basic_info.konsorsium_comment'
         type: radio
         default: 0
         options:
-            0: 'ap.tender::lang.global.no'
-            1: 'ap.tender::lang.global.yes'
+            0: 'ap.tender::lang.company_basic_info.non_konsorsium'
+            1: 'ap.tender::lang.company_basic_info.konsorsium'
     _section2:
         label: 'ap.tender::lang.company_basic_info.single'
         type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[0]
+    _section2b:
+        label: 'ap.tender::lang.company_basic_info.for_konsorium'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
     address:
         label: 'ap.tender::lang.company.address'
         type: textarea
         size: small
         span: left
+        placeholder: 'ap.tender::lang.company.address'
     region:
         label: 'ap.tender::lang.region.singular'
         type: recordfinder
@@ -40,14 +49,113 @@ fields:
         label: 'ap.tender::lang.company.phone_number'
         type: text
         span: left
+        placeholder: 'ap.tender::lang.company.phone_number'
     fax_number:
         label: 'ap.tender::lang.company.fax_number'
         type: text
         span: right
+        placeholder: 'ap.tender::lang.company.fax_number'
     email:
         label: 'ap.tender::lang.company.email'
         type: text
         span: left
+        placeholder: 'ap.tender::lang.company.email'
+    website:
+        label: 'ap.tender::lang.company.website'
+        type: text
+        span: right
+        placeholder: 'ap.tender::lang.company.website'
+    directors:
+        label: Direktur
+        prompt: Add new direktur
+        span: left
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Direktur
+                    span: full
+                    type: text
+                    placeholder: Direktur
+    commissioners:
+        label: Komisaris
+        prompt: Add new komisaris
+        span: right
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Komisaris
+                    span: full
+                    type: text
+                    placeholder: Komisaris
+    konsorsium_role:
+        label: 'ap.tender::lang.company.konsorsium_role'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.konsorsium_role'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section5:
+        label: 'Perwakilan Hukum Konsorsium'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_total:
+        label: 'Jumlah Perusahaan'
+        type: text
+        span: left
+        placeholder: 'Jumlah Perusahaan'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_name:
+        label: 'Nama Wakil Hukum'
+        type: text
+        span: right
+        placeholder: 'Nama Wakil Hukum'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_function:
+        label: 'Fungsi Dalam Perusahaan'
+        type: text
+        span: left
+        placeholder: 'Fungsi Dalam Perusahaan'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section6:
+        label: 'Kualifikasi Perusahaan'
+        type: section
+    fields:
+        label: Kategori Bisnis
+        type: taglist
+        mode: relation
+        nameFrom: name
+        span: full
+        placeholder: 'Kategori Bisnis'
+    business_activity:
+        label: 'Kegiatan Usaha Pokok'
+        type: text
+        span: left
+        placeholder: 'Kegiatan Usaha Pokok'
+    kbli:
+        label: 'Bidang Usaha (KBLI)'
+        type: text
+        span: left
+        placeholder: 'Bidang Usaha (KBLI)'
     _section3:
         label: 'ap.tender::lang.company.contact'
         type: section
@@ -55,14 +163,22 @@ fields:
         label: 'ap.tender::lang.company.contact_full_name'
         type: text
         span: left
+        placeholder: 'ap.tender::lang.company.contact_full_name'
     contact_position:
         label: 'ap.tender::lang.company.contact_position'
         type: relation
-        span: left
+        span: right
+        placeholder: 'ap.tender::lang.company.contact_position'
     contact_phone_number:
         label: 'ap.tender::lang.company.contact_phone_number'
         type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.contact_phone_number'
+    contact_email:
+        label: 'Alamat Email'
+        type: text
         span: right
+        placeholder: 'Alamat Email'
     _section4:
         label: 'ap.tender::lang.company_basic_info.doc_legal'
         type: section
@@ -155,3 +271,19 @@ fields:
         attachOnUpload: true
         span: right
         commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_basic_konsorsium:
+        label: 'Surat Perjanjian Konsorsium'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]

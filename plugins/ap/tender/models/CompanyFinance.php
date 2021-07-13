@@ -9,7 +9,7 @@ class CompanyFinance extends Company
 {
  
     public $rules = [
-        'finances' => 'required',
+        'finances' => 'required|size:3',
         
         'doc_finance_sppkp' => 'required',
         'doc_finance_spt' => 'required',
@@ -18,4 +18,12 @@ class CompanyFinance extends Company
         'doc_finance_sklp' => 'required',
         'doc_finance_other' => 'required',
     ];
+
+    public function beforeValidate()
+    {
+        if ($this->collaborate) {
+            $this->rules['doc_finance_collaborate'] = "required";
+        }
+    }
+
 }

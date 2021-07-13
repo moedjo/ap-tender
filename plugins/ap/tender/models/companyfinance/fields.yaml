@@ -78,3 +78,16 @@ fields:
         attachOnUpload: true
         span: right
         commentAbove: 'ap.tender::lang.global.doc_comment'
+    doc_finance_collaborate:
+        label: 'Bukti Dokumen Kerjasama'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        hidden: true
+        required: true

@@ -11,4 +11,5 @@
     - builder_table_create_ap_tender_experiences.php
     - builder_table_create_ap_tender_finances.php
     - builder_table_create_ap_tender_companies_summaries.php
+    - builder_table_create_ap_tender_companies_fields.php
     - seeder.php

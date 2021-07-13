@@ -154,6 +154,7 @@
         'npwp' => 'NPWP Tahun Terakhir',
         'collaborate' => 'Telah Bekerjasama dengan Angkasa Pura I sebelumnya?',
 
+
         'info' => 'Informasi Perusahaan',
         'contact' => 'Kontak Perusahaan',
         'address' => 'Alamat Perusahaan',
@@ -176,6 +177,8 @@
         'phone_number' => 'Nomor Telepon',
         'fax_number' => 'Nomor Fax',
         'email' => 'Email',
+        'website' =>  'Website',
+        'konsorsium_role' => 'Peran Dalam Perusahaan'
 
        
     ],
@@ -194,7 +197,14 @@
 
 
         'doc_legal' => 'Dokumen Legal Perusahaan',
-        'single' => 'Untuk Perusahaan Tunggal'
+        'single' => 'Untuk Perusahaan Tunggal',
+        'for_konsorium' => 'Untuk Perusahaan Konsorsium',
+
+        'postal_code' => 'Kode POS',
+        
+        'konsorsium_comment' => 'Perusahaan Konsorsium atau Non Konsorsium',
+        'konsorsium' => 'Konsorsium',
+        'non_konsorsium' => 'Non Konsorsium',
     ],
     'company_finance' => [
         'singular' => 'Keuangan Perusahaan',

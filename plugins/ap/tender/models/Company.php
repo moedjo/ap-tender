@@ -50,6 +50,12 @@ class Company extends Model
             'table' => 'ap_tender_companies_summaries',
             'key'      => 'company_id',
             'otherKey' => 'summary_id'
+        ],
+        'fields' => [
+            'Ap\Tender\Models\Field',
+            'table' => 'ap_tender_companies_fields',
+            'key'      => 'company_id',
+            'otherKey' => 'field_id'
         ]
     ];
 
@@ -60,6 +66,7 @@ class Company extends Model
         'doc_finance_bsp' => ['System\Models\File', 'public' => false],
         'doc_finance_sklp' => ['System\Models\File', 'public' => false],
         'doc_finance_other' => ['System\Models\File', 'public' => false],
+        'doc_finance_collaborate' => ['System\Models\File', 'public' => false],
 
 
         
@@ -67,6 +74,7 @@ class Company extends Model
         'doc_basic_ktp' => ['System\Models\File', 'public' => false],
         'doc_basic_sk' => ['System\Models\File', 'public' => false],
         'doc_basic_other' => ['System\Models\File', 'public' => false],
+        'doc_basic_konsorsium' => ['System\Models\File', 'public' => false],
         
     ];
 
@@ -78,8 +86,7 @@ class Company extends Model
     ];
 
     protected $jsonable = [
-        'qualification',
-        'commissioner',
-        'director',
+        'commissioners',
+        'directors',
     ]; 
 }
