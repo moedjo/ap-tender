@@ -1,27 +1,40 @@
 <?php if (!$this->fatalError): ?>
 
-<div class="container" style="margin-bottom: 30px;">
-    <div class="row">
-        <a href="javascript:window.location.reload(true)">
-            <div class="col-md-3 thumbnail">
-                <!-- <img src="{{ 'assets/images/Traffic.png'|media }}" /> -->
-                <img src="<?= url('/storage/app/media/assets/images/Traffic.png') ?>" height="84" width="200" />
-            </div>
-        </a>
-        <div class="col-md-3 thumbnail">
-            <img src="<?= url('/storage/app/media/assets/images/traffic-1.png') ?>" height="84" width="200" />
-            <!-- <small>Registrasi Awal</small>
-                <h4>Pengalaman</h4> -->
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">1</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.first')) ?></p>
+            </a>
         </div>
-        <div class="col-md-3 thumbnail">
-            <img src="<?= url('/storage/app/media/assets/images/traffic-2.png') ?>" height="84" width="200" />
-            <!--                 <small>Registrasi Awal</small>
-                <h4>Kemampuan Keuangan</h4> -->
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">2</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
+            </a>
         </div>
-        <div class="col-md-3 thumbnail">
-            <img src="<?= url('/storage/app/media/assets/images/traffic-3.png') ?>" height="84" width="200" />
-            <!--                 <small>Registrasi Awal</small>
-                <h4>Ringkasan</h4> -->
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">3</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">4</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.four')) ?></p>
+            </a>
         </div>
     </div>
 </div>

@@ -1,5 +1,42 @@
 <?php if (!$this->fatalError): ?>
-
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">1</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.first')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">2</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">3</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">4</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.four')) ?></p>
+            </a>
+        </div>
+    </div>
+</div>
 <?= Form::open(['class' => 'layout']) ?>
 
 <div class="layout-row">

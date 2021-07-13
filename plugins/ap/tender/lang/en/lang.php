@@ -218,8 +218,13 @@
         'doc_finance_blp' => 'Bukti Lapor Pajak',
         'doc_finance_bsp' => 'Bukti Setoran Pajak',
         'doc_finance_sklp' => 'Surat Keterangan Kelancaran Pembayaran',
-        'doc_finance_other' => 'Lainnya',
-
-        
+        'doc_finance_other' => 'Lainnya',   
+    ],
+    'card' => [
+        'general' => 'Registrasi Awal',
+        'first' => 'Informasi Umum',
+        'second' => 'Pengalaman',
+        'tree' => 'Kemampuan Keuangan',
+        'four' => 'Ringkasan',
     ]
 ];
