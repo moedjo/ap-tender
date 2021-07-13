@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
         <div class="card-header">
-            <a href="#">
+            <a href="<?= Backend::url('ap/tender/companybasicinfos/update/'.$formModel->id) ?>">
                 <div class="circle">1</div>
                 <?= e(trans('ap.tender::lang.card.general')) ?>
                 <p><?= e(trans('ap.tender::lang.card.first')) ?></p>
@@ -11,7 +11,7 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
         <div class="card-header">
-            <a href="#">
+            <a href="<?= Backend::url('ap/tender/companyexperiences/update/'.$formModel->id) ?>">
                 <div class="circle">2</div>
                 <?= e(trans('ap.tender::lang.card.general')) ?>
                 <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
@@ -20,7 +20,7 @@
     </div>
     <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
         <div class="card-header">
-            <a href="#">
+            <a href="<?= Backend::url('ap/tender/companyfinances/update/'.$formModel->id) ?>">
                 <div class="circle">3</div>
                 <?= e(trans('ap.tender::lang.card.general')) ?>
                 <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
