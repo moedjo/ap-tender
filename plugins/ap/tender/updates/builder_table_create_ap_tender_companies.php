@@ -83,6 +83,8 @@ class BuilderTableCreateApTenderCompanies extends Migration
             // $table->foreign('region_id')->references('id')
             //     ->on('ap_tender_regions');
 
+            $table->integer('user_id')->unsigned()->nullable();
+
         });
     }
 

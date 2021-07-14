@@ -1,0 +1,28 @@
+fields:
+    login:
+        span: left
+        label: 'backend::lang.user.login'
+        type: text
+    email:
+        span: right
+        type: email
+        label: 'backend::lang.user.email'
+        disabled: true
+    first_name:
+        span: left
+        label: 'backend::lang.user.first_name'
+        type: text
+        disabled: true
+    last_name:
+        span: right
+        label: 'backend::lang.user.last_name'
+        type: text
+        disabled: true
+    password:
+        type: password
+        span: left
+        label: 'backend::lang.user.password'
+    password_confirmation:
+        type: password
+        span: right
+        label: 'backend::lang.user.password_confirmation'

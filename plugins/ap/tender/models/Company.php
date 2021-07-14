@@ -31,6 +31,7 @@ class Company extends Model
             'conditions' => "type = 'regency'"
         ],
         'verification_office' => 'Ap\Tender\Models\Office',
+        'user' => ['Ap\Tender\Models\User', 'key' => 'user_id'],
     ];
 
     public $hasMany = [

@@ -1,0 +1,34 @@
+<?php if (!$this->fatalError): ?>
+
+    <?= Form::open(['class' => 'layout']) ?>
+
+        <div class="layout-row">
+            <?= $this->formRender() ?>
+        </div>
+
+        <div class="form-buttons">
+            <div class="loading-indicator-container">
+                <button type="button" class="btn btn-danger">
+                    <a href="<?= url('/') ?>" style="color: white;">
+                        <?= e(trans('ap.tender::lang.global.back')) ?>
+                    </a>
+                </button>            
+                <button 
+                    style="background-color: #219653; color: white;"
+                    type="button"
+                    data-request="onSave"
+                    data-request-data="close:1"
+                    data-hotkey="ctrl+enter, cmd+enter"
+                    data-load-indicator="<?= e(trans('backend::lang.form.saving')) ?>"
+                    class="btn pull-right">
+                    <?= e(trans('ap.tender::lang.global.register')) ?>
+                </button>
+            </div>
+        </div>
+
+    <?= Form::close() ?>
+
+<?php else: ?>
+    <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
+    <p><a href="<?= url('/') ?>" class="btn btn-default"><?= e(trans('backend::lang.form.return_to_list')) ?></a></p>
+<?php endif ?>

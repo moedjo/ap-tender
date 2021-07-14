@@ -71,21 +71,21 @@ class CompanySummaries extends Controller
         return $this->extendQuery($query);
     }
 
-    public function formBeforeCreate($model)
+    public function formBeforeSave($model)
     {
         $model->token = Str::random(6);
-        $model->token_url = url('/backend/ap/tender/companyregisters/validate');
-        $model->status = 'signup';
+        $model->token_url = url('/backend/ap/tender/publicusers/create?token='.$model->token);
+        $model->status = 'pre_register';
     }
 
 
-    public function formAfterCreate($model)
+    public function formAfterSave($model)
     {
-        Event::fire('company.before.signup', [$model]);
+        Event::fire('company.before.register', [$model]);
     }
 
     public function success(){
-        
+        Session::forget('company_id');
     }
 
 }

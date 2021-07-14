@@ -25,7 +25,9 @@ class Plugin extends PluginBase
     public function registerMailTemplates()
     {
         return [
-            'ap.tender::mail.company-register',
+            'ap.tender::mail.company-before-register',
+            'ap.tender::mail.company-after-register',
+            'ap.tender::mail.company-signup',
         ];
     }
 

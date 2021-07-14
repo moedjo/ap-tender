@@ -1,0 +1,6 @@
+name: 'User'
+form: $/ap/tender/models/user/public_fields.yaml
+modelClass: Ap\Tender\Models\User
+create:
+    redirect: 'ap/tender/publicusers/success'
+    redirectClose: 'ap/tender/publicusers/success'
