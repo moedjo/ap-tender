@@ -117,6 +117,8 @@ class CompanyBasicInfos extends Controller
 
             if(isset($user)){
                 $fields['name']->disabled = true;
+                $fields['doc_basic_npwp']->disabled = true;
+                
             }
             
         }
