@@ -29,6 +29,9 @@ permissions:
     ap_tender_access_companies:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_companies'
+    ap_tender_access_user_tenant:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_user_tenant'
 navigation:
     master:
         label: 'Master Data'
@@ -86,3 +89,9 @@ navigation:
         icon: icon-behance-square
         permissions:
             - ap_tender_access_companies
+    tentant-profile:
+        label: 'User Tenant'
+        url: ap/tender/companybasicinfos/view
+        icon: icon-angle-double-down
+        permissions:
+            - ap_tender_access_user_tenant
