@@ -25,7 +25,10 @@ permissions:
         label: 'ap.tender::lang.permission.label.access_regions'
     ap_tender_access_experience_categories:
         tab: 'ap.tender::lang.permission.tab.default'
-        label: 'ap.tender::lang.permission.label._access_experience_categories'
+        label: 'ap.tender::lang.permission.label.access_experience_categories'
+    ap_tender_access_companies:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_companies'
 navigation:
     master:
         label: 'Master Data'
@@ -77,3 +80,9 @@ navigation:
                 icon: icon-tasks
                 permissions:
                     - ap_tender_access_experience_categories
+    tenants:
+        label: 'Daftar Tenant'
+        url: ap/tender/companies
+        icon: icon-behance-square
+        permissions:
+            - ap_tender_access_companies

@@ -3,6 +3,8 @@
 namespace Ap\Tender\Controllers;
 
 use Backend\Classes\Controller;
+use Backend\Facades\BackendAuth;
+use Backend\Facades\BackendMenu;
 use Event;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\View;
@@ -12,35 +14,40 @@ use Response;
 
 class CompanyBasicInfos extends Controller
 {
-    public $implement = [        
+    public $implement = [
         'Backend\Behaviors\FormController'
     ];
 
     public $formConfig = 'config_form.yaml';
-    
-    
-    public $requiredPermissions = [
-    ];
+
+
+    public $requiredPermissions = [];
 
     public $publicActions = [
-        'update' 
+        'update'
     ];
 
     public function __construct()
     {
-        $this->layout = 'public/default';
+        parent::__construct();
+        BackendMenu::setContext('Ap.Tender', 'tenants');
+
+        $user = $this->user;
+        if (empty($user)) {
+            $this->layout = 'public/default';
+        }
+
         $url = url()->current();
         $search = "companybasicinfos";
         $active = preg_match("/{$search}/i", $url);
         if ($active == 1) {
             $this->vars['dataActive'] = 'active';
-        }else{
+        } else {
             $this->vars['dataActive'] = 'failed';
         }
-        parent::__construct();
     }
 
-    
+
     public function index_onDelete()
     {
         return Response::make(View::make('backend::access_denied'), 403);
@@ -63,9 +70,17 @@ class CompanyBasicInfos extends Controller
 
     public function extendQuery($query)
     {
+
+        $user = $this->user;
+
+        if (isset($user)) {
+            if ($user->hasPermission('ap_tender_access_companies')) {
+                return $query;
+            }
+        }
+
         $company_id = Session::get('company_id');
         return $query->where('id', $company_id);
-
     }
 
     public function formExtendQuery($query)
@@ -73,4 +88,19 @@ class CompanyBasicInfos extends Controller
         return $this->extendQuery($query);
     }
 
+
+    public function formExtendFields($host, $fields)
+    {
+        $context = $host->getContext();
+        $model = $host->model;
+        $user = $this->user;
+
+        if ($context == 'update') {
+
+            if(isset($user)){
+                $fields['name']->disabled = true;
+            }
+            
+        }
+    }
 }

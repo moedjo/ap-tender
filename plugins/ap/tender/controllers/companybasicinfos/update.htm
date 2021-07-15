@@ -53,9 +53,11 @@
             <?= e(trans('ap.tender::lang.global.next')) ?>
         </button>
 
+        <?php if(isset($user)): ?>
         <a href="<?= Backend::url('') ?>" class="btn btn-warning">
             <?= e(trans('ap.tender::lang.global.back')) ?>
         </a>
+        <?php endif ?>
     </div>
 </div>
 <?= Form::close() ?>

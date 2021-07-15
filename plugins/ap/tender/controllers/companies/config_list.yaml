@@ -1,6 +1,6 @@
 list: $/ap/tender/models/company/columns.yaml
 modelClass: Ap\Tender\Models\Company
-title: Companies
+title: Daftar Tenant
 noRecordsMessage: 'backend::lang.list.no_records'
 showSetup: true
 showCheckboxes: true
@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/companies/update/:id'
+recordUrl: 'ap/tender/companybasicinfos/update/:id'
