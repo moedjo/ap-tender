@@ -42,6 +42,8 @@
 
     var DragScroll = function(element, options) {
         this.options = $.extend({}, DragScroll.DEFAULTS, options);
+        this.touchDragStarted = false;
+        this.onTouchMove = onTouchMove;
 
         var $el = $(element),
             el = $el.get(0),
@@ -49,7 +51,6 @@
             startOffset = 0,
             self = this,
             dragging = false,
-            touchDragStarted = false,
             eventElementName = this.options.vertical ? 'pageY' : 'pageX',
             isNative = this.options.useNative && $('html').hasClass('mobile');
 
@@ -126,20 +127,22 @@
         }
 
         if (Modernizr.touchevents) {
-            $el.on('touchstart.dragScroll', this.options.dragSelector, function(event) {
+            $el.on('touchstart.dragScroll', this.options.dragSelector, function (event) {
                 if (self.paused) {
                     return;
                 }
 
                 var touchEvent = event.originalEvent;
+
                 if (touchEvent.touches.length == 1) {
                     startDrag(touchEvent.touches[0]);
-                    touchDragStarted = true;
+                    self.touchDragStarted = true;
+
                     event.stopPropagation();
                 }
             });
 
-            window.addEventListener('touchmove', onTouchMove, {passive: false})
+            window.addEventListener('touchmove', self.onTouchMove, { passive: false })
         }
 
         $el.on('click.dragScroll', function() {
@@ -184,8 +187,8 @@
         }
 
         function onTouchMove(event) {
-            if (!touchDragStarted) {
-                return
+            if (!self.touchDragStarted) {
+                return;
             }
 
             var touchEvent = event
@@ -224,7 +227,7 @@
          */
         function stopDrag(click) {
             $(window).off('.dragScroll');
-            touchDragStarted = false
+            self.touchDragStarted = false;
 
             dragging = false;
 
@@ -471,9 +474,7 @@
         this.el.off('.dragScroll');
 
         this.el.removeData('oc.dragScroll');
-
-        // Causing breakage "onTouchMove" not defined -sg
-        // window.removeEventListener('touchmove', onTouchMove, {passive: false})
+        window.removeEventListener('touchmove', self.onTouchMove, {passive: false})
 
         this.el = null;
         BaseProto.dispose.call(this);

@@ -11,6 +11,7 @@ use Cms\Classes\Asset;
 use Cms\Classes\Layout;
 use Cms\Classes\Partial;
 use Cms\Classes\Content;
+use Cms\Classes\Router;
 use Cms\Classes\CmsCompoundObject;
 use Cms\Classes\ComponentManager;
 use Cms\Classes\ComponentPartial;
@@ -593,6 +594,13 @@ trait EditorExtensionCrud
         $navigatorPath = dirname($template->fileName);
         if ($navigatorPath == '.') {
             $navigatorPath = "";
+        }
+
+        if ($template instanceof Page) {
+            $theme = $this->getTheme();
+            $router = new Router($theme);
+            $router->clearCache();
+            CmsCompoundObject::clearCache($theme);
         }
 
         $typeDirName = $this->getDocumentTypeDirName($template);

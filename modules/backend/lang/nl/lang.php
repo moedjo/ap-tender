@@ -351,6 +351,10 @@ return [
         'select_page' => 'Selecteer een pagina...',
     ],
     'relation' => [
+        'add_success' => ':name toegevoegd',
+        'link_success' => ':name gekoppeld',
+        'remove_success' => ':name verwijderd',
+        'unlink_success' => ':name losgekoppeld',
         'missing_config' => "Het gedrag (behavior) van deze relatie bevat geen instellingen voor ':config'.",
         'missing_definition' => "Het gedrag (behavior) van de relatie bevat geen kolom voor ':field'.",
         'missing_model' => 'Geen model opgegeven voor het gedrag (behavior) van relatie gebruikt in :class.',
@@ -512,6 +516,7 @@ return [
         'menu_mode_tile' => 'Tegels',
         'menu_mode_icon' => 'Iconen',
         'menu_mode_collapsed' => 'Ingeklapt',
+        'menu_mode_left' => 'Links gepositioneerd',
     ],
     'backend_preferences' => [
         'menu_label' => 'CMS voorkeuren',

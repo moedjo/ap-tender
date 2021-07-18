@@ -237,10 +237,16 @@ class Asset extends Extendable
     {
         $filePath = $this->getFilePath($fileName);
 
+        $foundTheme = $this->theme;
+
         if (!File::isFile($filePath)) {
-            // Look for parent
+            // Look at parent
             if ($parentTheme = $this->theme->getParentTheme()) {
+
+                $foundTheme = $parentTheme;
+
                 $filePath = $parentTheme->getPath().'/'.$this->dirName.'/'.$fileName;
+
                 if (!File::isFile($filePath)) {
                     return null;
                 }
@@ -248,6 +254,14 @@ class Asset extends Extendable
             else {
                 return null;
             }
+        }
+
+        if (!FileHelper::validateInTheme($foundTheme, $filePath)) {
+            throw new ValidationException(['fileName' =>
+                Lang::get('cms::lang.cms_object.invalid_file', [
+                    'name' => $fileName
+                ])
+            ]);
         }
 
         if (($content = @File::get($filePath)) === false) {
@@ -259,6 +273,7 @@ class Asset extends Extendable
         $this->mtime = File::lastModified($filePath);
         $this->content = $content;
         $this->exists = true;
+
         return $this;
     }
 
@@ -281,7 +296,7 @@ class Asset extends Extendable
     }
 
     /**
-     * Saves the object to the disk.
+     * save the object to the disk
      */
     public function save()
     {
@@ -340,12 +355,23 @@ class Asset extends Extendable
         $this->exists = true;
     }
 
+    /**
+     * delete the object from disk
+     */
     public function delete()
     {
         $fileName = Request::input('fileName');
         $fullPath = $this->getFilePath($fileName);
 
         $this->validateFileName($fileName);
+
+        if (!FileHelper::validateInTheme($this->theme, $fullPath)) {
+            throw new ValidationException(['fileName' =>
+                Lang::get('cms::lang.cms_object.invalid_file', [
+                    'name' => $fileName
+                ])
+            ]);
+        }
 
         if (File::exists($fullPath)) {
             if (!@File::delete($fullPath)) {
@@ -358,7 +384,7 @@ class Asset extends Extendable
     }
 
     /**
-     * Validate the supplied filename, extension and path.
+     * validateFileName supplied with extension and path.
      * @param string $fileName
      */
     protected function validateFileName($fileName = null)
@@ -396,13 +422,16 @@ class Asset extends Extendable
         }
     }
 
+    /**
+     * validate object
+     */
     public function validate()
     {
         $this->validateFileName();
     }
 
     /**
-     * Returns the file name.
+     * getFileName
      * @return string
      */
     public function getFileName()
@@ -419,15 +448,7 @@ class Asset extends Extendable
             $fileName = $this->fileName;
         }
 
-        // Limit paths to those under the assets directory
-        $directory = realpath($this->theme->getPath() . '/' . $this->dirName . '/');
-        $path = realpath($directory . '/' . $fileName);
-
-        if ($path !== false && !starts_with($path, $directory)) {
-            return '';
-        }
-
-        return $path;
+        return $this->theme->getPath().'/'.$this->dirName.'/'.$fileName;
     }
 
     /**

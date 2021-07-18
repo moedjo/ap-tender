@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '3ce07d0ac828e8cd7837437c3f620f2395ec2bc7',
+        'reference' => 'e2e52f39a9e6db920787db907c548d0253ec0854',
         'name' => 'october/october',
         'dev' => true,
     ),
@@ -92,12 +92,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/cache' => array(
-            'pretty_version' => '2.0.3',
-            'version' => '2.0.3.0',
+            'pretty_version' => '2.1.1',
+            'version' => '2.1.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/cache',
             'aliases' => array(),
-            'reference' => 'c9622c6820d3ede1e2315a6a377ea1076e421d88',
+            'reference' => '331b4d5dbaeab3827976273e9356b3b453c300ce',
             'dev_requirement' => false,
         ),
         'doctrine/dbal' => array(
@@ -193,169 +193,169 @@
         'illuminate/auth' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/broadcasting' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/bus' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/cache' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/config' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/console' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/container' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/contracts' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/cookie' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/database' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/encryption' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/events' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/filesystem' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/hashing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/http' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/log' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/mail' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/notifications' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/pagination' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/pipeline' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/queue' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/redis' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/routing' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/session' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/support' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/translation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/validation' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'illuminate/view' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => 'v6.20.29',
+                0 => 'v6.20.30',
             ),
         ),
         'jakub-onderka/php-console-color' => array(
@@ -386,12 +386,12 @@
             'dev_requirement' => false,
         ),
         'laravel/framework' => array(
-            'pretty_version' => 'v6.20.29',
-            'version' => '6.20.29.0',
+            'pretty_version' => 'v6.20.30',
+            'version' => '6.20.30.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../laravel/framework',
             'aliases' => array(),
-            'reference' => '00fa9c04aed10d68481f5757b89da0e6798f53b3',
+            'reference' => 'a6402599a517b2f15f4ada6b3b20df33a5895e1e',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -404,12 +404,12 @@
             'dev_requirement' => false,
         ),
         'league/commonmark' => array(
-            'pretty_version' => '1.6.5',
-            'version' => '1.6.5.0',
+            'pretty_version' => '1.6.6',
+            'version' => '1.6.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../league/commonmark',
             'aliases' => array(),
-            'reference' => '44ffd8d3c4a9133e4bd0548622b09c55af39db5f',
+            'reference' => 'c4228d11e30d7493c6836d20872f9582d8ba6dcf',
             'dev_requirement' => false,
         ),
         'league/csv' => array(
@@ -467,12 +467,12 @@
             'dev_requirement' => true,
         ),
         'monolog/monolog' => array(
-            'pretty_version' => '2.2.0',
-            'version' => '2.2.0.0',
+            'pretty_version' => '2.3.1',
+            'version' => '2.3.1.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(),
-            'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+            'reference' => '9738e495f288eec0b187e310b7cdbbb285777dbe',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
@@ -506,39 +506,39 @@
             'dev_requirement' => false,
         ),
         'october/backend' => array(
-            'pretty_version' => 'v2.0.25',
-            'version' => '2.0.25.0',
+            'pretty_version' => 'v2.0.26',
+            'version' => '2.0.26.0',
             'type' => 'october-module',
             'install_path' => __DIR__ . '/../../modules/backend',
             'aliases' => array(),
-            'reference' => '8bae67e1ef8a11da74d8809bc0f88159d553c6f3',
+            'reference' => '77cb5fccc1c2b2a58d45f84bacde1e6de6ef68a0',
             'dev_requirement' => false,
         ),
         'october/cms' => array(
-            'pretty_version' => 'v2.0.25',
-            'version' => '2.0.25.0',
+            'pretty_version' => 'v2.0.26',
+            'version' => '2.0.26.0',
             'type' => 'october-module',
             'install_path' => __DIR__ . '/../../modules/cms',
             'aliases' => array(),
-            'reference' => '11aacb394ff9dc629ae4b55a64a13ef20a2a0502',
+            'reference' => '8265c1ee5806a126cecbe24245cc2148470672ca',
             'dev_requirement' => false,
         ),
         'october/editor' => array(
-            'pretty_version' => 'v2.0.25',
-            'version' => '2.0.25.0',
+            'pretty_version' => 'v2.0.26',
+            'version' => '2.0.26.0',
             'type' => 'october-module',
             'install_path' => __DIR__ . '/../../modules/editor',
             'aliases' => array(),
-            'reference' => '81bb42834055d943db64c54fd4ce26f600563db6',
+            'reference' => '4971930b20ab0f155ed6d3993acd7cb7749b7458',
             'dev_requirement' => false,
         ),
         'october/media' => array(
-            'pretty_version' => 'v2.0.25',
-            'version' => '2.0.25.0',
+            'pretty_version' => 'v2.0.26',
+            'version' => '2.0.26.0',
             'type' => 'october-module',
             'install_path' => __DIR__ . '/../../modules/media',
             'aliases' => array(),
-            'reference' => '0a45b0e9c81322f747fb3933f2e9f4d6ac6a0acc',
+            'reference' => '9ccb7f7b6379099cc0e843b7e30dab7cf357bc12',
             'dev_requirement' => false,
         ),
         'october/october' => array(
@@ -547,25 +547,25 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '3ce07d0ac828e8cd7837437c3f620f2395ec2bc7',
+            'reference' => 'e2e52f39a9e6db920787db907c548d0253ec0854',
             'dev_requirement' => false,
         ),
         'october/rain' => array(
-            'pretty_version' => 'v2.0.23',
-            'version' => '2.0.23.0',
+            'pretty_version' => 'v2.0.25',
+            'version' => '2.0.25.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../october/rain',
             'aliases' => array(),
-            'reference' => 'e81ddac686108141f3f8d4bbd2431d2d962c8c19',
+            'reference' => '5b74d1c5704f0a55fcf4f4e2857d93e251c9005d',
             'dev_requirement' => false,
         ),
         'october/system' => array(
-            'pretty_version' => 'v2.0.25',
-            'version' => '2.0.25.0',
+            'pretty_version' => 'v2.0.26',
+            'version' => '2.0.26.0',
             'type' => 'october-module',
             'install_path' => __DIR__ . '/../../modules/system',
             'aliases' => array(),
-            'reference' => 'f0462e88ad6bf14a808c9b4a7f202bdef83a67b4',
+            'reference' => '2ffdee2da538ca1c063a5f49b64daabd20e12cc8',
             'dev_requirement' => false,
         ),
         'opis/closure' => array(
@@ -730,8 +730,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0.0',
-                1 => '1.0',
+                0 => '1.0',
+                1 => '1.0.0',
             ),
         ),
         'psr/simple-cache' => array(

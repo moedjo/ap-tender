@@ -24,10 +24,10 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '4a1f389d6ce373bda9e57857d3b61c84' => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src/helpers.php',
-        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
-        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '9e4824c5afbdc1482b6025ce3d4dfde8' => __DIR__ . '/..' . '/league/csv/src/functions_include.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        'f0906e6318348a765ffb6eb24e0d0938' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Foundation/helpers.php',
+        '58571171fd5812e6e447dce228f52f4d' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Support/helpers.php',
         '9ab6c0b43d4b818d98f088285310c9d9' => __DIR__ . '/..' . '/october/rain/src/Support/helpers.php',
         '7e5c472b6b448232930b8605a4c5e95c' => __DIR__ . '/..' . '/october/rain/src/Router/helpers.php',
         '97af4f586841c1bd9dd1f8710561ecaa' => __DIR__ . '/..' . '/october/rain/src/Html/helpers.php',
@@ -54,7 +54,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'S' => 
         array (
             'System\\Console\\' => 15,
-            'System\\' => 7,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Php73\\' => 23,
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -109,7 +108,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'M' => 
         array (
             'Monolog\\' => 8,
-            'Media\\' => 6,
         ),
         'L' => 
         array (
@@ -132,7 +130,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'E' => 
         array (
             'Egulias\\EmailValidator\\' => 23,
-            'Editor\\' => 7,
         ),
         'D' => 
         array (
@@ -157,13 +154,11 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
             'Composer\\Installers\\' => 20,
             'Composer\\CaBundle\\' => 18,
             'Composer\\' => 9,
-            'Cms\\' => 4,
             'Carbon\\' => 7,
         ),
         'B' => 
         array (
             'Barryvdh\\Debugbar\\' => 18,
-            'Backend\\' => 8,
         ),
         'A' => 
         array (
@@ -198,10 +193,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'System\\Console\\' => 
         array (
             0 => __DIR__ . '/../..' . '/modules/system/console',
-        ),
-        'System\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules/system',
         ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
@@ -371,10 +362,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Media\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules/media',
-        ),
         'League\\MimeTypeDetection\\' => 
         array (
             0 => __DIR__ . '/..' . '/league/mime-type-detection/src',
@@ -414,10 +401,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/src',
-        ),
-        'Editor\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules/editor',
         ),
         'Dotenv\\' => 
         array (
@@ -491,10 +474,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         array (
             0 => __DIR__ . '/..' . '/composer/composer/src/Composer',
         ),
-        'Cms\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules/cms',
-        ),
         'Carbon\\' => 
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
@@ -502,10 +481,6 @@ class ComposerStaticInit20a724cdaa692f0d3ead0f599d73985f
         'Barryvdh\\Debugbar\\' => 
         array (
             0 => __DIR__ . '/..' . '/barryvdh/laravel-debugbar/src',
-        ),
-        'Backend\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/modules/backend',
         ),
         'Assetic\\' => 
         array (

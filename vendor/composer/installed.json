@@ -768,25 +768,24 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "2.0.3",
-            "version_normalized": "2.0.3.0",
+            "version": "2.1.1",
+            "version_normalized": "2.1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "c9622c6820d3ede1e2315a6a377ea1076e421d88"
+                "reference": "331b4d5dbaeab3827976273e9356b3b453c300ce"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/c9622c6820d3ede1e2315a6a377ea1076e421d88",
-                "reference": "c9622c6820d3ede1e2315a6a377ea1076e421d88",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/331b4d5dbaeab3827976273e9356b3b453c300ce",
+                "reference": "331b4d5dbaeab3827976273e9356b3b453c300ce",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.1 || ^8.0"
             },
             "conflict": {
-                "doctrine/common": ">2.2,<2.4",
-                "psr/cache": ">=3"
+                "doctrine/common": ">2.2,<2.4"
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
@@ -795,13 +794,14 @@
                 "mongodb/mongodb": "^1.1",
                 "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
                 "predis/predis": "~1.0",
-                "psr/cache": "^1.0 || ^2.0",
-                "symfony/cache": "^4.4 || ^5.2"
+                "psr/cache": "^1.0 || ^2.0 || ^3.0",
+                "symfony/cache": "^4.4 || ^5.2 || ^6.0@dev",
+                "symfony/var-exporter": "^4.4 || ^5.2 || ^6.0@dev"
             },
             "suggest": {
                 "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
-            "time": "2021-05-25T09:43:04+00:00",
+            "time": "2021-07-17T14:49:29+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -850,7 +850,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/2.0.3"
+                "source": "https://github.com/doctrine/cache/tree/2.1.1"
             },
             "funding": [
                 {
@@ -1799,17 +1799,17 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v6.20.29",
-            "version_normalized": "6.20.29.0",
+            "version": "v6.20.30",
+            "version_normalized": "6.20.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "00fa9c04aed10d68481f5757b89da0e6798f53b3"
+                "reference": "a6402599a517b2f15f4ada6b3b20df33a5895e1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/00fa9c04aed10d68481f5757b89da0e6798f53b3",
-                "reference": "00fa9c04aed10d68481f5757b89da0e6798f53b3",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a6402599a517b2f15f4ada6b3b20df33a5895e1e",
+                "reference": "a6402599a517b2f15f4ada6b3b20df33a5895e1e",
                 "shasum": ""
             },
             "require": {
@@ -1914,7 +1914,7 @@
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^1.2).",
                 "wildbit/swiftmailer-postmark": "Required to use Postmark mail driver (^3.0)."
             },
-            "time": "2021-06-22T13:41:06+00:00",
+            "time": "2021-07-06T14:06:00+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2025,17 +2025,17 @@
         },
         {
             "name": "league/commonmark",
-            "version": "1.6.5",
-            "version_normalized": "1.6.5.0",
+            "version": "1.6.6",
+            "version_normalized": "1.6.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f"
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
-                "reference": "44ffd8d3c4a9133e4bd0548622b09c55af39db5f",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/c4228d11e30d7493c6836d20872f9582d8ba6dcf",
+                "reference": "c4228d11e30d7493c6836d20872f9582d8ba6dcf",
                 "shasum": ""
             },
             "require": {
@@ -2058,7 +2058,7 @@
                 "scrutinizer/ocular": "^1.5",
                 "symfony/finder": "^4.2"
             },
-            "time": "2021-06-26T11:57:13+00:00",
+            "time": "2021-07-17T17:13:23+00:00",
             "bin": [
                 "bin/commonmark"
             ],
@@ -2561,17 +2561,17 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "2.2.0",
-            "version_normalized": "2.2.0.0",
+            "version": "2.3.1",
+            "version_normalized": "2.3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "1cb1cde8e8dd0f70cc0fe51354a59acad9302084"
+                "reference": "9738e495f288eec0b187e310b7cdbbb285777dbe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1cb1cde8e8dd0f70cc0fe51354a59acad9302084",
-                "reference": "1cb1cde8e8dd0f70cc0fe51354a59acad9302084",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/9738e495f288eec0b187e310b7cdbbb285777dbe",
+                "reference": "9738e495f288eec0b187e310b7cdbbb285777dbe",
                 "shasum": ""
             },
             "require": {
@@ -2590,7 +2590,7 @@
                 "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpspec/prophecy": "^1.6.1",
-                "phpstan/phpstan": "^0.12.59",
+                "phpstan/phpstan": "^0.12.91",
                 "phpunit/phpunit": "^8.5",
                 "predis/predis": "^1.1",
                 "rollbar/rollbar": "^1.3",
@@ -2611,7 +2611,7 @@
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
                 "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
-            "time": "2020-12-14T13:15:25+00:00",
+            "time": "2021-07-14T11:56:39+00:00",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -2644,7 +2644,7 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/monolog/issues",
-                "source": "https://github.com/Seldaek/monolog/tree/2.2.0"
+                "source": "https://github.com/Seldaek/monolog/tree/2.3.1"
             },
             "funding": [
                 {
@@ -2876,30 +2876,20 @@
         },
         {
             "name": "october/backend",
-            "version": "v2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "v2.0.26",
+            "version_normalized": "2.0.26.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.0.25-2e3655.zip",
-                "reference": "8bae67e1ef8a11da74d8809bc0f88159d553c6f3",
-                "shasum": "933d0c6a1c50659befc45c162f466d0a3045b385"
+                "url": "https://gateway.octobercms.com/composer/dist/october/backend/october-backend-v2.0.26-5939e7.zip",
+                "reference": "77cb5fccc1c2b2a58d45f84bacde1e6de6ef68a0",
+                "shasum": "f71bd212cbf09661438e2e83c69f734087795ec7"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-06-25T21:59:43+00:00",
+            "time": "2021-07-09T06:39:17+00:00",
             "type": "october-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.2-dev"
-                }
-            },
             "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Backend\\": ""
-                }
-            },
             "authors": [
                 {
                     "name": "Alexey Bobkov",
@@ -2921,30 +2911,20 @@
         },
         {
             "name": "october/cms",
-            "version": "v2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "v2.0.26",
+            "version_normalized": "2.0.26.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.0.25-053320.zip",
-                "reference": "11aacb394ff9dc629ae4b55a64a13ef20a2a0502",
-                "shasum": "91201273625ebe1b4a3ec8e15e9566289110fe04"
+                "url": "https://gateway.octobercms.com/composer/dist/october/cms/october-cms-v2.0.26-23ea66.zip",
+                "reference": "8265c1ee5806a126cecbe24245cc2148470672ca",
+                "shasum": "8cf9adb82e8e4f8ea6801e7dee4644a713287943"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-07-01T03:57:07+00:00",
+            "time": "2021-07-12T23:43:29+00:00",
             "type": "october-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.2-dev"
-                }
-            },
             "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Cms\\": ""
-                }
-            },
             "authors": [
                 {
                     "name": "Alexey Bobkov",
@@ -2966,30 +2946,20 @@
         },
         {
             "name": "october/editor",
-            "version": "v2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "v2.0.26",
+            "version_normalized": "2.0.26.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.0.25-2d9991.zip",
-                "reference": "81bb42834055d943db64c54fd4ce26f600563db6",
-                "shasum": "fa09e860c0b0452c799cedbe02dedf375f467bbd"
+                "url": "https://gateway.octobercms.com/composer/dist/october/editor/october-editor-v2.0.26-732691.zip",
+                "reference": "4971930b20ab0f155ed6d3993acd7cb7749b7458",
+                "shasum": "265dcda5a9713c55cefc286418fc1ee1e6581605"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-06-12T07:03:05+00:00",
+            "time": "2021-07-09T06:39:17+00:00",
             "type": "october-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.2-dev"
-                }
-            },
             "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Editor\\": ""
-                }
-            },
             "authors": [
                 {
                     "name": "Alexey Bobkov",
@@ -3011,30 +2981,20 @@
         },
         {
             "name": "october/media",
-            "version": "v2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "v2.0.26",
+            "version_normalized": "2.0.26.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.0.25-329a8b.zip",
-                "reference": "0a45b0e9c81322f747fb3933f2e9f4d6ac6a0acc",
-                "shasum": "577ea4f90934edb52dbe5241419513fe5f57e174"
+                "url": "https://gateway.octobercms.com/composer/dist/october/media/october-media-v2.0.26-a3bbe5.zip",
+                "reference": "9ccb7f7b6379099cc0e843b7e30dab7cf357bc12",
+                "shasum": "829555ef17a7edb9c333ec722b43ac22eca779ab"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-06-07T04:22:37+00:00",
+            "time": "2021-07-09T06:39:17+00:00",
             "type": "october-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.2-dev"
-                }
-            },
             "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "Media\\": ""
-                }
-            },
             "authors": [
                 {
                     "name": "Alexey Bobkov",
@@ -3056,17 +3016,17 @@
         },
         {
             "name": "october/rain",
-            "version": "v2.0.23",
-            "version_normalized": "2.0.23.0",
+            "version": "v2.0.25",
+            "version_normalized": "2.0.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/octobercms/library.git",
-                "reference": "e81ddac686108141f3f8d4bbd2431d2d962c8c19"
+                "reference": "5b74d1c5704f0a55fcf4f4e2857d93e251c9005d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/octobercms/library/zipball/e81ddac686108141f3f8d4bbd2431d2d962c8c19",
-                "reference": "e81ddac686108141f3f8d4bbd2431d2d962c8c19",
+                "url": "https://api.github.com/repos/octobercms/library/zipball/5b74d1c5704f0a55fcf4f4e2857d93e251c9005d",
+                "reference": "5b74d1c5704f0a55fcf4f4e2857d93e251c9005d",
                 "shasum": ""
             },
             "require": {
@@ -3088,7 +3048,7 @@
                 "meyfa/phpunit-assert-gd": "^2.0.0|^3.0.0",
                 "phpunit/phpunit": "^8.0|^9.0"
             },
-            "time": "2021-06-20T23:57:07+00:00",
+            "time": "2021-07-09T09:27:46+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -3124,36 +3084,26 @@
                 "rain"
             ],
             "support": {
-                "source": "https://github.com/octobercms/library/tree/v2.0.23"
+                "source": "https://github.com/octobercms/library/tree/v2.0.25"
             },
             "install-path": "../october/rain"
         },
         {
             "name": "october/system",
-            "version": "v2.0.25",
-            "version_normalized": "2.0.25.0",
+            "version": "v2.0.26",
+            "version_normalized": "2.0.26.0",
             "dist": {
                 "type": "zip",
-                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.0.25-5d8fb8.zip",
-                "reference": "f0462e88ad6bf14a808c9b4a7f202bdef83a67b4",
-                "shasum": "008c7019a868d2047f65ed033817ae112a31a2f6"
+                "url": "https://gateway.octobercms.com/composer/dist/october/system/october-system-v2.0.26-e32390.zip",
+                "reference": "2ffdee2da538ca1c063a5f49b64daabd20e12cc8",
+                "shasum": "25ec91d8b6cc7746528ef6bec0f483e7fbe6031b"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
-            "time": "2021-07-02T05:16:22+00:00",
+            "time": "2021-07-09T06:50:43+00:00",
             "type": "october-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-develop": "1.2-dev"
-                }
-            },
             "installation-source": "dist",
-            "autoload": {
-                "psr-4": {
-                    "System\\": ""
-                }
-            },
             "authors": [
                 {
                     "name": "Alexey Bobkov",

@@ -17,7 +17,7 @@ use System\Models\EventLog;
 class EventLogs extends Controller
 {
     /**
-     * @var array Extensions implemented by this controller.
+     * @var array implement extensions in this controller
      */
     public $implement = [
         \Backend\Behaviors\FormController::class,
@@ -25,22 +25,22 @@ class EventLogs extends Controller
     ];
 
     /**
-     * @var array `FormController` configuration.
+     * @var array formConfig `FormController` configuration.
      */
     public $formConfig = 'config_form.yaml';
 
     /**
-     * @var array `ListController` configuration.
+     * @var array listConfig `ListController` configuration.
      */
     public $listConfig = 'config_list.yaml';
 
     /**
-     * @var array Permissions required to view this page.
+     * @var array requiredPermissions to view this page
      */
     public $requiredPermissions = ['system.access_logs'];
 
     /**
-     * Constructor.
+     * __construct
      */
     public function __construct()
     {
@@ -50,11 +50,17 @@ class EventLogs extends Controller
         SettingsManager::setContext('October.System', 'event_logs');
     }
 
+    /**
+     * index_onRefresh
+     */
     public function index_onRefresh()
     {
         return $this->listRefresh();
     }
 
+    /**
+     * index_onEmptyLog
+     */
     public function index_onEmptyLog()
     {
         EventLog::truncate();
@@ -62,6 +68,9 @@ class EventLogs extends Controller
         return $this->listRefresh();
     }
 
+    /**
+     * index_onDelete
+     */
     public function index_onDelete()
     {
         if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
@@ -82,8 +91,7 @@ class EventLogs extends Controller
     }
 
     /**
-     * Preview page action
-     * @return void
+     * preview page action
      */
     public function preview($id)
     {

@@ -16,16 +16,5 @@
     ],
     "require": {
         "composer/installers": "~1.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Media\\": ""
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-develop": "1.2-dev"
-        }
-    },
-    "minimum-stability": "dev"
+    }
 }
