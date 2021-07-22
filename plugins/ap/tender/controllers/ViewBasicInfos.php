@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 use October\Rain\Support\Facades\Flash;
 use Response;
 
-class CompanyBasicInfos extends Controller
+class ViewBasicInfos extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController'
@@ -24,30 +24,12 @@ class CompanyBasicInfos extends Controller
     public $formConfig = 'config_form.yaml';
 
 
-    public $requiredPermissions = [];
-
-    public $publicActions = [
-        'update'
-    ];
+    public $requiredPermissions = ['ap_tender_access_user_tenant'];
 
     public function __construct()
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tenants');
-
-        $user = $this->user;
-        if (empty($user)) {
-            $this->layout = 'public/default';
-        }
-
-        $url = url()->current();
-        $search = "companybasicinfos";
-        $active = preg_match("/{$search}/i", $url);
-        if ($active == 1) {
-            $this->vars['dataActive'] = 'active';
-        } else {
-            $this->vars['dataActive'] = 'failed';
-        }
     }
 
 
@@ -86,9 +68,7 @@ class CompanyBasicInfos extends Controller
                 return $query->where('user_id', $user->id);
             }
         }
-
-        $company_id = Session::get('company_id');
-        return $query->where('id', $company_id);
+        
     }
 
     public function formExtendQuery($query)
@@ -102,24 +82,7 @@ class CompanyBasicInfos extends Controller
     {
         $user = $this->user;
         $company = Company::where('user_id', $user->id)->first();
-        return Redirect::to(Backend::url('ap/tender/companybasicinfos/update/'.$company->id));
+        return Redirect::to(Backend::url('ap/tender/viewbasicinfos/update/'.$company->id));
     }
 
-
-    public function formExtendFields($host, $fields)
-    {
-        $context = $host->getContext();
-        $model = $host->model;
-        $user = $this->user;
-
-        if ($context == 'update') {
-
-            if(isset($user)){
-                $fields['name']->disabled = true;
-                // $fields['doc_basic_npwp']->disabled = true;
-                
-            }
-            
-        }
-    }
 }

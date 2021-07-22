@@ -91,7 +91,7 @@ navigation:
             - ap_tender_access_companies
     tentant-profile:
         label: 'User Tenant'
-        url: ap/tender/companybasicinfos/view
+        url: ap/tender/viewbasicinfos/view
         icon: icon-angle-double-down
         permissions:
             - ap_tender_access_user_tenant

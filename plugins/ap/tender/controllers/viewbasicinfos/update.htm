@@ -1,0 +1,63 @@
+<?php if (!$this->fatalError): ?>
+
+<div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">1</div>
+                <p><?= e(trans('ap.tender::lang.card.first')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+                <div class="circle">2</div>
+                <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+                <div class="circle">3</div>
+                <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
+            
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+                <div class="circle">4</div>
+                <p><?= e(trans('ap.tender::lang.card.four')) ?></p>
+            
+        </div>
+    </div>
+</div>
+
+<?= Form::open(['class' => 'layout']) ?>
+
+<div class="layout-row">
+    <?= $this->formRender() ?>
+</div>
+
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="<?= e(trans('ap.tender::lang.global.next')) ?>" class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.global.next')) ?>
+        </button>
+
+        <?php if(isset($user)): ?>
+        <a href="<?= Backend::url('') ?>" class="btn btn-warning">
+            <?= e(trans('ap.tender::lang.global.back')) ?>
+        </a>
+        <?php endif ?>
+    </div>
+</div>
+<?= Form::close() ?>
+
+<?php else: ?>
+<p class="flash-message static error">
+    <?= e(trans($this->fatalError)) ?>
+</p>
+<p><a href="<?= url('/') ?>" class="btn btn-default">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a></p>
+<?php endif ?>

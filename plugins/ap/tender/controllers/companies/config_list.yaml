@@ -9,4 +9,4 @@ toolbar:
     buttons: list_toolbar
     search:
         prompt: 'backend::lang.list.search_prompt'
-recordUrl: 'ap/tender/companybasicinfos/update/:id'
+recordUrl: 'ap/tender/viewbasicinfos/update/:id'
