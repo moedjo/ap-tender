@@ -36,7 +36,6 @@ class CompanyBasicInfo extends Company
         'doc_basic_npwp' => 'required',
         'doc_basic_ktp' => 'required',
         'doc_basic_sk' => 'required',
-        'doc_basic_other' => 'required',
     ];
 
 
