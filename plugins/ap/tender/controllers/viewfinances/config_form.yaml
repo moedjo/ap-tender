@@ -1,0 +1,6 @@
+name: 'ap.tender::lang.company.financial_ability'
+form: $/ap/tender/models/companyfinance/view_fields.yaml
+modelClass: Ap\Tender\Models\CompanyFinance
+update:
+    redirect: ap/tender/viewsummaries/update/:id
+    redirectClose: ap/tender/viewsummaries/update/:id

@@ -1,0 +1,8 @@
+finances:
+    label: 'ap.tender::lang.company_finance.singular'
+    manage:
+        form: $/ap/tender/models/finance/fields.yaml
+        list: $/ap/tender/models/finance/columns.yaml
+    view:
+        list: $/ap/tender/models/finance/columns.yaml
+        toolbarButtons: false

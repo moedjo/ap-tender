@@ -1,0 +1,69 @@
+<?php if (!$this->fatalError): ?>
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="<?= Backend::url('ap/tender/companybasicinfos/update/'.$formModel->id) ?>">
+                <div class="circle">1</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.first')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+            <a href="<?= Backend::url('ap/tender/companyexperiences/update/'.$formModel->id) ?>">
+                <div class="circle">2</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
+            </a>
+        </div>
+    </div>
+    <?php if ($dataActive == 'active'): ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card-active"  style="max-width: 28rem;">
+    <?php else: ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <?php endif ?>
+        <div class="card-header">
+            <a href="#">
+                <div class="circle">3</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+        <div class="card-header">
+                <div class="circle">4</div>
+                <?= e(trans('ap.tender::lang.card.general')) ?>
+                <p><?= e(trans('ap.tender::lang.card.four')) ?></p>
+        </div>
+    </div>
+</div>
+<?= Form::open(['class' => 'layout']) ?>
+
+<div class="layout-row">
+    <?= $this->formRender() ?>
+</div>
+
+<div class="form-buttons">
+    <div class="loading-indicator-container">
+        <button type="button" data-request="onSave" data-request-data="close:1" data-hotkey="ctrl+enter, cmd+enter"
+            data-load-indicator="<?= e(trans('ap.tender::lang.global.next')) ?>" class="btn btn-primary pull-right">
+            <?= e(trans('ap.tender::lang.global.next')) ?>
+        </button>
+
+        <a href="<?= Backend::url('ap/tender/viewexperiences/update/'.$formModel->id) ?>" class="btn btn-warning">
+            <?= e(trans('ap.tender::lang.global.back')) ?>
+        </a>
+    </div>
+</div>
+<?= Form::close() ?>
+
+<?php else: ?>
+<p class="flash-message static error">
+    <?= e(trans($this->fatalError)) ?>
+</p>
+<p><a href="<?= url('/') ?>" class="btn btn-default">
+        <?= e(trans('backend::lang.form.return_to_list')) ?>
+    </a></p>
+<?php endif ?>
