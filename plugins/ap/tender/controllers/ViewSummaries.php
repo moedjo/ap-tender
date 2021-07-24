@@ -81,21 +81,4 @@ class ViewSummaries extends Controller
         return $this->extendQuery($query);
     }
 
-    public function formBeforeSave($model)
-    {
-        $model->token = Str::random(6);
-        $model->token_url = url('/backend/ap/tender/publicusers/create?token='.$model->token);
-        $model->status = 'pre_register';
-    }
-
-
-    public function formAfterSave($model)
-    {
-        Event::fire('company.before.register', [$model]);
-    }
-
-    public function success(){
-        Session::forget('company_id');
-    }
-
 }

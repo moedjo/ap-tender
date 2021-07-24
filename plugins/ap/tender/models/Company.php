@@ -65,6 +65,12 @@ class Company extends Model
             'key'      => 'company_id',
             'otherKey' => 'verification_id',
             'timestamps' => true,
+            'pivot' => [
+                'on_note',
+                'on_check',
+                'on_last_note',
+                'on_last_check'
+            ]
         ],
         'verification_legals' => [
             'Ap\Tender\Models\Verification',

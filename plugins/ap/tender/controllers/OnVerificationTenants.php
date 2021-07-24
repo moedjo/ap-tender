@@ -35,10 +35,10 @@ class OnVerificationTenants extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query;
+        return $query->whereIn('status',['register','pre_evaluated']);
     }
 
-    public function formExtendQuery($query)
+    public function listExtendQuery($query)
     {
         return $this->extendQuery($query);
     }
@@ -57,6 +57,11 @@ class OnVerificationTenants extends Controller
         }
 
         if ($user->hasPermission('ap_tender_access_commercials')) {
+
+            if($record->status =='pre_evaluated'){
+                return 'ap/tender/onverificationlasts/update/' . $record->id;
+            }
+
             return 'ap/tender/onverificationcommercials/update/' . $record->id;
         }
     }

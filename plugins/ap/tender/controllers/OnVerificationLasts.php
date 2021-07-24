@@ -8,7 +8,7 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLegals extends Controller
+class OnVerificationLasts extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -18,7 +18,7 @@ class OnVerificationLegals extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_legals'];
+    public $requiredPermissions = ['ap_tender_access_commercials'];
 
     public function __construct()
     {
@@ -44,7 +44,7 @@ class OnVerificationLegals extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query->where('status','register');
+        return $query->where('status','pre_evaluated');
     }
 
     public function formExtendQuery($query)
@@ -54,31 +54,27 @@ class OnVerificationLegals extends Controller
 
     public function formExtendModel($model)
     {
-        $verifications = Verification::all();
-        $model->verifications = $verifications;
-        $model->save();
+       
     }
 
     public function formBeforeSave($model)
     {
-        $model->load('verification_legals');
-        $verification_legals = $model->verification_legals;
+        $model->load('verifications');
+        $verifications = $model->verifications;
         $status = 'approve';
-        foreach ($verification_legals as $verification_legal) {
-            if (!$verification_legal->pivot->on_check) {
+        foreach ($verifications as $verification) {
+            if (!$verification->pivot->on_last_check) {
                 $status = 'reject';
                 break;
             }
         }
-        $model->on_legal_status = $status;
+        $model->on_last_status = $status;
 
         if (
-            $model->on_legal_status == 'approve' &&
-            $model->on_finance_status == 'approve' &&
-            $model->on_commercial_status == 'approve'
+            $model->on_last_status == 'approve'
         ) {
 
-            $model->status = 'pre_evaluated';
+            $model->status = 'evaluated';
         }
     }
 }

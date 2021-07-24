@@ -1,0 +1,5 @@
+name: 'ap.tender::lang.company.info'
+form: $/ap/tender/models/companyexperience/on_verification_fields.yaml
+modelClass: Ap\Tender\Models\CompanyExperience
+update:
+    redirectClose: ap/tender/onverificationtenants

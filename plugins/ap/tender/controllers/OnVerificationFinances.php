@@ -44,7 +44,7 @@ class OnVerificationFinances extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query;
+        return $query->where('status','register');
     }
 
     public function formExtendQuery($query)
@@ -65,11 +65,20 @@ class OnVerificationFinances extends Controller
         $verification_finances = $model->verification_finances;
         $status = 'approve';
         foreach ($verification_finances as $verification_finance) {
-            if (!$verification_finance->pivot->on_finance_check) {
+            if (!$verification_finance->pivot->on_check) {
                 $status = 'reject';
                 break;
             }
         }
         $model->on_finance_status = $status;
+
+        if (
+            $model->on_legal_status == 'approve' &&
+            $model->on_finance_status == 'approve' &&
+            $model->on_commercial_status == 'approve'
+        ) {
+
+            $model->status = 'pre_evaluated';
+        }
     }
 }

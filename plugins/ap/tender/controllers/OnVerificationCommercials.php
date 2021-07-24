@@ -8,7 +8,7 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLegals extends Controller
+class OnVerificationCommercials extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -44,7 +44,7 @@ class OnVerificationLegals extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query;
+        return $query->where('status','register');
     }
 
     public function formExtendQuery($query)
@@ -62,14 +62,23 @@ class OnVerificationLegals extends Controller
     public function formBeforeSave($model)
     {
         $model->load('verification_commercials');
-        $verification_legals = $model->verification_legals;
+        $verification_commercials = $model->verification_commercials;
         $status = 'approve';
-        foreach ($verification_legals as $verification_legal) {
-            if (!$verification_legal->pivot->on_legal_check) {
+        foreach ($verification_commercials as $verification_commercial) {
+            if (!$verification_commercial->pivot->on_check) {
                 $status = 'reject';
                 break;
             }
         }
-        $model->on_legal_status = $status;
+        $model->on_commercial_status = $status;
+
+        if (
+            $model->on_legal_status == 'approve' &&
+            $model->on_finance_status == 'approve' &&
+            $model->on_commercial_status == 'approve'
+        ) {
+
+            $model->status = 'pre_evaluated';
+        }
     }
 }

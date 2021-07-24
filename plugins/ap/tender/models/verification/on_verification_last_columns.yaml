@@ -1,0 +1,17 @@
+columns:
+    number:
+        label: 'No.'
+        sortable: false
+    name:
+        label: 'Kategori'
+        sortable: false
+    description:
+        label: 'General Information'
+        sortable: false
+    pivot[on_last_check]:
+        label: Ya/Tidak
+        type: switch
+        sortable: false
+    pivot[on_last_note]:
+        label: Catatan
+        sortable: false

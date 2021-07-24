@@ -175,6 +175,39 @@ fields:
         span: left
         placeholder: 'Bidang Usaha (KBLI)'
         disabled: true
+    _section7:
+        label: 'ap.tender::lang.company.pic'
+        type: section      
+    pic_full_name:
+        label: 'ap.tender::lang.company.pic_full_name'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.pic_full_name'
+        disabled: true
+    pic_position:
+        label: 'ap.tender::lang.company.pic_position'
+        type: relation
+        span: right
+        placeholder: 'ap.tender::lang.company.pic_position'
+        disabled: true
+    pic_phone_number:
+        label: 'ap.tender::lang.company.pic_phone_number'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.pic_phone_number'
+        disabled: true
+    pic_ktp:
+        label: 'ap.tender::lang.company.pic_ktp'
+        type: text
+        span: right
+        placeholder: 'ap.tender::lang.company.pic_ktp'
+        disabled: true
+    pic_email:
+        label: 'ap.tender::lang.company.pic_email'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.pic_email'
+        disabled: true
     _section3:
         label: 'ap.tender::lang.company.contact'
         type: section

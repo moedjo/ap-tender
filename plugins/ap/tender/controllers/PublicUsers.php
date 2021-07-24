@@ -108,9 +108,9 @@ class PublicUsers extends Controller
         $company_id = Session::get('company_id');
         $company = Company::findOrFail($company_id);
 
-        // $company->token = null;
-        // $company->token_url = null;
-        // $company->status = 'register';
+        $company->token = null;
+        $company->token_url = null;
+        $company->status = 'register';
         $company->user()->associate($model);
         $company->save();
 
