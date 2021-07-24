@@ -18,10 +18,12 @@ use Response;
 class ViewExperiences extends Controller
 {
     public $implement = [
-        'Backend\Behaviors\FormController'
+        'Backend\Behaviors\FormController',
+        'Backend\Behaviors\RelationController',
     ];
 
     public $formConfig = 'config_form.yaml';
+    public $relationConfig = 'config_relation.yaml';
 
 
     public $requiredPermissions = ['ap_tender_access_user_tenant'];

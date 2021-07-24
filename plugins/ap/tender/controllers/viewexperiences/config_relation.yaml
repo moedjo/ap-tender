@@ -1,7 +1,7 @@
 experiences:
     label: 'ap.tender::lang.company_experience.singular'
     manage:
-        form: $/ap/tender/models/experience/view_fields.yaml
+        form: $/ap/tender/models/experience/fields.yaml
         list: $/ap/tender/models/experience/columns.yaml
     view:
         list: $/ap/tender/models/experience/columns.yaml
