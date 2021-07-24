@@ -46,15 +46,19 @@ trait ViewMaker
      * @param string|array $path
      * @return void
      */
-    public function addViewPath($path)
+    public function addViewPath($path, $append = false)
     {
         $this->viewPath = (array) $this->viewPath;
 
         if (is_array($path)) {
-            $this->viewPath = array_merge($path, $this->viewPath);
+            $this->viewPath = $append
+                ? array_merge($this->viewPath, $path)
+                : array_merge($path, $this->viewPath);
         }
         else {
-            array_unshift($this->viewPath, $path);
+            $append
+                ? array_push($this->viewPath, $path)
+                : array_unshift($this->viewPath, $path);
         }
     }
 

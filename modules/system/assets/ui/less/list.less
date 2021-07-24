@@ -98,13 +98,6 @@ table.table.data {
             color: @color-list-text;
             border-top: 1px solid @color-list-row-border;
 
-            a:not(.btn) {
-                color: @color-list-text;
-                &:hover {
-                    text-decoration: none;
-                }
-            }
-
             div.progress {
                 position: relative;
                 overflow: visible;
@@ -512,6 +505,17 @@ table.table.data {
                 &:hover:before {
                     opacity: 1;
                     color: @color-list-hover-bg !important;
+                }
+            }
+        }
+    }
+
+    &.list-rowlink tbody {
+        td, th {
+            a:not(.btn) {
+                color: @color-list-text;
+                &:hover {
+                    text-decoration: none;
                 }
             }
         }

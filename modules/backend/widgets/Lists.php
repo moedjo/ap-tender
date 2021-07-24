@@ -88,16 +88,6 @@ class Lists extends WidgetBase
     public $showSetup = false;
 
     /**
-     * @var bool Display parent/child relationships in the list.
-     */
-    public $showTree = false;
-
-    /**
-     * @var bool Expand the tree nodes by default.
-     */
-    public $treeExpanded = false;
-
-    /**
      * @var bool|string Display pagination when limiting records per page.
      */
     public $showPagination = 'auto';
@@ -208,8 +198,6 @@ class Lists extends WidgetBase
             'defaultSort',
             'showCheckboxes',
             'showSetup',
-            'showTree',
-            'treeExpanded',
             'showPagination',
             'customViewPath',
         ]);
@@ -230,7 +218,6 @@ class Lists extends WidgetBase
         }
 
         $this->validateModel();
-        $this->validateTree();
     }
 
     /**
@@ -267,8 +254,6 @@ class Lists extends WidgetBase
         $this->vars['showSorting'] = $this->showSorting;
         $this->vars['sortColumn'] = $this->getSortColumn();
         $this->vars['sortDirection'] = $this->sortDirection;
-        $this->vars['showTree'] = $this->showTree;
-        $this->vars['treeLevel'] = 0;
 
         if ($this->showPagination) {
             $this->vars['pageCurrent'] = $this->records->currentPage();
@@ -534,7 +519,7 @@ class Lists extends WidgetBase
         /*
          * Apply sorting
          */
-        if (($sortColumn = $this->getSortColumn()) && !$this->showTree) {
+        if ($this->useSorting() && ($sortColumn = $this->getSortColumn())) {
             if (($column = array_get($this->allColumns, $sortColumn)) && $column->valueFrom) {
                 $sortColumn = $this->isColumnPivot($column)
                     ? 'pivot_' . $column->valueFrom
@@ -599,10 +584,7 @@ class Lists extends WidgetBase
     {
         $query = $this->prepareQuery();
 
-        if ($this->showTree) {
-            $records = $query->getNested();
-        }
-        elseif ($this->showPagination) {
+        if ($this->showPagination) {
             $method = $this->showPageNumbers ? 'paginate' : 'simplePaginate';
             $currentPageNumber = $this->getCurrentPageNumber($query);
             $records = $query->{$method}($this->recordsPerPage, $currentPageNumber);
@@ -668,12 +650,19 @@ class Lists extends WidgetBase
     }
 
     /**
+     * hasRecordAction will specify is anything is clickable
+     */
+    public function hasRecordAction(): bool
+    {
+        return isset($this->recordOnClick) || isset($this->recordUrl);
+    }
+
+    /**
      * getRecordAction
      */
     public function getRecordAction($record): ?array
     {
-        // Nothing clickable
-        if (!isset($this->recordOnClick) && !isset($this->recordUrl)) {
+        if (!$this->hasRecordAction()) {
             return null;
         }
 
@@ -1023,10 +1012,6 @@ class Lists extends WidgetBase
             $total++;
         }
 
-        if ($this->showTree) {
-            $total++;
-        }
-
         return $total;
     }
 
@@ -1240,6 +1225,19 @@ class Lists extends WidgetBase
         return $value;
     }
 
+    /**
+     * getColumnTimezonePreference for date specific columns
+     */
+    protected function getColumnTimezonePreference($column, $default = true): bool
+    {
+        // @deprecated API
+        if (!empty($column->config['ignoreTimezone'])) {
+            return false;
+        }
+
+        return (bool) $column->getConfig('useTimezone', $default);
+    }
+
     //
     // Value processing
     //
@@ -1381,12 +1379,9 @@ class Lists extends WidgetBase
         $options = [
             'defaultValue' => $value,
             'format' => $column->format,
-            'formatAlias' => 'dateTimeLongMin'
+            'formatAlias' => 'dateTimeLongMin',
+            'useTimezone' => $this->getColumnTimezonePreference($column),
         ];
-
-        if (!empty($column->config['ignoreTimezone'])) {
-            $options['ignoreTimezone'] = true;
-        }
 
         return Backend::dateTime($dateTime, $options);
     }
@@ -1409,12 +1404,9 @@ class Lists extends WidgetBase
         $options = [
             'defaultValue' => $value,
             'format' => $column->format,
-            'formatAlias' => 'time'
+            'formatAlias' => 'time',
+            'useTimezone' => $this->getColumnTimezonePreference($column, false),
         ];
-
-        if (!empty($column->config['ignoreTimezone'])) {
-            $options['ignoreTimezone'] = true;
-        }
 
         return Backend::dateTime($dateTime, $options);
     }
@@ -1440,12 +1432,9 @@ class Lists extends WidgetBase
         $options = [
             'defaultValue' => $value,
             'format' => $column->format,
-            'formatAlias' => 'dateLongMin'
+            'formatAlias' => 'dateLongMin',
+            'useTimezone' => $this->getColumnTimezonePreference($column, false),
         ];
-
-        if (!empty($column->config['ignoreTimezone'])) {
-            $options['ignoreTimezone'] = true;
-        }
 
         return Backend::dateTime($dateTime, $options);
     }
@@ -1465,12 +1454,9 @@ class Lists extends WidgetBase
 
         $options = [
             'defaultValue' => $value,
-            'timeSince' => true
+            'timeSince' => true,
+            'useTimezone' => $this->getColumnTimezonePreference($column),
         ];
-
-        if (!empty($column->config['ignoreTimezone'])) {
-            $options['ignoreTimezone'] = true;
-        }
 
         return Backend::dateTime($dateTime, $options);
     }
@@ -1490,12 +1476,9 @@ class Lists extends WidgetBase
 
         $options = [
             'defaultValue' => $value,
-            'timeTense' => true
+            'timeTense' => true,
+            'useTimezone' => $this->getColumnTimezonePreference($column),
         ];
-
-        if (!empty($column->config['ignoreTimezone'])) {
-            $options['ignoreTimezone'] = true;
-        }
 
         return Backend::dateTime($dateTime, $options);
     }
@@ -1568,11 +1551,6 @@ class Lists extends WidgetBase
      */
     public function setSearchTerm($term, $resetPagination = false)
     {
-        // Show or hide tree
-        $this->showTree = empty($term)
-            ? $this->getConfig('showTree')
-            : false;
-
         // Reset pagination
         if ($resetPagination) {
             $this->currentPageNumber = 1;
@@ -1728,6 +1706,14 @@ class Lists extends WidgetBase
     }
 
     /**
+     * useSorting
+     */
+    protected function useSorting(): bool
+    {
+        return true;
+    }
+
+    /**
      * Returns the current sort direction or default of 'asc'
      */
     public function getSortDirection()
@@ -1844,57 +1830,6 @@ class Lists extends WidgetBase
         }
 
         return array_merge($columns, $this->getVisibleColumns());
-    }
-
-    //
-    // Tree
-    //
-
-    /**
-     * Validates the model and settings if showTree is used
-     * @return void
-     */
-    public function validateTree()
-    {
-        if (!$this->showTree) {
-            return;
-        }
-
-        $this->showSorting = $this->showPagination = false;
-
-        if (!$this->model->methodExists('getChildren')) {
-            throw new ApplicationException(
-                'To display list as a tree, the specified model must have a method "getChildren"'
-            );
-        }
-
-        if (!$this->model->methodExists('getChildCount')) {
-            throw new ApplicationException(
-                'To display list as a tree, the specified model must have a method "getChildCount"'
-            );
-        }
-    }
-
-    /**
-     * Checks if a node (model) is expanded in the session.
-     * @param  Model $node
-     * @return boolean
-     */
-    public function isTreeNodeExpanded($node)
-    {
-        return $this->getSession('tree_node_status_' . $node->getKey(), $this->treeExpanded);
-    }
-
-    /**
-     * Sets a node (model) to an expanded or collapsed state, stored in the
-     * session, then renders the list again.
-     * @return string List HTML contents.
-     */
-    public function onToggleTreeNode()
-    {
-        $this->putSession('tree_node_status_' . post('node_id'), post('status') ? 0 : 1);
-
-        return $this->onRefresh();
     }
 
     //

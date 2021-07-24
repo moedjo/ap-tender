@@ -104,7 +104,7 @@ abstract class Skin
             return self::$skinCache;
         }
 
-        $skinClass = Config::get('backend.skin');
+        $skinClass = Config::get('backend.skin', \Backend\Skins\Standard::class);
         $skinObject = new $skinClass();
         return self::$skinCache = $skinObject;
     }

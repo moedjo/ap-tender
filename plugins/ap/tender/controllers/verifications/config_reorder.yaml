@@ -1,0 +1,5 @@
+title: 'ap.tender::lang.verification.order'
+modelClass: Ap\Tender\Models\Verification
+nameFrom: displayOrder
+toolbar:
+    buttons: reorder_toolbar

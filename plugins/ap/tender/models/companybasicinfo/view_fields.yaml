@@ -102,6 +102,7 @@ fields:
                     type: text
                     placeholder: Komisaris
     konsorsium_role:
+        disabled: true
         label: 'ap.tender::lang.company.konsorsium_role'
         type: text
         span: left
@@ -119,6 +120,7 @@ fields:
             field: konsorsium
             condition: value[1]
     konsorsium_total:
+        disabled: true
         label: 'Jumlah Perusahaan'
         type: text
         span: left
@@ -129,6 +131,7 @@ fields:
             field: konsorsium
             condition: value[1]
     konsorsium_name:
+        disabled: true
         label: 'Nama Wakil Hukum'
         type: text
         span: right
@@ -139,6 +142,7 @@ fields:
             field: konsorsium
             condition: value[1]
     konsorsium_function:
+        disabled: true
         label: 'Fungsi Dalam Perusahaan'
         type: text
         span: left

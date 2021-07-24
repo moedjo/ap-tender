@@ -152,7 +152,6 @@ class ListController extends ControllerBehavior
             'showSorting',
             'showSetup',
             'showCheckboxes',
-            'showTree',
             'treeExpanded',
             'customViewPath',
         ];
@@ -166,7 +165,12 @@ class ListController extends ControllerBehavior
         /*
          * List Widget with extensibility
          */
-        $widget = $this->makeWidget('Backend\Widgets\Lists', $columnConfig);
+        if ($listConfig->showTree ?? false) {
+            $widget = $this->makeWidget('Backend\Widgets\ListTree', $columnConfig);
+        }
+        else {
+            $widget = $this->makeWidget('Backend\Widgets\Lists', $columnConfig);
+        }
 
         $widget->bindEvent('list.extendColumns', function () use ($widget) {
             $this->controller->listExtendColumns($widget);

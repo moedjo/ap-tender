@@ -57,7 +57,41 @@ class Company extends Model
             'table' => 'ap_tender_companies_fields',
             'key'      => 'company_id',
             'otherKey' => 'field_id'
-        ]
+        ],
+        'verification_legals' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_companies_verifications',
+            'key'      => 'company_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'legal'",
+            'pivot' => [
+                'on_legal_note',
+                'on_legal_check'
+            ]
+        ],
+        'verification_finances' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_companies_verifications',
+            'key'      => 'company_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'finance'",
+            'pivot' => [
+                'on_finance_note',
+                'on_finance_check'
+            ]
+        ],
+        'verification_commercials' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_companies_verifications',
+            'key'      => 'company_id',
+            'otherKey' => 'verification_id',
+            'conditions' => "type = 'commercial'",
+            'pivot' => [
+                'on_commercial_note',
+                'on_commercial_check'
+            ]
+        ],
+        
     ];
 
     public $attachOne = [
@@ -69,8 +103,6 @@ class Company extends Model
         'doc_finance_other' => ['System\Models\File', 'public' => false],
         'doc_finance_collaborate' => ['System\Models\File', 'public' => false],
 
-
-        
         'doc_basic_npwp' => ['System\Models\File', 'public' => false],
         'doc_basic_ktp' => ['System\Models\File', 'public' => false],
         'doc_basic_sk' => ['System\Models\File', 'public' => false],
@@ -90,4 +122,12 @@ class Company extends Model
         'commissioners',
         'directors',
     ]; 
+
+    
+    public function getDisplayFieldsAttribute()
+    {
+            return 'test';
+
+    }
+
 }

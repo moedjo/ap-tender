@@ -1,5 +1,10 @@
-<div class="control-list list-scrollable" data-control="listwidget">
-    <table class="table data" data-control="rowlink">
+<?php
+    $useRowLink = $this->hasRecordAction();
+?>
+<div
+    class="control-list list-scrollable <?= $useRowLink ? 'list-rowlink' : '' ?>"
+    data-control="listwidget">
+    <table class="table data" <?= $useRowLink ? 'data-control="rowlink"' : '' ?>>
         <thead>
             <?= $this->makePartial('list_head_row') ?>
         </thead>

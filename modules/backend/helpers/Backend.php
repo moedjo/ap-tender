@@ -149,8 +149,15 @@ class Backend
             'jsFormat' => null,
             'timeTense' => false,
             'timeSince' => false,
+            'useTimezone' => true,
+            // @deprecated API
             'ignoreTimezone' => false,
         ], $options));
+
+        // @deprecated API
+        if ($ignoreTimezone) {
+            $useTimezone = false;
+        }
 
         if (!$dateTime) {
             return '';
@@ -170,7 +177,7 @@ class Backend
             'data-datetime-control' => 1,
         ];
 
-        if ($ignoreTimezone) {
+        if (!$useTimezone) {
             $attributes['data-ignore-timezone'] = true;
         }
 
