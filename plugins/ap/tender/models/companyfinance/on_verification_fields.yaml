@@ -1,0 +1,107 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.financial_ability'
+        type: section
+    finances:
+        label: 'ap.tender::lang.company.financial_ability'
+        span: full
+        path: field_finances
+        context:
+            - update
+        type: partial
+    _section2:
+        label: 'ap.tender::lang.company_finance.doc_finance'
+        type: section
+    doc_finance_sppkp:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_spt:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_blp:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_bsp:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_sklp:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_other:
+        label: 'ap.tender::lang.company_finance.doc_finance_sppkp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_finance_collaborate:
+        label: 'Bukti Dokumen Kerjasama'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        hidden: true
+        required: true
+        disabled: true
+    verification_finances:
+        label: 'Verifikasi Data Finance'
+        span: full
+        path: field_verification_finances
+        context:
+            - update
+        type: partial

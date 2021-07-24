@@ -18,7 +18,7 @@ class OnVerificationLegals extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_legals'];
+    public $requiredPermissions = ['ap_tender_access_commercials'];
 
     public function __construct()
     {
@@ -61,7 +61,7 @@ class OnVerificationLegals extends Controller
 
     public function formBeforeSave($model)
     {
-        $model->load('verification_legals');
+        $model->load('verification_commercials');
         $verification_legals = $model->verification_legals;
         $status = 'approve';
         foreach ($verification_legals as $verification_legal) {

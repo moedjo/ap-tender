@@ -8,7 +8,7 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLegals extends Controller
+class OnVerificationFinances extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -18,7 +18,7 @@ class OnVerificationLegals extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_legals'];
+    public $requiredPermissions = ['ap_tender_access_finances'];
 
     public function __construct()
     {
@@ -61,15 +61,15 @@ class OnVerificationLegals extends Controller
 
     public function formBeforeSave($model)
     {
-        $model->load('verification_legals');
-        $verification_legals = $model->verification_legals;
+        $model->load('verification_finances');
+        $verification_finances = $model->verification_finances;
         $status = 'approve';
-        foreach ($verification_legals as $verification_legal) {
-            if (!$verification_legal->pivot->on_legal_check) {
+        foreach ($verification_finances as $verification_finance) {
+            if (!$verification_finance->pivot->on_finance_check) {
                 $status = 'reject';
                 break;
             }
         }
-        $model->on_legal_status = $status;
+        $model->on_finance_status = $status;
     }
 }

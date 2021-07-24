@@ -59,15 +59,25 @@ class Company extends Model
             'key'      => 'company_id',
             'otherKey' => 'field_id'
         ],
+        'verifications' => [
+            'Ap\Tender\Models\Verification',
+            'table' => 'ap_tender_companies_verifications',
+            'key'      => 'company_id',
+            'otherKey' => 'verification_id',
+            'timestamps' => true,
+        ],
         'verification_legals' => [
             'Ap\Tender\Models\Verification',
             'table' => 'ap_tender_companies_verifications',
             'key'      => 'company_id',
             'otherKey' => 'verification_id',
             'conditions' => "type = 'legal'",
+            'timestamps' => true,
             'pivot' => [
-                'on_legal_note',
-                'on_legal_check'
+                'on_note',
+                'on_check',
+                'on_last_note',
+                'on_last_check'
             ]
         ],
         'verification_finances' => [
@@ -76,9 +86,12 @@ class Company extends Model
             'key'      => 'company_id',
             'otherKey' => 'verification_id',
             'conditions' => "type = 'finance'",
+            'timestamps' => true,
             'pivot' => [
-                'on_finance_note',
-                'on_finance_check'
+                'on_note',
+                'on_check',
+                'on_last_note',
+                'on_last_check'
             ]
         ],
         'verification_commercials' => [
@@ -87,9 +100,12 @@ class Company extends Model
             'key'      => 'company_id',
             'otherKey' => 'verification_id',
             'conditions' => "type = 'commercial'",
+            'timestamps' => true,
             'pivot' => [
-                'on_commercial_note',
-                'on_commercial_check'
+                'on_note',
+                'on_check',
+                'on_last_note',
+                'on_last_check'
             ]
         ],
         

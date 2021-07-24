@@ -1,38 +1,8 @@
 verification_legals:
     label: 'Verifikasi'
     view:
-        list: 
-            columns:
-                number:
-                    label: 'No.'
-                    sortable: false
-                name:
-                    label: 'Kategori'
-                    sortable: false
-                description:
-                    label: 'General Information'
-                    sortable: false
-                pivot[on_legal_check]:
-                    label: Ya/Tidak
-                    type: switch
-                    sortable: false
-                pivot[on_legal_note]:
-                    label: Catatan
-                    sortable: false
+        list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
         showCheckboxes: false
     pivot:
-        form: 
-            fields:
-                name:
-                    label: 'Kategori'
-                    disabled: true
-                description:
-                    label: 'General Information'
-                    disabled: true
-                pivot[on_legal_check]:
-                    label: Ya/Tidak
-                    type: checkbox
-                    default: false
-                pivot[on_legal_note]:
-                    label: Catatan
+        form: $/ap/tender/models/verification/on_verification_fields.yaml

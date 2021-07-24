@@ -1,0 +1,13 @@
+fields:
+    name:
+        label: 'Kategori'
+        disabled: true
+    description:
+        label: 'General Information'
+        disabled: true
+    pivot[on_check]:
+        label: Ya/Tidak
+        type: checkbox
+        default: false
+    pivot[on_note]:
+        label: Catatan

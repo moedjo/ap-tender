@@ -42,4 +42,22 @@ class OnVerificationTenants extends Controller
     {
         return $this->extendQuery($query);
     }
+
+
+    public function listOverrideRecordUrl($record, $definition = null)
+    {
+
+        $user = $this->user;
+        if ($user->hasPermission('ap_tender_access_legals')) {
+            return 'ap/tender/onverificationlegals/update/' . $record->id;
+        }
+
+        if ($user->hasPermission('ap_tender_access_finances')) {
+            return 'ap/tender/onverificationfinances/update/' . $record->id;
+        }
+
+        if ($user->hasPermission('ap_tender_access_commercials')) {
+            return 'ap/tender/onverificationcommercials/update/' . $record->id;
+        }
+    }
 }

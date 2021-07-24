@@ -13,7 +13,7 @@
     - builder_table_create_ap_tender_companies_summaries.php
     - builder_table_create_ap_tender_companies_fields.php
     - seeder.php
+    - builder_table_create_ap_tender_verifications.php
 1.0.2:
     - 'Created table ap_tender_companies_verifications'
-    - builder_table_create_ap_tender_verifications.php
     - builder_table_create_ap_tender_companies_verifications.php

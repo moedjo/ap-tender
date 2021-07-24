@@ -1,0 +1,328 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.info'
+        type: section
+    name:
+        label:  'ap.tender::lang.company.name'
+        placeholder: 'ap.tender::lang.company.name'
+        type: text
+        span: left
+        disabled: true
+    npwp:
+        label: 'ap.tender::lang.company.npwp'
+        type: text
+        span: right
+        disabled: true
+    konsorsium:
+        disabled: true
+        label: 'ap.tender::lang.company_basic_info.konsorsium_comment'
+        type: radio
+        default: 0
+        options:
+            0: 'ap.tender::lang.company_basic_info.non_konsorsium'
+            1: 'ap.tender::lang.company_basic_info.konsorsium'
+    _section2:
+        label: 'ap.tender::lang.company_basic_info.single'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[0]
+    _section2b:
+        label: 'ap.tender::lang.company_basic_info.for_konsorium'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    address:
+        label: 'ap.tender::lang.company.address'
+        type: textarea
+        size: small
+        span: left
+        placeholder: 'ap.tender::lang.company.address'
+        disabled: true
+    region:
+        disabled: true
+        label: 'ap.tender::lang.region.singular'
+        type: recordfinder
+        list: ~/plugins/ap/tender/models/region/columns.yaml
+        recordsPerPage: 10
+        nameFrom: name
+        span: right
+        disabled: true
+    phone_number:
+        disabled: true
+        label: 'ap.tender::lang.company.phone_number'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.phone_number'
+    fax_number:
+        disabled: true
+        label: 'ap.tender::lang.company.fax_number'
+        type: text
+        span: right
+        placeholder: 'ap.tender::lang.company.fax_number'
+    email:
+        disabled: true
+        label: 'ap.tender::lang.company.email'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.email'
+    website:
+        disabled: true
+        label: 'ap.tender::lang.company.website'
+        type: text
+        span: right
+        placeholder: 'ap.tender::lang.company.website'
+    directors:
+        disabled: true
+        label: Direktur
+        prompt: Add new direktur
+        span: left
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Direktur
+                    span: full
+                    type: text
+                    placeholder: Direktur
+    commissioners:
+        disabled: true
+        label: Komisaris
+        prompt: Add new komisaris
+        span: right
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Komisaris
+                    span: full
+                    type: text
+                    placeholder: Komisaris
+    konsorsium_role:
+        disabled: true
+        label: 'ap.tender::lang.company.konsorsium_role'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.konsorsium_role'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section5:
+        label: 'Perwakilan Hukum Konsorsium'
+        type: section
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_total:
+        disabled: true
+        label: 'Jumlah Perusahaan'
+        type: text
+        span: left
+        placeholder: 'Jumlah Perusahaan'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_name:
+        disabled: true
+        label: 'Nama Wakil Hukum'
+        type: text
+        span: right
+        placeholder: 'Nama Wakil Hukum'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    konsorsium_function:
+        disabled: true
+        label: 'Fungsi Dalam Perusahaan'
+        type: text
+        span: left
+        placeholder: 'Fungsi Dalam Perusahaan'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    _section6:
+        label: 'Kualifikasi Perusahaan'
+        type: section
+    fields:
+        label: Kategori Bisnis
+        type: taglist
+        mode: relation
+        nameFrom: name
+        span: full
+        placeholder: 'Kategori Bisnis'
+        disabled: true
+    business_activity:
+        label: 'Kegiatan Usaha Pokok'
+        type: text
+        span: left
+        placeholder: 'Kegiatan Usaha Pokok'
+        disabled: true
+    kbli:
+        label: 'Bidang Usaha (KBLI)'
+        type: text
+        span: left
+        placeholder: 'Bidang Usaha (KBLI)'
+        disabled: true
+    _section3:
+        label: 'ap.tender::lang.company.contact'
+        type: section
+    contact_full_name:
+        label: 'ap.tender::lang.company.contact_full_name'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.contact_full_name'
+        disabled: true
+    contact_position:
+        label: 'ap.tender::lang.company.contact_position'
+        type: relation
+        span: right
+        placeholder: 'ap.tender::lang.company.contact_position'
+        disabled: true
+    contact_phone_number:
+        label: 'ap.tender::lang.company.contact_phone_number'
+        type: text
+        span: left
+        placeholder: 'ap.tender::lang.company.contact_phone_number'
+        disabled: true
+    contact_email:
+        label: 'Alamat Email'
+        type: text
+        span: right
+        placeholder: 'Alamat Email'
+        disabled: true
+    _section4:
+        label: 'ap.tender::lang.company_basic_info.doc_legal'
+        type: section
+    doc_basic_akta:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_akta'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        maxFiles: 5
+        disabled: true
+    doc_basic_siup:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_siup'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_tdp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_tdp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_domisili:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_domisili'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_npwp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_npwp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_ktp:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_ktp'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_sk:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_sk'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_other:
+        label: 'ap.tender::lang.company_basic_info.doc_basic_other'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: right
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        disabled: true
+    doc_basic_konsorsium:
+        disabled: true
+        label: 'Surat Perjanjian Konsorsium'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        commentAbove: 'ap.tender::lang.global.doc_comment'
+        required: true
+        trigger:
+            action: show
+            field: konsorsium
+            condition: value[1]
+    verification_legals:
+        label: 'Verifikasi Data Legal'
+        span: full
+        path: field_verification_legals
+        context:
+            - update
+        type: partial
