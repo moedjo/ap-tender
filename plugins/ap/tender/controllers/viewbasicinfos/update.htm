@@ -1,7 +1,11 @@
 <?php if (!$this->fatalError): ?>
 
 <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <?php if ($dataActive == 'active'): ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card-active"  style="max-width: 30rem;">
+    <?php else: ?>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 30rem;">
+    <?php endif ?>
         <div class="card-header">
             <a href="#">
                 <div class="circle">1</div>
@@ -9,20 +13,20 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 30rem;">
         <div class="card-header">
                 <div class="circle">2</div>
                 <p><?= e(trans('ap.tender::lang.card.second')) ?></p>
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 30rem;">
         <div class="card-header">
                 <div class="circle">3</div>
                 <p><?= e(trans('ap.tender::lang.card.tree')) ?></p>
             
         </div>
     </div>
-    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 28rem;">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-6 panel-card"  style="max-width: 30rem;">
         <div class="card-header">
                 <div class="circle">4</div>
                 <p><?= e(trans('ap.tender::lang.card.four')) ?></p>

@@ -2,5 +2,5 @@ name: 'ap.tender::lang.company.info'
 form: $/ap/tender/models/companybasicinfo/view_fields.yaml
 modelClass: Ap\Tender\Models\CompanyBasicInfo
 update:
-    redirect: ap/tender/companyexperiences/update/:id
-    redirectClose: ap/tender/companyexperiences/update/:id
+    redirect: ap/tender/viewexperiences/update/:id
+    redirectClose: ap/tender/viewexperiences/update/:id

@@ -15,7 +15,7 @@ use Illuminate\Support\Str;
 use October\Rain\Support\Facades\Flash;
 use Response;
 
-class ViewBasicInfos extends Controller
+class ViewExperiences extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController'
@@ -30,15 +30,6 @@ class ViewBasicInfos extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tenants');
-
-        $url = url()->current();
-        $search = "viewbasicinfos";
-        $active = preg_match("/{$search}/i", $url);
-        if ($active == 1) {
-            $this->vars['dataActive'] = 'active';
-        } else {
-            $this->vars['dataActive'] = 'failed';
-        }
     }
 
 
@@ -91,7 +82,7 @@ class ViewBasicInfos extends Controller
     {
         $user = $this->user;
         $company = Company::where('user_id', $user->id)->first();
-        return Redirect::to(Backend::url('ap/tender/viewbasicinfos/update/'.$company->id));
+        return Redirect::to(Backend::url('ap/tender/viewexperiences/update/'.$company->id));
     }
 
 }

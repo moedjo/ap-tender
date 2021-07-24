@@ -1,0 +1,6 @@
+name: 'ap.tender::lang.company.experience'
+form: $/ap/tender/models/companyexperience/view_fields.yaml
+modelClass: Ap\Tender\Models\CompanyExperience
+update:
+    redirect: ap/tender/companyfinances/update/:id
+    redirectClose: ap/tender/companyfinances/update/:id
