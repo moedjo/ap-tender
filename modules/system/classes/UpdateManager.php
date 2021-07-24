@@ -575,7 +575,7 @@ class UpdateManager
         $plugin = $this->pluginManager->findByIdentifier($name);
 
         if (!$plugin) {
-            $this->note('<error>Unable to find:</error> ' . $name);
+            $this->note('<error>Unable to find</error> ' . $name);
             return $this;
         }
 
@@ -596,16 +596,43 @@ class UpdateManager
         $plugin = $this->pluginManager->findByIdentifier($name);
 
         if (!$plugin && $this->versionManager->purgePlugin($name)) {
-            $this->note('<info>Purged from database:</info> ' . $name);
+            $this->note('<info>Purged from database</info> ' . $name);
             return $this;
         }
 
         if ($this->versionManager->removePlugin($plugin)) {
-            $this->note('<info>Rolled back:</info> ' . $name);
+            $this->note('<info>Rolled back</info> ' . $name);
             return $this;
         }
 
-        $this->note('<error>Unable to find:</error> ' . $name);
+        $this->note('<error>Unable to find</error> ' . $name);
+        return $this;
+    }
+
+    /**
+     * rollbackPlugin removes an existing plugin database and version record
+     */
+    public function rollbackPluginToVersion(string $name, string $toVersion): UpdateManager
+    {
+        $toVersion = ltrim($toVersion, 'v');
+
+        $plugin = $this->pluginManager->findByIdentifier($name);
+
+        if (!$plugin && $this->versionManager->purgePlugin($name)) {
+            $this->note('<info>Purged from database</info> ' . $name);
+            return $this;
+        }
+
+        if (!$this->versionManager->hasVersion($plugin, $toVersion)) {
+            throw new ApplicationException(Lang::get('system::lang.updates.plugin_version_not_found'));
+        }
+
+        if ($this->versionManager->removePluginToVersion($plugin, $toVersion)) {
+            $this->note("<info>Rolled back</info> ${name} <info>to version</info> {$toVersion}");
+            return $this;
+        }
+
+        $this->note('<error>Unable to find</error> ' . $name);
         return $this;
     }
 

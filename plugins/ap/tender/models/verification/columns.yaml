@@ -1,0 +1,26 @@
+columns:
+    type:
+        label: 'Tipe'
+        type: text
+    number:
+        label: 'No.'
+        type: text
+        searchable: true
+        sortable: true
+    name:
+        label: 'Kategori'
+        type: text
+    description:
+        label: 'General Information'
+        type: text
+    fields:
+        label: 'Fields'
+        type: text
+    created_at:
+        label: 'ap.tender::lang.global.created_at'
+        type: datetime
+        invisible: true
+    updated_at:
+        label: 'ap.tender::lang.global.updated_at'
+        type: datetime
+        invisible: true

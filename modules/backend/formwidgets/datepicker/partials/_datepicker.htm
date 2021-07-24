@@ -16,7 +16,7 @@
         <?php if ($yearRange): ?>data-year-range="<?= $yearRange ?>"<?php endif ?>
         <?php if ($firstDay): ?>data-first-day="<?= $firstDay ?>"<?php endif ?>
         data-show-week-number="<?= $showWeekNumber ?>"
-        <?php if ($ignoreTimezone): ?>data-ignore-timezone<?php endif ?>
+        <?php if (!$useTimezone): ?>data-ignore-timezone<?php endif ?>
     >
 
         <?php if ($mode == 'date'): ?>

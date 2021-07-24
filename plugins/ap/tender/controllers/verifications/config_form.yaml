@@ -1,0 +1,10 @@
+name: 'ap.tender::lang.verification.singular'
+form: $/ap/tender/models/verification/fields.yaml
+modelClass: Ap\Tender\Models\Verification
+defaultRedirect: ap/tender/verifications
+create:
+    redirect: 'ap/tender/verifications/update/:id'
+    redirectClose: ap/tender/verifications
+update:
+    redirect: ap/tender/verifications
+    redirectClose: ap/tender/verifications

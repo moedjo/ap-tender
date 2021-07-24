@@ -1,4 +1,4 @@
-<?php namespace System\Console\OctoberUtil;
+<?php namespace System\Console;
 
 use Db;
 use Schema;

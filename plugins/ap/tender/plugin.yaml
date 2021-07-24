@@ -32,6 +32,21 @@ permissions:
     ap_tender_access_user_tenant:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_user_tenant'
+    ap_tender_access_legals:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_legals'
+    ap_tender_access_finances:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_finances'
+    ap_tender_access_commercials:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_commercials'
+    ap_tender_access_on_verification_tenants:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_on_verification_tenants'
+    ap_tender_access_verifications:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_verifications'
 navigation:
     master:
         label: 'Master Data'
@@ -83,6 +98,12 @@ navigation:
                 icon: icon-tasks
                 permissions:
                     - ap_tender_access_experience_categories
+            verifications:
+                label: 'Daftar Verifikasi'
+                url: ap/tender/verifications
+                icon: icon-sitemap
+                permissions:
+                    - ap_tender_access_verifications
     tenants:
         label: 'Daftar Tenant'
         url: ap/tender/companies
@@ -95,3 +116,16 @@ navigation:
         icon: icon-angle-double-down
         permissions:
             - ap_tender_access_user_tenant
+    verification-tenants:
+        label: Verifikasi
+        url: ap/tender/onverificationtenants
+        icon: icon-life-ring
+        permissions:
+            - ap_tender_access_on_verification_tenants
+        sideMenu:
+            on-verification-tenants:
+                label: Evaluasi
+                url: ap/tender/onverificationtenants
+                icon: icon-sort
+                permissions:
+                    - ap_tender_access_on_verification_tenants

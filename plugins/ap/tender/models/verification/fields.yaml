@@ -1,0 +1,32 @@
+fields:
+    type:
+        label: Tipe
+        type: balloon-selector
+        default: legal
+        options:
+            legal: Legal
+            finance: Finance
+            commercial: Commercial
+    fields:
+        label: Fields
+        type: taglist
+        options:
+            - name
+            - npwp
+            - konsorsium
+    number:
+        label: 'No.'
+        span: full
+        placeholder: 'No.'
+        type: text
+    name:
+        label: 'Kategori'
+        span: full
+        placeholder: 'Kategori'
+        type: text
+    description:
+        label: 'General Information'
+        size: ''
+        span: full
+        placeholder: 'General Information'
+        type: textarea

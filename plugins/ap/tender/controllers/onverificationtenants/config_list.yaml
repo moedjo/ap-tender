@@ -1,0 +1,12 @@
+list: $/ap/tender/models/company/on_verification_columns.yaml
+modelClass: Ap\Tender\Models\Company
+title: Daftar Tenant
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'ap/tender/onverificationlegals/update/:id'

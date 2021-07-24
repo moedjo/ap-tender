@@ -103,11 +103,27 @@
         'delete' => 'Hapus Badan Usaha',
         'order' => 'Urutan Badan Usaha'
     ],
+    'verification' => [
+        'singular' => 'Verifikasi',
+        'plural' => 'Daftar Verifikasi',
+
+        'id' => 'Id Verifikasi',
+        'name' => 'Nama Badan Usaha',
+        'description' => 'Keterangan',
+
+        'create' => 'Buat Verifikasi',
+        'update' => 'Ubah Verifikasi',
+        'delete' => 'Hapus Verifikasi',
+        'order' => 'Urutan Verifikasi'
+    ],
     'global' => [
         'id' => 'Id',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
         'business_entity' => 'Badan Usaha',
+        'legal' => 'Legal',
+        'finance' => 'Finance',
+        'commercial' => 'Commercial',
         'yes' => 'Ya',
         'no' => 'Tidak',
         'register' => 'Daftar',

@@ -152,7 +152,7 @@ abstract class PluginTestCase extends TestCase
         /*
          * Execute the command
          */
-        Artisan::call('plugin:refresh', ['name' => $code]);
+        Artisan::call('plugin:refresh', ['name' => $code, '--force' => true]);
     }
 
     /**

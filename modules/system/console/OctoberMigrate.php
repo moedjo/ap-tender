@@ -46,7 +46,7 @@ class OctoberMigrate extends Command
      */
     protected function handleRollback()
     {
-        if (!$this->confirm('This will DESTROY all database tables.')) {
+        if ($this->userAbortedFromWarning()) {
             return;
         }
 
@@ -57,12 +57,31 @@ class OctoberMigrate extends Command
     }
 
     /**
+     * userAbortedFromWarning
+     */
+    protected function userAbortedFromWarning(): bool
+    {
+        // Bypass from force
+        if ($this->option('force', false)) {
+            return false;
+        }
+
+        // Warn user
+        if (!$this->confirm('This will DESTROY all database tables.')) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
      * getOptions get the console command options
      */
     protected function getOptions()
     {
         return [
-            ['rollback', null, InputOption::VALUE_NONE, 'Destroys all database tables and records.'],
+            ['force', 'f', InputOption::VALUE_NONE, 'Force the operation to run.'],
+            ['rollback', 'r', InputOption::VALUE_NONE, 'Destroys all database tables and records.'],
         ];
     }
 }
