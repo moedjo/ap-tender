@@ -197,7 +197,7 @@
         'konsorsium_role' => 'Peran Dalam Perusahaan',
         
         'pic' => 'Penanggung Jawab Perusahaan',
-        'pic_name' => 'Nama',
+        'pic_full_name' => 'Nama',
         'pic_position' => 'Jabatan',
         'pic_phone_number' => 'Nomor Handphone',
         'pic_ktp' => 'Nomor KTP',

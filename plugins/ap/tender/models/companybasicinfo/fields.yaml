@@ -159,11 +159,11 @@ fields:
     _section7:
         label: 'ap.tender::lang.company.pic'
         type: section      
-    pic_name:
-        label: 'ap.tender::lang.company.pic_name'
+    pic_full_name:
+        label: 'ap.tender::lang.company.pic_full_name'
         type: text
         span: left
-        placeholder: 'ap.tender::lang.company.pic_name'
+        placeholder: 'ap.tender::lang.company.pic_full_name'
     pic_position:
         label: 'ap.tender::lang.company.pic_position'
         type: relation

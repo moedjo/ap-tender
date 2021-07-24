@@ -178,7 +178,7 @@ fields:
     _section7:
         label: 'ap.tender::lang.company.pic'
         type: section      
-    pic_name:
+    pic_full_name:
         label: 'ap.tender::lang.company.pic_name'
         type: text
         span: left
