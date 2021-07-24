@@ -32,6 +32,15 @@ class ViewExperiences extends Controller
     {
         parent::__construct();
         BackendMenu::setContext('Ap.Tender', 'tenants');
+
+        $url = url()->current();
+        $search = "viewexperiences";
+        $active = preg_match("/{$search}/i", $url);
+        if ($active == 1) {
+            $this->vars['dataActive'] = 'active';
+        } else {
+            $this->vars['dataActive'] = 'failed';
+        }
     }
 
 

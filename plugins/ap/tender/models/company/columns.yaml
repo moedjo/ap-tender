@@ -1,6 +1,6 @@
 columns:
     id:
-        label: AAa
+        label: No
         type: number
     name:
         label: Nama Perusahaan
