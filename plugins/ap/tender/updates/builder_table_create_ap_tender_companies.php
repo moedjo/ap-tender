@@ -36,6 +36,7 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->string('pic_phone_number')->nullable();
             $table->string('pic_email')->nullable();
             $table->string('pic_ktp')->nullable();
+            
             $table->integer('pic_position_id')->unsigned()->nullable();
             $table->foreign('pic_position_id')->references('id')
                 ->on('ap_tender_positions');

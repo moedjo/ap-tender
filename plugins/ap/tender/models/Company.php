@@ -25,6 +25,7 @@ class Company extends Model
     public $belongsTo = [
         'business_entity' => 'Ap\Tender\Models\BusinessEntity',
         'contact_position' => 'Ap\Tender\Models\Position',
+        'pic_position' => 'Ap\Tender\Models\Position',
         'region' => [
             'Ap\Tender\Models\Region',
             'key' => 'region_id',

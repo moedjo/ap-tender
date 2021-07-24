@@ -29,6 +29,9 @@ class CompanyBasicInfo extends Company
         'contact_position' => 'required',
         'contact_phone_number' => 'required',
         'contact_email' => 'required',
+
+        
+
         'doc_basic_akta' => 'required',
         'doc_basic_siup' => 'required',
         'doc_basic_tdp' => 'required',
