@@ -194,7 +194,15 @@
         'fax_number' => 'Nomor Fax',
         'email' => 'Email',
         'website' =>  'Website',
-        'konsorsium_role' => 'Peran Dalam Perusahaan'
+        'konsorsium_role' => 'Peran Dalam Perusahaan',
+        
+        'pic' => 'Penanggung Jawab Perusahaan',
+        'pic_name' => 'Nama',
+        'pic_position' => 'Jabatan',
+        'pic_phone_number' => 'Nomor Handphone',
+        'pic_ktp' => 'Nomor KTP',
+        'pic_email' => 'Email',
+
 
        
     ],

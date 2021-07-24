@@ -29,6 +29,11 @@ class CompanyBasicInfo extends Company
         'contact_position' => 'required',
         'contact_phone_number' => 'required',
         'contact_email' => 'required',
+        'pic_name' => 'required',
+        'pic_position' => 'required',
+        'pic_phone_number' => 'required',
+        'pic_ktp' => 'required',
+        'pic_email' => 'required',
 
         
 
