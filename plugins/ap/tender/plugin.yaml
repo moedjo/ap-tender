@@ -53,8 +53,7 @@ navigation:
         url: /
         icon: icon-align-left
         permissions:
-            - access_summaries
-            - access_fields
+            - ap_tender_access_summaries
         sideMenu:
             summaries:
                 label: 'ap.tender::lang.summary.plural'
