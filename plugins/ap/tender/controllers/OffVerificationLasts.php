@@ -5,10 +5,11 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Verification;
 use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLasts extends Controller
+class OffVerificationLasts extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -23,7 +24,7 @@ class OnVerificationLasts extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'on-verification-tenants');
+        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'off-verification-tenants');
     }
 
     public function update_onDelete($recordId = null)
@@ -44,7 +45,7 @@ class OnVerificationLasts extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query->where('status','pre_evaluated');
+        return $query->where('status','pre_clarificated');
     }
 
     public function formExtendQuery($query)
@@ -59,6 +60,12 @@ class OnVerificationLasts extends Controller
 
     public function formBeforeSave($model)
     {
-    
+        $model->status = 'short_listed';
+    }
+
+    public function formAfterSave($model)
+    {
+        $model->load('business_entity');
+        Event::fire('tenant.short.listed', [$model]);
     }
 }

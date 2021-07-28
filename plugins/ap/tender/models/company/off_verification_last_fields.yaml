@@ -1,0 +1,22 @@
+fields:
+    verification_legals:
+        label: 'Verifikasi Data Legal'
+        span: full
+        path: field_verification_legals
+        context:
+            - update
+        type: partial
+    verification_commercials:
+        label: 'Verifikasi Data Komersial'
+        span: full
+        path: field_verification_commercials
+        context:
+            - update
+        type: partial
+    verification_finances:
+        label: 'Verifikasi Data Finance'
+        span: full
+        path: field_verification_finances
+        context:
+            - update
+        type: partial

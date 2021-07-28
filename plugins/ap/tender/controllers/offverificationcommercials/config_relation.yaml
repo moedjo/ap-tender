@@ -1,0 +1,17 @@
+verification_commercials:
+    label: 'Verifikasi'
+    view:
+        list: $/ap/tender/models/verification/off_verification_columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    pivot:
+        form: $/ap/tender/models/verification/off_verification_fields.yaml
+experiences:
+    label: 'ap.tender::lang.company_experience.singular'
+    manage:
+        form: $/ap/tender/models/experience/fields.yaml
+        list: $/ap/tender/models/experience/columns.yaml
+    view:
+        list: $/ap/tender/models/experience/columns.yaml
+        toolbarButtons: create|delete
+        showCheckboxes: false

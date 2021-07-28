@@ -69,8 +69,6 @@ class OffVerificationLegals extends Controller
             }
         }
 
-       
-
         $model->off_legal_status = $status;
 
         if (

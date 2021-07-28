@@ -1,0 +1,5 @@
+name: 'Klarifikasi Tenant'
+form: $/ap/tender/models/companyfinance/off_verification_fields.yaml
+modelClass: Ap\Tender\Models\CompanyFinance
+update:
+    redirectClose: ap/tender/offverificationtenants

@@ -8,7 +8,9 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLasts extends Controller
+use function PHPUnit\Framework\isEmpty;
+
+class OffVerificationCommercials extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -23,7 +25,7 @@ class OnVerificationLasts extends Controller
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'on-verification-tenants');
+        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'off-verification-tenants');
     }
 
     public function update_onDelete($recordId = null)
@@ -43,8 +45,7 @@ class OnVerificationLasts extends Controller
 
     public function extendQuery($query)
     {
-        $user = $this->user;
-        return $query->where('status','pre_evaluated');
+        return $query->where('status','evaluated');
     }
 
     public function formExtendQuery($query)
@@ -54,11 +55,29 @@ class OnVerificationLasts extends Controller
 
     public function formExtendModel($model)
     {
-       
     }
 
     public function formBeforeSave($model)
     {
-    
+        $model->load('verification_commercials');
+        $verification_commercials = $model->verification_commercials;
+        $status = 'approve';
+        foreach ($verification_commercials as $verification_commercial) {
+            if (!$verification_commercial->pivot->off_check) {
+                $status = 'reject';
+                break;
+            }
+        }
+
+        $model->off_commercial_status = $status;
+
+        if (
+            $model->off_legal_status == 'approve' &&
+            $model->off_finance_status == 'approve' &&
+            $model->off_commercial_status == 'approve'
+        ) {
+
+            $model->status = 'pre_clarificated';
+        }
     }
 }

@@ -35,7 +35,7 @@ class OffVerificationTenants extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query->whereIn('status',['evaluated',]);
+        return $query->whereIn('status',['evaluated','pre_clarificated']);
     }
 
     public function listExtendQuery($query)

@@ -8,7 +8,9 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLasts extends Controller
+use function PHPUnit\Framework\isEmpty;
+
+class OffVerificationFinances extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -18,12 +20,12 @@ class OnVerificationLasts extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_commercials'];
+    public $requiredPermissions = ['ap_tender_access_finances'];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'on-verification-tenants');
+        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'off-verification-tenants');
     }
 
     public function update_onDelete($recordId = null)
@@ -43,8 +45,7 @@ class OnVerificationLasts extends Controller
 
     public function extendQuery($query)
     {
-        $user = $this->user;
-        return $query->where('status','pre_evaluated');
+        return $query->where('status','evaluated');
     }
 
     public function formExtendQuery($query)
@@ -54,11 +55,29 @@ class OnVerificationLasts extends Controller
 
     public function formExtendModel($model)
     {
-       
     }
 
     public function formBeforeSave($model)
     {
-    
+        $model->load('verification_finances');
+        $verification_finances = $model->verification_finances;
+        $status = 'approve';
+        foreach ($verification_finances as $verification_finance) {
+            if (!$verification_finance->pivot->off_check) {
+                $status = 'reject';
+                break;
+            }
+        }
+
+        $model->off_finance_status = $status;
+
+        if (
+            $model->off_legal_status == 'approve' &&
+            $model->off_finance_status == 'approve' &&
+            $model->off_commercial_status == 'approve'
+        ) {
+
+            $model->status = 'pre_clarificated';
+        }
     }
 }

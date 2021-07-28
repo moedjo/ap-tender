@@ -1,0 +1,5 @@
+name: 'Klarifikasi Akhir'
+form: $/ap/tender/models/company/off_verification_last_fields.yaml
+modelClass: Ap\Tender\Models\Company
+update:
+    redirectClose: ap/tender/offverificationtenants

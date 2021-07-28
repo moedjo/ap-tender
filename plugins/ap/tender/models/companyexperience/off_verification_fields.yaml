@@ -1,0 +1,18 @@
+fields:
+    _section1:
+        label: 'ap.tender::lang.company.experience'
+        type: section
+    experiences:
+        label: 'ap.tender::lang.company.experience'
+        span: full
+        path: field_experiences
+        context:
+            - update
+        type: partial
+    verification_commercials:
+        label: 'Verifikasi Data Komersial'
+        span: full
+        path: field_verification_commercials
+        context:
+            - update
+        type: partial

@@ -1,0 +1,5 @@
+name: 'Klarifikasi Komesial'
+form: $/ap/tender/models/companyexperience/off_verification_fields.yaml
+modelClass: Ap\Tender\Models\CompanyExperience
+update:
+    redirectClose: ap/tender/offverificationtenants

@@ -33,5 +33,13 @@ Event::listen('tenant.invite', function ($company) {
    
 });
 
+Event::listen('tenant.short.listed', function ($company) {
+
+   Mail::queue('ap.tender::mail.tenant-short-listed', $company->toArray(), function ($message) use ($company) {
+      $message->to($company->email, $company->name);
+   });
+   
+});
+
 
 
