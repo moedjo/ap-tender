@@ -1,1 +1,5 @@
-<?= $this->relationRender('verification_finances', ['readOnly' => false]) ?>
+<?php if(empty($model->on_finance_status)): ?>
+    <?= $this->relationRender('verification_finances', ['readOnly' => false]) ?>
+<?php else: ?>
+    <?= $this->relationRender('verification_finances', ['readOnly' => true]) ?>
+<?php endif; ?>

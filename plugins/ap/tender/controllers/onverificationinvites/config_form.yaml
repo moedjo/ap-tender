@@ -1,0 +1,5 @@
+name: Tenant Invite
+form: $/ap/tender/models/tenantinvite/fields.yaml
+modelClass: Ap\Tender\Models\TenantInvite
+update:
+    redirectClose: ap/tender/onverificationtenants

@@ -5,10 +5,11 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Verification;
 use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLasts extends Controller
+class OnVerificationInvites extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -54,27 +55,16 @@ class OnVerificationLasts extends Controller
 
     public function formExtendModel($model)
     {
-       
     }
 
     public function formBeforeSave($model)
     {
-        // $model->load('verifications');
-        // $verifications = $model->verifications;
-        // $status = 'approve';
-        // foreach ($verifications as $verification) {
-        //     if (!$verification->pivot->on_last_check) {
-        //         $status = 'reject';
-        //         break;
-        //     }
-        // }
-        // $model->on_last_status = $status;
+        $model->status = 'evaluated';
+    }
 
-        // if (
-        //     $model->on_last_status == 'approve'
-        // ) {
-
-        //     $model->status = 'evaluated';
-        // }
+    public function formAfterSave($model)
+    {
+        $model->load('business_entity');
+        Event::fire('tenant.invite', [$model]);
     }
 }

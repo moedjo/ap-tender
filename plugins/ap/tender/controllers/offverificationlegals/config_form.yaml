@@ -1,0 +1,5 @@
+name: 'Klarifikasi Legal'
+form: $/ap/tender/models/companybasicinfo/off_verification_fields.yaml
+modelClass: Ap\Tender\Models\CompanyBasicInfo
+update:
+    redirectClose: ap/tender/offverificationtenants

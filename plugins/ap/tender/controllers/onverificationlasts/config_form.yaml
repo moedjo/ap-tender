@@ -2,4 +2,4 @@ name: 'ap.tender::lang.company.info'
 form: $/ap/tender/models/company/on_verification_last_fields.yaml
 modelClass: Ap\Tender\Models\Company
 update:
-    redirectClose: ap/tender/onverificationtenants
+    redirectClose: ap/tender/onverificationinvites/update/:id

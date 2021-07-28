@@ -1,5 +1,6 @@
 verification_legals:
     label: 'Verifikasi'
+    deferredBinding: false
     view:
         list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false

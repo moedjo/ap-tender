@@ -18,7 +18,7 @@ class BuilderTableCreateApTenderVerifications extends Migration
             $table->string('type');
             $table->string('number')->nullable();
             $table->string('name')->nullable();
-            $table->string('description')->nullable();;
+            $table->text('description')->nullable();
             
             $table->json('fields')->nullable();;
             

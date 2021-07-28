@@ -5,9 +5,9 @@ fields:
     description:
         label: 'General Information'
         disabled: true
-    pivot[on_last_check]:
+    pivot[off_check]:
         label: Ya/Tidak
         type: checkbox
         default: false
-    pivot[on_last_note]:
+    pivot[off_note]:
         label: Catatan

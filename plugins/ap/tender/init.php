@@ -25,4 +25,13 @@ Event::listen('company.after.register', function ($company) {
 });
 
 
+Event::listen('tenant.invite', function ($company) {
+
+   Mail::queue('ap.tender::mail.tenant-invite', $company->toArray(), function ($message) use ($company) {
+      $message->to($company->email, $company->name);
+   });
+   
+});
+
+
 

@@ -71,6 +71,16 @@ class BuilderTableCreateApTenderCompanies extends Migration
             $table->string('off_commercial_status')->nullable();
             $table->string('off_last_status')->nullable();
 
+
+            $table->string('invite_name')->nullable();
+            $table->string('invite_description')->nullable();
+            $table->string('invite_location')->nullable();
+            $table->string('invite_pic_phone_number')->nullable();
+            $table->timestamp('invite_date')->nullable();
+            $table->timestamp('invite_hour_start')->nullable();
+            $table->timestamp('invite_hour_end')->nullable();
+
+
             $table->integer('business_entity_id')->unsigned()->nullable();
             $table->foreign('business_entity_id')->references('id')
                 ->on('ap_tender_business_entities');

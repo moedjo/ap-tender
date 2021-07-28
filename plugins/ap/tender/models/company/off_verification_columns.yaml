@@ -1,0 +1,19 @@
+columns:
+    name:
+        label: Nama Tenant
+        type: text
+    pic_full_name:
+        label: PIC
+        type: text
+    pic_phone_number:
+        label: Telp PIC
+        type: text
+    off_legal_status:
+        label: Legal Status
+    off_finance_status:
+        label: Finance Status
+    off_commercial_status:
+        label: Commercial Status
+    status:
+        label: Status
+        type: text

@@ -47,6 +47,9 @@ permissions:
     ap_tender_access_verifications:
         tab: 'ap.tender::lang.permission.tab.default'
         label: 'ap.tender::lang.permission.label.access_verifications'
+    ap_tender_access_off_verification_tenants:
+        tab: 'ap.tender::lang.permission.tab.default'
+        label: 'ap.tender::lang.permission.label.access_off_verification_tenants'
 navigation:
     master:
         label: 'Master Data'
@@ -128,3 +131,9 @@ navigation:
                 icon: icon-sort
                 permissions:
                     - ap_tender_access_on_verification_tenants
+            off-verification-tenants:
+                label: Klarifikasi
+                url: ap/tender/offverificationtenants
+                icon: icon-square
+                permissions:
+                    - ap_tender_access_off_verification_tenants

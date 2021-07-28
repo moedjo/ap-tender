@@ -8,10 +8,10 @@ columns:
     description:
         label: 'General Information'
         sortable: false
-    pivot[on_last_check]:
+    pivot[off_check]:
         label: Ya/Tidak
         type: switch
         sortable: false
-    pivot[on_last_note]:
+    pivot[off_note]:
         label: Catatan
         sortable: false

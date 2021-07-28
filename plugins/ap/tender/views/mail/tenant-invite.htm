@@ -1,0 +1,17 @@
+subject = "Undangan Verifikasi"
+layout = "ap-tender-registration"
+description = "Undangan Verifikasi"
+==
+
+
+Yth. Bapak/Ibu  {{business_entity.name}} {{name}}
+
+Terima kasih telah melakukan pendaftaran sebagai Calon Mitra Usaha di lingkungan PT Angkasa Pura I (Persero). 
+Bersama ini kami mengundang Bapak/Ibu untuk melakukan verifikasi dokumen yang telah diunggah melalui Tenant Management System (TMS) dengan dokumen asli dan atau salinannya yang akan dilaksanakan pada: 
+
+Tanggal	:	{{invite_date|date("m/d/Y")}} {{invite_hour_start|date("H:i")}}  
+PIC     :   {{invite_pic_phone_number}}  
+Tempat	:	{{invite_location}}  
+Detail	:	{{invite_description|md}}  
+
+-----

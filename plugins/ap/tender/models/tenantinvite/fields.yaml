@@ -1,0 +1,44 @@
+fields:
+    _section1:
+        label: 'Informasi Undangan'
+        type: section
+    invite_name:
+        label:  'Agenda'
+        placeholder: 'Agenda'
+        type: text
+        span: left
+    name:
+        label: 'Nama Tenant'
+        type: text
+        span: right
+        disabled: true
+    invite_location:
+        label:  'Lokasi Undangan'
+        placeholder: 'Lokasi Undangan'
+        type: text
+        span: left
+    invite_pic_phone_number:
+        label:  'Kontak PIC'
+        placeholder: 'Kontak PIC'
+        type: text
+        span: right
+    invite_date:
+        label: 'Tanggal Undangan'
+        type: datepicker
+        mode: date
+        span: left
+    invite_hour_start:
+        label: 'Waktu Mulai'
+        type: datepicker
+        mode: time
+        span: left
+    invite_hour_end:
+        label: 'Waktu Berakhir'
+        type: datepicker
+        mode: time
+        span: right
+    invite_description:
+        label: 'Deskripsi Pengumuman'
+        type: richeditor
+        size: huge
+        span: full

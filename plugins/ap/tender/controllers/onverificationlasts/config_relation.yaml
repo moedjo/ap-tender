@@ -1,24 +1,24 @@
 verification_legals:
     label: 'Verifikasi'
     view:
-        list: $/ap/tender/models/verification/on_verification_last_columns.yaml
+        list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
         showCheckboxes: false
     pivot:
-        form: $/ap/tender/models/verification/on_verification_last_fields.yaml
+        form: $/ap/tender/models/verification/on_verification_fields.yaml
 verification_commercials:
     label: 'Verifikasi'
     view:
-        list: $/ap/tender/models/verification/on_verification_last_columns.yaml
+        list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
         showCheckboxes: false
     pivot:
-        form: $/ap/tender/models/verification/on_verification_last_fields.yaml
+        form: $/ap/tender/models/verification/on_verification_fields.yaml
 verification_finances:
     label: 'Verifikasi'
     view:
-        list: $/ap/tender/models/verification/on_verification_last_columns.yaml
+        list: $/ap/tender/models/verification/on_verification_columns.yaml
         toolbarButtons: false
         showCheckboxes: false
     pivot:
-        form: $/ap/tender/models/verification/on_verification_last_fields.yaml
+        form: $/ap/tender/models/verification/on_verification_fields.yaml

@@ -1,4 +1,4 @@
-<?php if(empty($model->on_legal_status)): ?>
+<?php if(empty($model->off_legal_status)): ?>
     <?= $this->relationRender('verification_legals', ['readOnly' => false]) ?>
 <?php else: ?>
     <?= $this->relationRender('verification_legals', ['readOnly' => true]) ?>

@@ -68,8 +68,8 @@ class Company extends Model
             'pivot' => [
                 'on_note',
                 'on_check',
-                'on_last_note',
-                'on_last_check'
+                'off_note',
+                'off_check',
             ]
         ],
         'verification_legals' => [
@@ -82,8 +82,8 @@ class Company extends Model
             'pivot' => [
                 'on_note',
                 'on_check',
-                'on_last_note',
-                'on_last_check'
+                'off_note',
+                'off_check',
             ]
         ],
         'verification_finances' => [
@@ -96,8 +96,8 @@ class Company extends Model
             'pivot' => [
                 'on_note',
                 'on_check',
-                'on_last_note',
-                'on_last_check'
+                'off_note',
+                'off_check',
             ]
         ],
         'verification_commercials' => [
@@ -110,8 +110,8 @@ class Company extends Model
             'pivot' => [
                 'on_note',
                 'on_check',
-                'on_last_note',
-                'on_last_check'
+                'off_note',
+                'off_check',
             ]
         ],
         

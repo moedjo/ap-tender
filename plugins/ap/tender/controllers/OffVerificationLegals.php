@@ -8,7 +8,9 @@ use Backend\Facades\BackendMenu;
 use Illuminate\Support\Facades\View;
 use Response;
 
-class OnVerificationLasts extends Controller
+use function PHPUnit\Framework\isEmpty;
+
+class OffVerificationLegals extends Controller
 {
     public $implement = [
         'Backend\Behaviors\FormController',
@@ -18,12 +20,12 @@ class OnVerificationLasts extends Controller
     public $formConfig = 'config_form.yaml';
     public $relationConfig = 'config_relation.yaml';
 
-    public $requiredPermissions = ['ap_tender_access_commercials'];
+    public $requiredPermissions = ['ap_tender_access_legals'];
 
     public function __construct()
     {
         parent::__construct();
-        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'on-verification-tenants');
+        BackendMenu::setContext('Ap.Tender', 'verification-tenants', 'off-verification-tenants');
     }
 
     public function update_onDelete($recordId = null)
@@ -43,8 +45,7 @@ class OnVerificationLasts extends Controller
 
     public function extendQuery($query)
     {
-        $user = $this->user;
-        return $query->where('status','pre_evaluated');
+        return $query->where('status','evaluated');
     }
 
     public function formExtendQuery($query)
@@ -54,27 +55,31 @@ class OnVerificationLasts extends Controller
 
     public function formExtendModel($model)
     {
-       
     }
 
     public function formBeforeSave($model)
     {
-        // $model->load('verifications');
-        // $verifications = $model->verifications;
-        // $status = 'approve';
-        // foreach ($verifications as $verification) {
-        //     if (!$verification->pivot->on_last_check) {
-        //         $status = 'reject';
-        //         break;
-        //     }
-        // }
-        // $model->on_last_status = $status;
+        $model->load('verification_legals');
+        $verification_legals = $model->verification_legals;
+        $status = 'approve';
+        foreach ($verification_legals as $verification_legal) {
+            if (!$verification_legal->pivot->off_check) {
+                $status = 'reject';
+                break;
+            }
+        }
 
-        // if (
-        //     $model->on_last_status == 'approve'
-        // ) {
+       
 
-        //     $model->status = 'evaluated';
-        // }
+        $model->off_legal_status = $status;
+
+        if (
+            $model->off_legal_status == 'approve' &&
+            $model->off_finance_status == 'approve' &&
+            $model->off_commercial_status == 'approve'
+        ) {
+
+            $model->status = 'pre_clarificated';
+        }
     }
 }

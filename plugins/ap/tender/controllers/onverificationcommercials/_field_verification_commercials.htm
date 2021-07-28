@@ -1,1 +1,5 @@
-<?= $this->relationRender('verification_commercials', ['readOnly' => false]) ?>
+<?php if(empty($model->on_commercial_status)): ?>
+    <?= $this->relationRender('verification_commercials', ['readOnly' => false]) ?>
+<?php else: ?>
+    <?= $this->relationRender('verification_commercials', ['readOnly' => true]) ?>
+<?php endif; ?>

@@ -28,6 +28,7 @@ class Plugin extends PluginBase
             'ap.tender::mail.company-before-register',
             'ap.tender::mail.company-after-register',
             'ap.tender::mail.company-signup',
+            'ap.tender::mail.tenant-invite',
         ];
     }
 
