@@ -64,7 +64,7 @@ class OffVerificationCommercials extends Controller
         $status = 'approve';
         foreach ($verification_commercials as $verification_commercial) {
             if (!$verification_commercial->pivot->off_check) {
-                $status = 'reject';
+                $status = null;
                 break;
             }
         }

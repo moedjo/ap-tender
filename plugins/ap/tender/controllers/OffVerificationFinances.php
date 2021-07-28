@@ -64,7 +64,7 @@ class OffVerificationFinances extends Controller
         $status = 'approve';
         foreach ($verification_finances as $verification_finance) {
             if (!$verification_finance->pivot->off_check) {
-                $status = 'reject';
+                $status = null;
                 break;
             }
         }

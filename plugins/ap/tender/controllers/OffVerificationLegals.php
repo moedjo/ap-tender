@@ -64,7 +64,7 @@ class OffVerificationLegals extends Controller
         $status = 'approve';
         foreach ($verification_legals as $verification_legal) {
             if (!$verification_legal->pivot->off_check) {
-                $status = 'reject';
+                $status = null;
                 break;
             }
         }
