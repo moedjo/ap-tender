@@ -74,6 +74,11 @@ class ListColumn
     public $relation;
 
     /**
+     * @var bool Count mode to display the number of related records.
+     */
+    public $relationCount = false;
+
+    /**
      * @var string sets the column width, can be specified in percents (10%) or pixels (50px).
      * There could be a single column without width specified, it will be stretched to take the
      * available space.
@@ -177,6 +182,9 @@ class ListColumn
         if (isset($config['relation'])) {
             $this->relation = $config['relation'];
         }
+        if (isset($config['relationCount'])) {
+            $this->relationCount = (bool) $config['relationCount'];
+        }
         if (isset($config['format'])) {
             $this->format = $config['format'];
         }
@@ -224,6 +232,23 @@ class ListColumn
     public function getAlignClass()
     {
         return $this->align ? 'list-cell-align-' . $this->align : '';
+    }
+
+    /**
+     * useRelationCount
+     */
+    public function useRelationCount(): bool
+    {
+        if (!$this->relation) {
+            return false;
+        }
+
+        // @deprecated use relationCount instead
+        if (($value = $this->getConfig('useRelationCount')) !== null) {
+            return $value;
+        }
+
+        return $this->relationCount;
     }
 
     /**

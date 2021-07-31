@@ -54,6 +54,14 @@ class ListTree extends Lists
     }
 
     /**
+     * @inheritDoc
+     */
+    protected function loadAssets()
+    {
+        $this->addJs('/modules/backend/widgets/lists/assets/js/october.list.js', 'core');
+    }
+
+    /**
      * prepareVars for display
      */
     public function prepareVars()

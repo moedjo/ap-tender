@@ -569,13 +569,14 @@ class Theme
         $author = strtolower(trim(array_get($data, 'authorCode')));
         $code = strtolower(trim(array_get($data, 'code')));
         $description = array_get($data, 'description');
+        $path = $this->getPath();
 
         if (!$description) {
             $description = array_get($data, 'name');
         }
 
         // Abort
-        if (!$author || !$code) {
+        if (!$path || !$author || !$code) {
             return;
         }
 
@@ -589,7 +590,7 @@ class Theme
         ];
 
         File::put(
-            $this->getPath().'/composer.json',
+            $path.'/composer.json',
             json_encode($composerArr, JSON_UNESCAPED_SLASHES|JSON_PRETTY_PRINT)
         );
     }

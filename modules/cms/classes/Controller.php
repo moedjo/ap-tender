@@ -39,7 +39,7 @@ use Illuminate\Http\RedirectResponse;
  */
 class Controller
 {
-    use \System\Traits\AssetMaker;
+    use \Cms\Traits\ThemeAssetMaker;
     use \System\Traits\EventEmitter;
     use \System\Traits\ResponseMaker;
     use \System\Traits\SecurityController;
@@ -1341,48 +1341,6 @@ class Controller
         return $this->layout;
     }
 
-    /**
-     * getThemeAssetPath returns the public directory for theme assets
-     */
-    protected function getThemeAssetPath(string $relativePath = null): string
-    {
-        // Determine directory name for asset
-        $dirName = $this->theme->getDirName();
-
-        if (
-            $relativePath !== null &&
-            $this->theme->useParentAsset($relativePath) &&
-            ($parentTheme = $this->theme->getParentTheme())
-        ) {
-            $dirName = $parentTheme->getDirName();
-        }
-
-        // Configuration for theme asset location
-        $assetUrl = Config::get('system.themes_asset_url');
-
-        if ($assetUrl === null) {
-            $assetUrl = Config::get('app.asset_url').'/themes';
-        }
-
-        // Build path
-        $path = $assetUrl . '/' . $dirName;
-
-        if ($relativePath !== null) {
-            $path = $assetUrl . '/' . $dirName . '/' . $relativePath;
-        }
-
-        return $path;
-    }
-
-    /**
-     * getAssetPathOverride interfaces with AssetMaker to modify its logic
-     * to respect parent theme asset locations
-     */
-    protected function getAssetPathOverride($fileName): string
-    {
-        return $this->getThemeAssetPath($fileName);
-    }
-
     //
     // Page helpers
     //
@@ -1468,33 +1426,6 @@ class Controller
         }
 
         return Url::asset($this->getThemeAssetPath($url));
-    }
-
-    /**
-     * getMultipleThemeAssetPaths checks combiner paths in the theme
-     * and rewrites them to parent assets, if necessary
-     */
-    protected function getMultipleThemeAssetPaths(array $urls): array
-    {
-        $theme = $this->getTheme();
-
-        if (!$theme->hasParentTheme()) {
-            return $urls;
-        }
-
-        foreach ($urls as &$url) {
-            // Combiner alias
-            if (substr($url, 0, 1) === '@') {
-                continue;
-            }
-
-            // Parent asset
-            if ($theme->useParentAsset($url)) {
-                $url = $theme->getParentTheme()->getPath().'/'.$url;
-            }
-        }
-
-        return $urls;
     }
 
     /**
