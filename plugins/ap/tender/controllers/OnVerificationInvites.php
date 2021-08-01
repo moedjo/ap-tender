@@ -64,7 +64,6 @@ class OnVerificationInvites extends Controller
 
     public function formAfterSave($model)
     {
-        $model->load('business_entity');
         Event::fire('tenant.invite', [$model]);
     }
 }

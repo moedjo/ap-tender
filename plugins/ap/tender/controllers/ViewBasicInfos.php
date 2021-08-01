@@ -94,4 +94,45 @@ class ViewBasicInfos extends Controller
         return Redirect::to(Backend::url('ap/tender/viewbasicinfos/update/'.$company->id));
     }
 
+
+    public function formExtendFields($host, $fields)
+    {
+        $model = $host->model;
+        if($model->status == 'register' && $model->on_legal_status == 'reject') {
+            $verifications = $model->verification_legals;
+            foreach ($verifications as $verification) {
+                if (!$verification->pivot->on_check) {
+                    $v_fields = explode(",",$verification->fields);
+                    foreach ($v_fields as $field) {
+                        trace_log($field);
+                        $fields[$field]->disabled = false;
+                        $fields[$field]->readOnly = false;
+                        // $fields[$field]->hidden = false;
+                        
+                        // if(isset($field['_'.$field])){
+                        //     $fields[$field]->hidden = true;
+                        // }
+                        
+                        $this->vars['enabled_'.$field] = true;
+                    }
+                }
+            }
+
+        }
+        // $fields['fields']->readOnly = false;
+
+        // trace_log($fields['fields']);
+
+    }
+
+
+    public function formAfterSave($model)
+    {
+        if($model->status == 'register' && $model->on_legal_status == 'reject') {
+            $model->on_legal_status = '';
+            $model->save();
+        }
+    }
+    
+
 }

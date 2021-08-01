@@ -5,6 +5,7 @@ namespace Ap\Tender\Controllers;
 use Ap\Tender\Models\Verification;
 use Backend\Classes\Controller;
 use Backend\Facades\BackendMenu;
+use Event;
 use Illuminate\Support\Facades\View;
 use Response;
 
@@ -44,7 +45,7 @@ class OnVerificationLegals extends Controller
     public function extendQuery($query)
     {
         $user = $this->user;
-        return $query->where('status','register');
+        return $query->where('status', 'register');
     }
 
     public function formExtendQuery($query)
@@ -79,6 +80,14 @@ class OnVerificationLegals extends Controller
         ) {
 
             $model->status = 'pre_evaluated';
+        }
+    }
+
+
+    public function formAfterSave($model)
+    {
+        if ($model->on_legal_status == 'reject') {
+            Event::fire('tenant.reject', [$model]);
         }
     }
 }
