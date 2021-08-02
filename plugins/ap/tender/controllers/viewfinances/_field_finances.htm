@@ -1,1 +1,1 @@
-<?= $this->relationRender('finances', ['readOnly' => false]) ?>
+<?= $this->relationRender('finances', ['readOnly' => !isset($enabled_finances)]) ?>

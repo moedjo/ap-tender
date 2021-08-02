@@ -1,0 +1,19 @@
+subject = "Reject Tenant"
+layout = "ap-tender-registration"
+description = "Reject Tenant"
+==
+
+
+Yth. Bapak/Ibu  {{business_entity.name}} {{name}}
+
+{% for verification in verifications %}
+
+
+{% if verification.pivot.on_check == false %}
+    {{ verification.name }} -> Keterangan : {{ verification.pivot.on_note }}  
+{% endif %}
+
+
+{% endfor %}
+
+-----

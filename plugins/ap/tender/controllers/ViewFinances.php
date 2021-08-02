@@ -92,6 +92,30 @@ class ViewFinances extends Controller
                 $fields['doc_finance_collaborate']->hidden = false;
             }
         }
+
+        if($model->status == 'register' && $model->on_finance_status == 'reject') {
+            $verifications = $model->verification_finances;
+            foreach ($verifications as $verification) {
+                if (!$verification->pivot->on_check) {
+                    $v_fields = explode(",",$verification->fields);
+                    foreach ($v_fields as $field) {
+                        $fields[$field]->disabled = false;
+                        $fields[$field]->readOnly = false;
+                        $this->vars['enabled_'.$field] = true;
+                    }
+                }
+            }
+
+        }
+    }
+
+
+    public function formAfterSave($model)
+    {
+        if($model->status == 'register' && $model->on_finance_status == 'reject') {
+            $model->on_finance_status = '';
+            $model->save();
+        }
     }
 
 }

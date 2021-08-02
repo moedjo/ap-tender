@@ -96,4 +96,31 @@ class ViewExperiences extends Controller
         return Redirect::to(Backend::url('ap/tender/viewexperiences/update/'.$company->id));
     }
 
+    public function formExtendFields($host, $fields)
+    {
+        $model = $host->model;
+        if($model->status == 'register' && $model->on_commercial_status == 'reject') {
+            $verifications = $model->verification_commercials;
+            foreach ($verifications as $verification) {
+                if (!$verification->pivot->on_check) {
+                    $v_fields = explode(",",$verification->fields);
+                    foreach ($v_fields as $field) {
+                        $fields[$field]->disabled = false;
+                        $this->vars['enabled_'.$field] = true;
+                    }
+                }
+            }
+
+        }
+
+    }
+
+    public function formAfterSave($model)
+    {
+        if($model->status == 'register' && $model->on_commercial_status == 'reject') {
+            $model->on_commercial_status = '';
+            $model->save();
+        }
+    }
+
 }
