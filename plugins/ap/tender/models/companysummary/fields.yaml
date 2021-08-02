@@ -7,3 +7,4 @@ fields:
         context: [update]
         label: 'ap.tender::lang.company.summary'
         type: checkboxlist
+        required: true

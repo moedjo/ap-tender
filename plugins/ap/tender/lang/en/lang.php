@@ -130,7 +130,8 @@
         'back' => 'Kembali',
         'next' => 'Selanjutnya',
         'doc_comment' => 'File (*pdf - max 50MB)',
-        'success_activation' => 'Aktivasi sukses'
+        'success_activation' => 'Aktivasi sukses',
+        'btnSubmit' => 'Submit'
     ],
     'position' => [
         'singular' => 'Jabatan',
