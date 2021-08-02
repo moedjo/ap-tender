@@ -308,9 +308,8 @@ class PluginManager
     public function getComposerCode($id)
     {
         $path = $this->getPluginPath($id);
-        $file = $path . '/composer.json';
 
-        if (!$path || !File::exists($file)) {
+        if (!File::exists($file = $path . '/composer.json')) {
             return null;
         }
 

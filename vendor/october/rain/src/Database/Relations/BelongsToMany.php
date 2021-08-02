@@ -15,7 +15,6 @@ class BelongsToMany extends BelongsToManyBase
 
     /**
      * @var boolean countMode sets this relation object is a 'count' helper
-     * @deprecated use Laravel withCount() method instead
      */
     public $countMode = false;
 

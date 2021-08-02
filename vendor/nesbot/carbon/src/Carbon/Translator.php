@@ -148,7 +148,7 @@ class Translator extends Translation\Translator
      */
     public function trans($id, array $parameters = [], $domain = null, $locale = null)
     {
-        if ($domain === null) {
+        if (null === $domain) {
             $domain = 'messages';
         }
 
@@ -326,7 +326,7 @@ class Translator extends Translation\Translator
 
         $previousLocale = $this->getLocale();
 
-        if ($previousLocale === $locale && isset($this->messages[$locale])) {
+        if ($previousLocale === $locale) {
             return true;
         }
 
@@ -355,7 +355,7 @@ class Translator extends Translation\Translator
         }
 
         // If subtag (ex: en_CA) first load the macro (ex: en) to have a fallback
-        if (str_contains($locale, '_') &&
+        if (strpos($locale, '_') !== false &&
             $this->loadMessagesFromFile($macroLocale = preg_replace('/^([^_]+).*$/', '$1', $locale))
         ) {
             parent::setLocale($macroLocale);

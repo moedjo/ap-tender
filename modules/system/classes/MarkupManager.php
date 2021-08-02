@@ -112,12 +112,11 @@ class MarkupManager
         }
 
         foreach ($definitions as $name => $definition) {
-            $item = $this->defineMarkupExtensionItem([
+            $item = MarkupExtensionItem::createFromArray([
                 'name' => $name,
                 'type' => $type,
                 'definition' => $definition,
             ]);
-
             switch ($type) {
                 case self::EXTENSION_TOKEN_PARSER:
                     $this->items[$type][] = $item;
@@ -128,14 +127,6 @@ class MarkupManager
                     break;
             }
         }
-    }
-
-    /**
-     * defineMarkupExtensionItem
-     */
-    protected function defineMarkupExtensionItem(array $config): MarkupExtensionItem
-    {
-        return (new MarkupExtensionItem)->useConfig($config);
     }
 
     /**

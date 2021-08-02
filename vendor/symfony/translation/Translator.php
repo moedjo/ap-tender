@@ -143,7 +143,6 @@ class Translator implements LegacyTranslatorInterface, TranslatorInterface, Tran
         }
 
         $this->assertValidLocale($locale);
-        $locale ?: $locale = class_exists(\Locale::class) ? \Locale::getDefault() : 'en';
 
         $this->resources[$locale][] = [$format, $resource, $domain];
 
@@ -164,7 +163,7 @@ class Translator implements LegacyTranslatorInterface, TranslatorInterface, Tran
         }
 
         $this->assertValidLocale($locale);
-        $this->locale = $locale;
+        $this->locale = $locale ?? (class_exists(\Locale::class) ? \Locale::getDefault() : 'en');
     }
 
     /**
@@ -172,11 +171,13 @@ class Translator implements LegacyTranslatorInterface, TranslatorInterface, Tran
      */
     public function getLocale()
     {
-        return $this->locale ?: (class_exists(\Locale::class) ? \Locale::getDefault() : 'en');
+        return $this->locale;
     }
 
     /**
      * Sets the fallback locales.
+     *
+     * @param array $locales The fallback locales
      *
      * @throws InvalidArgumentException If a locale contains invalid characters
      */
@@ -282,7 +283,7 @@ class Translator implements LegacyTranslatorInterface, TranslatorInterface, Tran
      */
     public function getCatalogue($locale = null)
     {
-        if (!$locale) {
+        if (null === $locale) {
             $locale = $this->getLocale();
         } else {
             $this->assertValidLocale($locale);
@@ -506,7 +507,7 @@ EOF
      */
     protected function assertValidLocale($locale)
     {
-        if (!preg_match('/^[a-z0-9@_\\.\\-]*$/i', (string) $locale)) {
+        if (null !== $locale && 1 !== preg_match('/^[a-z0-9@_\\.\\-]*$/i', $locale)) {
             throw new InvalidArgumentException(sprintf('Invalid "%s" locale.', $locale));
         }
     }

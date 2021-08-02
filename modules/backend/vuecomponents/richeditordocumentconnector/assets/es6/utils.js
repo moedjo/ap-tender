@@ -109,7 +109,7 @@ $.oc.module.register('backend.vuecomponents.richeditordocumentconnector.utils', 
                 dropdownItemType = 'checkbox';
             }
 
-            if ((knownButtonConfig && knownButtonConfig.dropdownOnly) || !isWrapped) {
+            if (knownButtonConfig && knownButtonConfig.dropdownOnly) {
                 type = 'dropdown';
             }
 

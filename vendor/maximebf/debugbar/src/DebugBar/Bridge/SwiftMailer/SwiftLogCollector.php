@@ -34,16 +34,7 @@ class SwiftLogCollector extends MessagesCollector implements Swift_Plugins_Logge
 
     public function dump()
     {
-        $dump = '';
-        foreach ($this->messages as $message) {
-            if (!$message['is_string']) {
-                continue;
-            }
-
-            $dump .= $message['message'] . PHP_EOL;
-        }
-
-        return $dump;
+        return implode(PHP_EOL, $this->_log);
     }
 
     public function getName()

@@ -1,7 +1,7 @@
 <?php namespace System\Classes;
 
 /**
- * MarkupExtensionItem class
+ * Class MarkupExtensionItem
  *
  * @package october\system
  * @author Alexey Bobkov, Samuel Georges
@@ -24,44 +24,47 @@ class MarkupExtensionItem
     const TYPE_TOKEN_PARSER = 'token';
 
     /**
-     * @var string name
+     * @var string
      */
     public $name;
 
     /**
-     * @var string type
+     * @var string
      */
     public $type;
 
     /**
-     * @var callable callback
+     * @var callable
      */
     public $callback;
 
     /**
-     * @var bool escapeOutput
+     * @var bool
      */
     public $escapeOutput;
 
     /**
-     * useConfig
+     * @param array|string $data
+     * @return static
      */
-    public function useConfig(array $data): MarkupExtensionItem
+    public static function createFromArray(array $data)
     {
-        [$callback, $escapeOutput] = $this->parseDefinition($data['definition'] ?? null);
+        $instance = new static;
 
-        $this->name = $data['name'] ?? $this->name;
-        $this->type = $data['type'] ?? $this->type;
-        $this->callback = $data['callback'] ?? $callback;
-        $this->escapeOutput = $data['escapeOutput'] ?? $escapeOutput;
+        [$callback, $escapeOutput] = self::parseDefinition($data['definition'] ?? null);
 
-        return $this;
+        $instance->name = $data['name'] ?? null;
+        $instance->type = $data['type'] ?? null;
+        $instance->callback = $data['callback'] ?? $callback;
+        $instance->escapeOutput = $data['escapeOutput'] ?? $escapeOutput;
+
+        return $instance;
     }
 
     /**
      * parseDefinition will check if a callable definition contains output escaping
      */
-    protected function parseDefinition($definition): array
+    protected static function parseDefinition($definition): array
     {
         $escapeOutput = false;
         $callback = $definition;

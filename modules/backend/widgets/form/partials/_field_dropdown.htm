@@ -5,20 +5,8 @@
 ?>
 <!-- Dropdown -->
 <?php if ($this->previewMode || $field->readOnly): ?>
-    <?php
-        $fieldValue = $fieldOptions[$field->value] ?? '';
-    ?>
     <div class="form-control" <?= $field->readOnly ? 'disabled="disabled"' : '' ?>>
-        <?php if (is_array($fieldValue)): ?>
-            <?php if (strpos($fieldValue[1], '.')): ?>
-                <img src="<?= $fieldValue[1] ?>" alt="">
-            <?php else: ?>
-                <i class="<?= $fieldValue[1] ?>"></i>
-            <?php endif ?>
-            <?= e(trans($fieldValue[0])) ?>
-        <?php else: ?>
-            <?= e(trans($fieldValue)) ?>
-        <?php endif ?>
+        <?= (isset($fieldOptions[$field->value])) ? e(trans($fieldOptions[$field->value])) : '' ?>
     </div>
     <?php if ($field->readOnly): ?>
         <input
@@ -33,15 +21,13 @@
         class="form-control custom-select <?= $useSearch ? '' : 'select-no-search' ?>"
         <?= $field->getAttributes() ?>
         <?= $field->placeholder ? 'data-placeholder="'.e(trans($field->placeholder)).'"' : '' ?>
-    >
+        >
         <?php if ($emptyOption): ?>
             <option value=""><?= e(trans($emptyOption)) ?></option>
         <?php endif ?>
         <?php foreach ($fieldOptions as $value => $option): ?>
             <?php
-                if (!is_array($option)) {
-                    $option = [$option];
-                }
+                if (!is_array($option)) $option = [$option];
             ?>
             <option
                 <?= $field->isSelected($value) ? 'selected="selected"' : '' ?>

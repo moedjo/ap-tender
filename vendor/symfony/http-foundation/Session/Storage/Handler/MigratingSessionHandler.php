@@ -63,7 +63,7 @@ class MigratingSessionHandler implements \SessionHandlerInterface, \SessionUpdat
     }
 
     /**
-     * @return int|false
+     * @return bool
      */
     #[\ReturnTypeWillChange]
     public function gc($maxlifetime)

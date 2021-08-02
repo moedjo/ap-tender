@@ -104,7 +104,7 @@ class ConsoleLogger extends AbstractLogger
      */
     private function interpolate(string $message, array $context): string
     {
-        if (!str_contains($message, '{')) {
+        if (false === strpos($message, '{')) {
             return $message;
         }
 

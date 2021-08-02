@@ -133,9 +133,9 @@ class ArrayInput extends Input
             if ('--' === $key) {
                 return;
             }
-            if (str_starts_with($key, '--')) {
+            if (0 === strpos($key, '--')) {
                 $this->addLongOption(substr($key, 2), $value);
-            } elseif (str_starts_with($key, '-')) {
+            } elseif (0 === strpos($key, '-')) {
                 $this->addShortOption(substr($key, 1), $value);
             } else {
                 $this->addArgument($key, $value);

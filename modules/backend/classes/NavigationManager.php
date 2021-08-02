@@ -9,7 +9,7 @@ use System\Classes\PluginManager;
 use SystemException;
 
 /**
- * NavigationManager manages the backend navigation.
+ * Manages the backend navigation.
  *
  * @method static NavigationManager instance()
  *
@@ -23,47 +23,47 @@ class NavigationManager
     const ITEM_TYPE_ADD_BUTTON = 'add-button';
 
     /**
-     * @var array callbacks is a cache of registration callbacks.
+     * @var array Cache of registration callbacks.
      */
     protected $callbacks = [];
 
     /**
-     * @var MainMenuItem[] items is a list of registered items.
+     * @var MainMenuItem[] List of registered items.
      */
     protected $items;
 
     /**
-     * @var array contextSidenavPartials
+     * @var array
      */
     protected $contextSidenavPartials = [];
 
     /**
-     * @var string contextOwner
+     * @var string
      */
     protected $contextOwner;
 
     /**
-     * @var string contextMainMenuItemCode
+     * @var string
      */
     protected $contextMainMenuItemCode;
 
     /**
-     * @var string contextSideMenuItemCode
+     * @var string
      */
     protected $contextSideMenuItemCode;
 
     /**
-     * @var array menuDisplayTree
+     * @var array
      */
     protected static $menuDisplayTree;
 
     /**
-     * @var System\Classes\PluginManager pluginManager
+     * @var System\Classes\PluginManager
      */
     protected $pluginManager;
 
     /**
-     * init this singleton.
+     * Initialize this singleton.
      */
     protected function init()
     {
@@ -71,7 +71,8 @@ class NavigationManager
     }
 
     /**
-     * loadItems from modules and plugins
+     * Loads the menu items from modules and plugins
+     * @return void
      */
     protected function loadItems()
     {
@@ -157,7 +158,7 @@ class NavigationManager
     }
 
     /**
-     * registerCallback function that defines menu items.
+     * Registers a callback function that defines menu items.
      * The callback function should register menu items by calling the manager's
      * `registerMenuItems` method. The manager instance is passed to the callback
      * function as an argument. Usage:
@@ -174,7 +175,7 @@ class NavigationManager
     }
 
     /**
-     * registerMenuItems for the back-end menu items.
+     * Registers the back-end menu items.
      * The argument is an array of the main menu items. The array keys represent the
      * menu item codes, specific for the plugin/module. Each element in the
      * array should be an associative array with the following keys:
@@ -229,7 +230,7 @@ class NavigationManager
     }
 
     /**
-     * addMainMenuItems dynamically adds an array of main menu items.
+     * Dynamically add an array of main menu items
      * @param string $owner
      * @param array  $definitions
      */
@@ -241,7 +242,7 @@ class NavigationManager
     }
 
     /**
-     * addMainMenuItem dynamically adds a single main menu item.
+     * Dynamically add a single main menu item
      * @param string $owner
      * @param string $code
      * @param array  $definition
@@ -259,7 +260,7 @@ class NavigationManager
             'owner' => $owner
         ]);
 
-        $this->items[$itemKey] = $this->defineMainMenuItem($item);
+        $this->items[$itemKey] = MainMenuItem::createFromArray($item);
 
         if (array_key_exists('sideMenu', $item)) {
             $this->addSideMenuItems($owner, $code, $item['sideMenu']);
@@ -267,15 +268,7 @@ class NavigationManager
     }
 
     /**
-     * defineMainMenuItem
-     */
-    protected function defineMainMenuItem(array $config): MainMenuItem
-    {
-        return (new MainMenuItem)->useConfig($config);
-    }
-
-    /**
-     * getMainMenuItem returns a main menu item
+     * Returns a main menu item
      * @param string $owner
      * @param string $code
      * @return MainMenuItem
@@ -293,7 +286,7 @@ class NavigationManager
     }
 
     /**
-     * removeMainMenuItem removes a single main menu item
+     * Removes a single main menu item
      * @param $owner
      * @param $code
      */
@@ -304,7 +297,7 @@ class NavigationManager
     }
 
     /**
-     * addSideMenuItems dynamically adds an array of side menu items
+     * Dynamically add an array of side menu items
      * @param string $owner
      * @param string $code
      * @param array  $definitions
@@ -317,7 +310,7 @@ class NavigationManager
     }
 
     /**
-     * addSideMenuItem dynamically add a single side menu item
+     * Dynamically add a single side menu item
      * @param string $owner
      * @param string $code
      * @param string $sideCode
@@ -343,7 +336,7 @@ class NavigationManager
             $definition = array_merge((array) $mainItem->sideMenu[$sideCode], $definition);
         }
 
-        $item = $this->defineSideMenuItem($definition);
+        $item = SideMenuItem::createFromArray($definition);
 
         $this->items[$itemKey]->addSideMenuItem($item);
 
@@ -351,15 +344,7 @@ class NavigationManager
     }
 
     /**
-     * defineSideMenuItem
-     */
-    protected function defineSideMenuItem(array $config): SideMenuItem
-    {
-        return (new SideMenuItem)->useConfig($config);
-    }
-
-    /**
-     * removeSideMenuItem removes a single main menu item
+     * Removes a single main menu item
      * @param string $owner
      * @param string $code
      * @param string $sideCode
@@ -378,7 +363,7 @@ class NavigationManager
     }
 
     /**
-     * listMainMenuItems returns a list of the main menu items.
+     * Returns a list of the main menu items.
      * @return array
      */
     public function listMainMenuItems()
@@ -414,7 +399,7 @@ class NavigationManager
     }
 
     /**
-     * listSideMenuItems returns a list of side menu items for the currently active main menu item.
+     * Returns a list of side menu items for the currently active main menu item.
      * The currently active main menu item is set with the setContext methods.
      * @param null $owner
      * @param null $code
@@ -456,8 +441,8 @@ class NavigationManager
     }
 
     /**
-     * listMainMenuItemsWithSubitems prepares data for displaying the top menu and side
-     * (collapsable) menu. Uses caching to avoid running counter functions twice.
+     * Prepares data for displaying the top menu and side (collapsable) menu.
+     * Uses caching to avoid running counter functions twice.
      */
     public function listMainMenuItemsWithSubitems()
     {
@@ -488,8 +473,7 @@ class NavigationManager
     }
 
     /**
-     * listMainMenuSubItems uses cached result of listMainMenuItemsWithSubitems to return
-     * submenu items and avoid duplicate counter calls.
+     * Uses cached result of listMainMenuItemsWithSubitems to return submenu items and avoid duplicate counter calls.
      */
     public function listMainMenuSubItems()
     {
@@ -504,7 +488,7 @@ class NavigationManager
     }
 
     /**
-     * setContext sets the navigation context.
+     * Sets the navigation context.
      * The function sets the navigation owner, main menu item code and the side menu item code.
      * @param string $owner Specifies the navigation owner in the format Vendor/Module
      * @param string $mainMenuItemCode Specifies the main menu item code
@@ -518,7 +502,7 @@ class NavigationManager
     }
 
     /**
-     * setContextOwner sets the navigation context owner.
+     * Sets the navigation context.
      * The function sets the navigation owner.
      * @param string $owner Specifies the navigation owner in the format Vendor/Module
      */
@@ -528,7 +512,7 @@ class NavigationManager
     }
 
     /**
-     * setContextMainMenu specifies a code of the main menu item in the current navigation context.
+     * Specifies a code of the main menu item in the current navigation context.
      * @param string $mainMenuItemCode Specifies the main menu item code
      */
     public function setContextMainMenu($mainMenuItemCode)
@@ -537,7 +521,7 @@ class NavigationManager
     }
 
     /**
-     * getContext returns information about the current navigation context.
+     * Returns information about the current navigation context.
      * @return mixed Returns an object with the following fields:
      * - mainMenuCode
      * - sideMenuCode
@@ -553,7 +537,7 @@ class NavigationManager
     }
 
     /**
-     * setContextSideMenu specifies a code of the side menu item in the current navigation context.
+     * Specifies a code of the side menu item in the current navigation context.
      * If the code is set to TRUE, the first item will be flagged as active.
      * @param string $sideMenuItemCode Specifies the side menu item code
      */
@@ -563,7 +547,7 @@ class NavigationManager
     }
 
     /**
-     * isMainMenuItemActive determines if a main menu item is active.
+     * Determines if a main menu item is active.
      * @param MainMenuItem $item Specifies the item object.
      * @return boolean Returns true if the menu item is active.
      */
@@ -573,7 +557,7 @@ class NavigationManager
     }
 
     /**
-     * getActiveMainMenuItem returns the currently active main menu item
+     * Returns the currently active main menu item
      * @return null|MainMenuItem $item Returns the item object or null.
      * @throws SystemException
      */
@@ -589,7 +573,7 @@ class NavigationManager
     }
 
     /**
-     * isSideMenuItemActive determines if a side menu item is active.
+     * Determines if a side menu item is active.
      * @param SideMenuItem $item Specifies the item object.
      * @return boolean Returns true if the side item is active.
      */
@@ -604,8 +588,8 @@ class NavigationManager
     }
 
     /**
-     * registerContextSidenavPartial registers a special side navigation partial for a specific
-     * main menu. The sidenav partial replaces the standard side navigation.
+     * Registers a special side navigation partial for a specific main menu.
+     * The sidenav partial replaces the standard side navigation.
      * @param string $owner Specifies the navigation owner in the format Vendor/Module.
      * @param string $mainMenuItemCode Specifies the main menu item code.
      * @param string $partial Specifies the partial name.
@@ -616,8 +600,9 @@ class NavigationManager
     }
 
     /**
-     * getContextSidenavPartial returns the side navigation partial for a specific main menu
-     * previously registered with the registerContextSidenavPartial() method.
+     * Returns the side navigation partial for a specific main menu previously registered
+     * with the registerContextSidenavPartial() method.
+     *
      * @param string $owner Specifies the navigation owner in the format Vendor/Module.
      * @param string $mainMenuItemCode Specifies the main menu item code.
      * @return mixed Returns the partial name or null.
@@ -630,7 +615,7 @@ class NavigationManager
     }
 
     /**
-     * filterItemPermissions removes menu items from an array if the supplied user lacks permission.
+     * Removes menu items from an array if the supplied user lacks permission.
      * @param \Backend\Models\User $user A user object
      * @param MainMenuItem[]|SideMenuItem[] $items A collection of menu items
      * @return array The filtered menu items
@@ -653,7 +638,7 @@ class NavigationManager
     }
 
     /**
-     * makeItemKey is an internal method to make a unique key for an item.
+     * Internal method to make a unique key for an item.
      * @param string $owner
      * @param string $code
      * @return string

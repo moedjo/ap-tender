@@ -166,9 +166,8 @@ class ThemeManager
     public function getComposerCode(string $dirName): string
     {
         $path = $this->getThemePath($dirName);
-        $file = $path . '/composer.json';
 
-        if (!$path || !File::exists($file)) {
+        if (!File::exists($file = $path . '/composer.json')) {
             return '';
         }
 

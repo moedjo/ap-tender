@@ -11,87 +11,66 @@ use October\Rain\Exception\SystemException;
 class MainMenuItem
 {
     /**
-     * @var string code
+     * @var string
      */
     public $code;
 
     /**
-     * @var string owner
+     * @var string
      */
     public $owner;
 
     /**
-     * @var string label
+     * @var string
      */
     public $label;
 
     /**
-     * @var null|string icon
+     * @var null|string
      */
     public $icon;
 
     /**
-     * @var null|string iconSvg
+     * @var null|string
      */
     public $iconSvg;
 
     /**
-     * @var mixed counter
+     * @var mixed
      */
     public $counter;
 
     /**
-     * @var null|string counterLabel
+     * @var null|string
      */
     public $counterLabel;
 
     /**
-     * @var string url
+     * @var string
      */
     public $url;
 
     /**
-     * @var array permissions
+     * @var array
      */
     public $permissions = [];
 
     /**
-     * @var int order
+     * @var int
      */
     public $order = 500;
 
     /**
-     * @var SideMenuItem[] sideMenu
+     * @var SideMenuItem[]
      */
     public $sideMenu = [];
 
     /**
-     * @var array customData
+     * @var array
      */
     public $customData = [];
 
     /**
-     * useConfig
-     */
-    public function useConfig(array $data): MainMenuItem
-    {
-        $this->code = $data['code'] ?? $this->code;
-        $this->owner = $data['owner'] ?? $this->owner;
-        $this->label = $data['label'] ?? $this->label;
-        $this->url = $data['url'] ?? $this->url;
-        $this->icon = $data['icon'] ?? $this->icon;
-        $this->iconSvg = $data['iconSvg'] ?? $this->iconSvg;
-        $this->counter = $data['counter'] ?? $this->counter;
-        $this->counterLabel = $data['counterLabel'] ?? $this->counterLabel;
-        $this->permissions = $data['permissions'] ?? $this->permissions;
-        $this->order = $data['order'] ?? $this->order;
-        $this->customData = $data['customData'] ?? $this->customData;
-
-        return $this;
-    }
-
-    /**
-     * addPermission
      * @param string $permission
      * @param array $definition
      */
@@ -101,7 +80,6 @@ class MainMenuItem
     }
 
     /**
-     * addSideMenuItem
      * @param SideMenuItem $sideMenu
      */
     public function addSideMenuItem(SideMenuItem $sideMenu)
@@ -110,7 +88,6 @@ class MainMenuItem
     }
 
     /**
-     * getSideMenuItem
      * @param string $code
      * @return SideMenuItem
      * @throws SystemException
@@ -125,11 +102,33 @@ class MainMenuItem
     }
 
     /**
-     * removeSideMenuItem
      * @param string $code
      */
     public function removeSideMenuItem(string $code)
     {
         unset($this->sideMenu[$code]);
+    }
+
+    /**
+     * @param array $data
+     * @return static
+     */
+    public static function createFromArray(array $data)
+    {
+        $instance = new static;
+
+        $instance->code = $data['code'];
+        $instance->owner = $data['owner'];
+        $instance->label = $data['label'];
+        $instance->url = $data['url'];
+        $instance->icon = $data['icon'] ?? null;
+        $instance->iconSvg = $data['iconSvg'] ?? null;
+        $instance->counter = $data['counter'] ?? null;
+        $instance->counterLabel = $data['counterLabel'] ?? null;
+        $instance->permissions = $data['permissions'] ?? $instance->permissions;
+        $instance->order = $data['order'] ?? $instance->order;
+        $instance->customData = $data['customData'] ?? [];
+
+        return $instance;
     }
 }

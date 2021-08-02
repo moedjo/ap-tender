@@ -10,14 +10,6 @@ use Symfony\Component\VarDumper\Dumper\HtmlDumper;
  */
 class DebugBarHtmlDumper extends HtmlDumper
 {
-    /**
-     * Resets an HTML header.
-     */
-    public function resetDumpHeader()
-    {
-        $this->dumpHeader = null;
-    }
-
     public function getDumpHeaderByDebugBar() {
         // getDumpHeader is protected:
         return str_replace('pre.sf-dump', '.phpdebugbar pre.sf-dump', $this->getDumpHeader());

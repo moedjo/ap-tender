@@ -23,7 +23,7 @@ class MarkupExtensionItemTest extends TestCase
     public function testOutputEscaping()
     {
         // Escaped
-        $item = $this->defineMarkupExtensionItem([
+        $item = MarkupExtensionItem::createFromArray([
             'name' => 'test_func',
             'type' => MarkupExtensionItem::TYPE_FILTER,
             'definition' => ['count', true]
@@ -33,7 +33,7 @@ class MarkupExtensionItemTest extends TestCase
         $this->assertTrue(is_callable($item->callback));
 
         // Not escaped
-        $item = $this->defineMarkupExtensionItem([
+        $item = MarkupExtensionItem::createFromArray([
             'name' => 'test_func',
             'type' => MarkupExtensionItem::TYPE_FILTER,
             'definition' => 'count'
@@ -48,7 +48,7 @@ class MarkupExtensionItemTest extends TestCase
      */
     public function testIsWildCallable()
     {
-        $item = $this->defineMarkupExtensionItem([
+        $item = MarkupExtensionItem::createFromArray([
             'name' => 'test_func',
             'type' => MarkupExtensionItem::TYPE_FILTER,
             'definition' => null
@@ -104,13 +104,5 @@ class MarkupExtensionItemTest extends TestCase
         $this->assertArrayHasKey(1, $result);
         $this->assertEquals('MyFood', $result[0]);
         $this->assertEquals('myFood', $result[1]);
-    }
-
-    /**
-     * defineMarkupExtensionItem
-     */
-    protected function defineMarkupExtensionItem(array $config): MarkupExtensionItem
-    {
-        return (new MarkupExtensionItem)->useConfig($config);
     }
 }

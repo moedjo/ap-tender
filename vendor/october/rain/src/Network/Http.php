@@ -483,13 +483,7 @@ class Http
      */
     public function noRedirect(): Http
     {
-        if (defined('CURLOPT_FOLLOWLOCATION') && !ini_get('open_basedir')) {
-            $this->setOption(CURLOPT_FOLLOWLOCATION, false);
-        }
-        else {
-            $this->maxRedirects = 0;
-        }
-
+        $this->setOption(CURLOPT_FOLLOWLOCATION, false);
         return $this;
     }
 
