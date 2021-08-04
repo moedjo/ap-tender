@@ -131,6 +131,7 @@ class Company extends Model
         'doc_basic_sk' => ['System\Models\File', 'public' => false],
         'doc_basic_other' => ['System\Models\File', 'public' => false],
         'doc_basic_konsorsium' => ['System\Models\File', 'public' => false],
+        'doc_proof_cooperation' => ['System\Models\File', 'public' => false],
         
     ];
 

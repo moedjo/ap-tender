@@ -23,6 +23,7 @@ class CompanyRegister extends Company
         'email' => 'required|email',
         'npwp' => 'required|min:15|numeric',
         'contact_phone_number' => 'required|min:10|numeric',
-        'phone_number' => 'required|min:10|numeric'
+        'phone_number' => 'required|min:10|numeric',
+        'doc_proof_cooperation' => 'required'
     ];
 }

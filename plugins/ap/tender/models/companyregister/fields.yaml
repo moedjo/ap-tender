@@ -21,6 +21,21 @@ fields:
         options:
             0: 'ap.tender::lang.global.no'
             1: 'ap.tender::lang.global.yes'
+    doc_proof_cooperation:
+        label: 'ap.tender::lang.company.doc_proof_cooperation'
+        type: fileupload
+        mode: file
+        useCaption: false
+        fileTypes: pdf
+        mimeTypes: pdf
+        maxFilesize: 1
+        attachOnUpload: true
+        span: left
+        maxFiles: 5
+        trigger:
+            action: show
+            field: collaborate
+            condition: value[1]
     _section2:
         label: 'ap.tender::lang.company.address'
         type: section

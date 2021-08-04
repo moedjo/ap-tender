@@ -204,6 +204,9 @@
         'pic_ktp' => 'Nomor KTP',
         'pic_email' => 'Email',
 
+        'doc_proof_cooperation' => 'Surat Keterangan Bukti Kerja Sama',
+
+
 
        
     ],
