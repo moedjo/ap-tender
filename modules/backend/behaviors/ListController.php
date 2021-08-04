@@ -134,9 +134,9 @@ class ListController extends ControllerBehavior
         /*
          * Prepare the list widget
          */
-        $columnConfig = $this->makeConfig($listConfig->list);
-        $columnConfig->model = $model;
-        $columnConfig->alias = $definition;
+        $widgetConfig = $this->makeConfig($listConfig->list);
+        $widgetConfig->model = $model;
+        $widgetConfig->alias = $definition;
 
         /*
          * Prepare the columns configuration
@@ -152,24 +152,24 @@ class ListController extends ControllerBehavior
             'showSorting',
             'showSetup',
             'showCheckboxes',
-            'treeExpanded',
             'customViewPath',
         ];
 
         foreach ($configFieldsToTransfer as $field) {
             if (isset($listConfig->{$field})) {
-                $columnConfig->{$field} = $listConfig->{$field};
+                $widgetConfig->{$field} = $listConfig->{$field};
             }
         }
 
         /*
          * List Widget with extensibility
          */
-        if ($listConfig->showTree ?? false) {
-            $widget = $this->makeWidget('Backend\Widgets\ListTree', $columnConfig);
+        $structureConfig = $this->makeListStructureConfig($widgetConfig, $listConfig);
+        if ($structureConfig) {
+            $widget = $this->makeWidget('Backend\Widgets\ListStructure', $structureConfig);
         }
         else {
-            $widget = $this->makeWidget('Backend\Widgets\Lists', $columnConfig);
+            $widget = $this->makeWidget('Backend\Widgets\Lists', $widgetConfig);
         }
 
         $widget->bindEvent('list.extendColumns', function () use ($widget) {
@@ -276,6 +276,33 @@ class ListController extends ControllerBehavior
         }
 
         return $widget;
+    }
+
+    /**
+     * makeListStructureConfig
+     */
+    protected function makeListStructureConfig(object $widgetConfig, object $config): ?object
+    {
+        // @deprecated old API
+        if (isset($config->showTree)) {
+            $widgetConfig->showTree = $config->showTree;
+            $widgetConfig->treeExpanded = $config->treeExpanded ?? false;
+            $widgetConfig->showReorder = false;
+            return $widgetConfig;
+        }
+
+        // New API
+        if (!isset($config->structure)) {
+            return null;
+        }
+
+        if (is_array($config->structure)) {
+            foreach ($config->structure as $key => $value) {
+                $widgetConfig->$key = $value;
+            }
+        }
+
+        return $widgetConfig;
     }
 
     /**

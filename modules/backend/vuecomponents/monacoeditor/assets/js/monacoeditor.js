@@ -77,10 +77,6 @@
                 type: String,
                 default: ''
             },
-            theme: {
-                type: String,
-                default: 'vs-dark'
-            },
             supportDragEvents: {
                 type: Boolean,
                 default: false
@@ -147,7 +143,8 @@
                 modelReferences: [],
                 timerId: null,
                 lastWidth: null,
-                lastHeight: null
+                lastHeight: null,
+                theme: 'vs-dark'
             };
         },
         methods: {
@@ -313,6 +310,11 @@
 
             var options = JSON.parse(this.$el.getAttribute('data-configuration'));
             initEnvironment(options.vendorPath);
+
+            this.theme = options.theme;
+            if (!this.theme) {
+                this.theme = 'vs-dark';
+            }
 
             options.theme = this.theme;
             options.tabCompletion = 'on';

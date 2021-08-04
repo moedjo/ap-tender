@@ -1,6 +1,7 @@
 <?php namespace System\Classes;
 
 use Lang;
+use System;
 use ApplicationException;
 use Illuminate\Routing\Controller as ControllerBase;
 use Exception;
@@ -37,7 +38,12 @@ class SystemController extends ControllerBase
             return $combiner->getContents($cacheId);
         }
         catch (Exception $ex) {
-            return Response::make('/* '.e($ex->getMessage()).' */', 404);
+            if (System::checkDebugMode()) {
+                return Response::make($ex, 404);
+            }
+            else {
+                return Response::make('/* '.e($ex->getMessage()).' */', 404);
+            }
         }
     }
 
@@ -62,7 +68,12 @@ class SystemController extends ControllerBase
             return $combiner->getContents($cacheId);
         }
         catch (Exception $ex) {
-            return Response::make('/* '.e($ex->getMessage()).' */', 404);
+            if (System::checkDebugMode()) {
+                return Response::make($ex, 404);
+            }
+            else {
+                return Response::make('/* '.e($ex->getMessage()).' */', 404);
+            }
         }
     }
 }

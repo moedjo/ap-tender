@@ -83,8 +83,6 @@ class CmsObjectTest extends TestCase
         /*
          * Second try - the object should be loaded from the cache
          */
-        CmsObject::clearInternalCache();
-
         $obj = TestTemporaryCmsObject::loadCached($theme, 'test.htm');
         $this->assertTrue($obj->isLoadedFromCache());
         $this->assertEquals('<p>Test content</p>', $obj->getContent());
@@ -98,13 +96,11 @@ class CmsObjectTest extends TestCase
         file_put_contents($filePath, '<p>Updated test content</p>');
         clearstatcache(); // The filemtime() function caches its value within a request, so we should clear its cache.
 
-        CmsObject::clearInternalCache();
         $obj = TestTemporaryCmsObject::loadCached($theme, 'test.htm');
         $this->assertFalse($obj->isLoadedFromCache());
         $this->assertEquals('<p>Updated test content</p>', $obj->getContent());
         $this->assertEquals(filemtime($filePath), $obj->mtime);
 
-        CmsObject::clearInternalCache();
         $obj = TestTemporaryCmsObject::loadCached($theme, 'test.htm');
         $this->assertTrue($obj->isLoadedFromCache());
         $this->assertEquals('<p>Updated test content</p>', $obj->getContent());
@@ -116,7 +112,6 @@ class CmsObjectTest extends TestCase
         @unlink($filePath);
         $this->assertFileNotExists($filePath);
 
-        CmsObject::clearInternalCache();
         $obj = TestTemporaryCmsObject::loadCached($theme, 'test.htm');
         $this->assertNull($obj);
     }

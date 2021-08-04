@@ -52,7 +52,6 @@ class ServiceProvider extends ModuleServiceProvider
     {
         CombineAssets::registerCallback(function ($combiner) {
             $combiner->registerBundle('~/modules/media/widgets/mediamanager/assets/js/mediamanager-browser.js');
-            $combiner->registerBundle('~/modules/media/widgets/mediamanager/assets/less/mediamanager.less');
         });
     }
 

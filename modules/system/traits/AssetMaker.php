@@ -252,7 +252,7 @@ trait AssetMaker
     }
 
     /**
-     * Locates a file based on it's definition. If the file starts with
+     * getAssetPath locates a file based on it's definition. If the file starts with
      * a forward slash, it will be returned in context of the application public path,
      * otherwise it will be returned in context of the asset path.
      * @param string $fileName File to load.
@@ -271,10 +271,6 @@ trait AssetMaker
 
         if (substr($fileName, 0, 1) == '/' || $assetPath === null) {
             return $fileName;
-        }
-
-        if (method_exists($this, 'getAssetPathOverride')) {
-            return $this->getAssetPathOverride($fileName);
         }
 
         return $assetPath . '/' . $fileName;

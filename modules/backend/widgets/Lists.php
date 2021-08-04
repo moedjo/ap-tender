@@ -379,7 +379,6 @@ class Lists extends WidgetBase
         $primarySearchable = [];
         $relationSearchable = [];
 
-        $columnsToSearch = [];
         if (!empty($this->searchTerm) && ($searchableColumns = $this->getSearchableColumns())) {
             foreach ($searchableColumns as $column) {
                 /*
@@ -410,8 +409,7 @@ class Lists extends WidgetBase
          * Prepare related eager loads (withs) and custom selects (joins)
          */
         foreach ($this->getVisibleColumns() as $column) {
-            // If useRelationCount is enabled, eager load the count of the relation into $relation_count
-            if ($column->relation && @$column->config['useRelationCount']) {
+            if ($column->useRelationCount()) {
                 $query->withCount($column->relation);
             }
 
@@ -526,8 +524,7 @@ class Lists extends WidgetBase
                     : $column->valueFrom;
             }
 
-            // Set the sorting column to $relation_count if useRelationCount enabled
-            if (isset($column->relation) && @$column->config['useRelationCount']) {
+            if ($column->useRelationCount()) {
                 $sortColumn = $column->relation . '_count';
             }
 
@@ -1094,9 +1091,7 @@ class Lists extends WidgetBase
             ) {
                 $value = $record->attributes[$columnName];
             }
-            // Load the value from the relationship counter if useRelationCount is specified
-            elseif ($column->relation && @$column->config['useRelationCount']) {
-                // Laravel converts count columns to snake case
+            elseif ($column->useRelationCount()) {
                 $countColumnName = Str::snake($column->relation) . '_count';
                 $value = $record->{$countColumnName};
             }

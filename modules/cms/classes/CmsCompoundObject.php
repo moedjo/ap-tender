@@ -123,7 +123,6 @@ class CmsCompoundObject extends CmsObject
         return $result;
     }
 
-
     /**
      * If the model is loaded with an invalid INI section, the invalid content will be
      * passed as a special attribute. Look for it, then locate the failure reason.

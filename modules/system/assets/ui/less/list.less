@@ -9,6 +9,7 @@
 // Lists
 // --------------------------------------------------
 
+@import "list.structure.less";
 @import "list.rowlink.less";
 @import "list.base.less";
 
@@ -76,7 +77,7 @@ table.table.data {
         }
 
         tr th:first-child {
-            padding-left: 7px;
+            // padding-left: 7px;
         }
 
         tr th:last-child a {
@@ -135,25 +136,21 @@ table.table.data {
         }
 
         tr td:first-child {
-            border-left: 3px solid transparent;
-            padding-left: 22px;
+            // padding-left: 20px;
         }
 
-        tr.active {
+        tr.active,
+        tr.selected {
             &:not(.no-data) td {
                 color: @color-list-text-active;
                 background-color: @table-bg-active;
             }
-
-            td:first-child {
-                border-left: 3px solid @color-list-stripe-active;
-            }
         }
 
-        tr.rowlink:not(.nolink):hover td,
-        tr:not(.no-data).selected td {
-            background: @color-list-hover-bg;
-            color: @color-list-hover-text;
+        tr.rowlink:not(.nolink):not(.active):hover td,
+        tr:not(.no-data):not(.active).selected td {
+            color: @color-list-text-active;
+            background-color: @table-bg-active;
 
             // When hover is white, this targets common objects
             // a:not(.btn), span, i[class^="icon-"] {
@@ -161,10 +158,15 @@ table.table.data {
             // }
         }
 
-        tr.rowlink:not(.nolink):active td {
-            background: @color-list-active-bg !important;
-            color: @color-list-active-text;
+        tr.rowlink:not(.nolink).active:hover td,
+        tr:not(.no-data).active.selected td {
+            background: @color-list-hover-bg-active;
         }
+
+        // tr.rowlink:not(.nolink):active td {
+        //     background: @color-list-hover-bg-active !important;
+        //     color: @color-list-active-text;
+        // }
 
         tr:focus {
             outline: none;
@@ -379,54 +381,13 @@ table.table.data {
     }
 
     tbody tr td.list-checkbox {
-        padding-left: (@padding-standard - 3); // Offset stripe border
+        padding-left: @padding-standard;
         padding-right: (@padding-standard - 17); // Offset the checkbox padding
     }
 
     thead tr th.list-checkbox {
         padding: 18px 0 0 @padding-standard;
     }
-
-    //
-    // Trees
-    //
-
-    .list-tree {
-        width: 10px;
-        padding: 0;
-        padding-left: 0 !important;
-        vertical-align: middle;
-
-        a.list-expand-collapse {
-            padding: 5px;
-            display: block;
-            text-align: center;
-            font-size: 14px;
-            position: relative;
-            text-decoration: none !important;
-            color: @color-list-text-tree;
-        }
-    }
-
-    // Tree levels 1 - 10
-    .makeTreeLevel(@count) {
-        tr.list-tree-level-@{count} {
-            a.list-expand-collapse { left: 10px + (10 * @count); }
-            td.list-cell-index-1 { padding-left: 15px + (10 * @count); }
-        }
-    }
-
-    .makeTreeLevel(0);
-    .makeTreeLevel(1);
-    .makeTreeLevel(2);
-    .makeTreeLevel(3);
-    .makeTreeLevel(4);
-    .makeTreeLevel(5);
-    .makeTreeLevel(6);
-    .makeTreeLevel(7);
-    .makeTreeLevel(8);
-    .makeTreeLevel(9);
-    .makeTreeLevel(10);
 }
 
 //
@@ -522,13 +483,42 @@ table.table.data {
     }
 }
 
-.layout-row > .list-widget > .control-list {
-    margin: 0 @padding-standard;
+.list-widget-container {
+    border-radius: @border-radius-large;
+    background-color: @color-list-container-bg;
+    border: 1px solid @color-grey-3;
+    overflow: hidden;
+
+    > .control-filter {
+        background-color: transparent;
+        border-top: none;
+    }
+
+    > .list-widget {
+        table.table.data thead th {
+            border-top: none!important;
+        }
+
+        .control-list.no-pagination table.table.data {
+            border-bottom: none;
+        }
+    }
+}
+
+.layout-row > .list-widget-container,
+.tab-pane > .list-widget-container, {
+    margin: 0 @padding-standard @padding-standard;
+
+    > .list-widget > .control-list {
+        margin-bottom: 0;
+    }
 }
 
 @media (max-width: @screen-xs-max) {
-    .layout-row > .list-widget > .control-list {
-        margin: 0;
+    .layout-row > .list-widget-container {
+        margin: 0 0 @padding-standard;
+        border-radius: 0;
+        border: none;
     }
 }
 
@@ -605,8 +595,8 @@ table.table.data {
         margin-top: 0;
         height: 40px;
         padding: 13px 10px;
-        background: #fff;
-        top: 1px;
+        background: @color-list-head-bg;
+        top: 0;
     }
 
     &:before {

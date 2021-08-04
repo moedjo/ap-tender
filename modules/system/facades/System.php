@@ -2,18 +2,19 @@
 
 use October\Rain\Support\Facade;
 
+/**
+ * System facade
+ * @see \System\Helpers\System
+ */
 class System extends Facade
 {
     /**
-     * @var string The October CMS major version.
+     * @var string VERSION for October CMS, including major and minor.
      */
-    const VERSION = '2.0';
+    const VERSION = '2.1';
 
     /**
-     * Get the registered name of the component.
-     *
-     * @see \System\Helpers\System
-     * @return string
+     * getFacadeAccessor gets the registered name of the component.
      */
     protected static function getFacadeAccessor()
     {

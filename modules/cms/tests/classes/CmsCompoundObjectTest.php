@@ -167,7 +167,6 @@ class CmsCompoundObjectTest extends TestCase
          * Load the test object again, it should be loaded from the cache this time
          */
 
-        CmsObject::clearInternalCache();
         $obj = TestTemporaryCmsCompoundObject::loadCached($theme, 'testcompound.htm');
         $this->assertTrue($obj->isLoadedFromCache());
         $this->assertEquals($testContent, $obj->getContent());

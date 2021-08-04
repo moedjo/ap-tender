@@ -262,31 +262,77 @@ body.breadcrumb-fancy .control-breadcrumb,
                 right: 5px;
             }
             > div > ul.nav-tabs {
+                position: relative;
                 border-top: 1px solid @color-grey-3;
-                border-bottom: 1px solid @color-grey-3;
                 background: @color-fancy-secondary-tabs-bg;
+                padding-top: 10px;
+
+                &:before {
+                    position: absolute;
+                    bottom: 0;
+                    height: 1px;
+                    width: 100%;
+                    z-index: @zindex-tab - 1;
+                    content: ' ';
+                    border-bottom: 2px solid @color-grey-3;
+                }
+
                 > li {
                     border-right: none;
                     padding-right: 0;
-                    margin-right: 0;
+                    margin-right: -10px;
+                    vertical-align: top;
+
                     a {
-                        border-radius: 4px;
-                        background: transparent;
-                        border: 1px solid transparent;
-                        margin: 3px 0 4px 0;
-                        padding: 8px 12px 9px 12px;
-                        font-size: 14px;
-                        line-height: 14px;
-                        // color: @color-text-grey-1;
-                        color: @color-grey-2;
+                        font-size: @font-size-base;
                         font-weight: 500;
+                        padding-bottom: 3px;
+                        margin: 0;
+                        position: relative;
+                        top: -1px;
+                        z-index: @zindex-tab + 1;
+                        background: transparent;
+                        overflow: visible;
+                        border-bottom: 1px solid transparent;
 
                         span {
+                            position: relative;
+                            display: inline-block;
+                            padding: 4px 25px 0px;
+                            .box-sizing(border-box);
+
+                            &:before, &:after {
+                                content: '';
+                                display: none;
+                                border-top: 2px solid @color-grey-3;
+                                position: absolute;
+                                background: transparent;
+                                top: 0;
+                                z-index: -1;
+                                width: 20px;
+                                bottom: -2px;
+                                transform-origin: bottom;
+                            }
+
+                            &:before {
+                                left: 0;
+                                border-left: 2px solid @color-grey-3;
+                                .border-radius(8px 0 0 0);
+                                .transform( ~'skewX(-10deg)');
+                            }
+    
+                            &:after {
+                                right: 0;
+                                border-right: 2px solid @color-grey-3;
+                                .border-radius(0 8px 0 0);
+                                .transform( ~'skewX(10deg)');
+                            }
+
                             span {
-                                overflow: visible;
-                                border-top: none;
-                                margin-top: 0;
-                                padding-top: 0;
+                                border-top: 2px solid transparent;
+                                padding-left: 0;
+                                padding-right: 0;
+                                padding-top: 7px;
                             }
                         }
                     }
@@ -302,14 +348,62 @@ body.breadcrumb-fancy .control-breadcrumb,
                         padding-left: 10px;
                     }
 
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
                     &.active {
                         a {
-                            // font-weight: 500;
-                            // background: @color-grey-4;
-                            color: @color-fancy-secondary-tabs-active-text;
-                            border-color: @brand-primary;
-                            // background: fadeout(@color-selection, 80%);
-                            // color: darken(@color-selection, 20%);
+                            z-index: @zindex-tab + 3;
+                            top: 0;
+
+                            > span.title {
+                                // z-index: @zindex-tab + 2;
+                                border-top-color: @color-grey-3;
+        
+                                &:before, &:after {
+                                    display: block;
+                                    border-color: @color-grey-3;
+                                }
+        
+                                span {
+                                    border-top-color: @color-grey-3;
+                                }
+                            }
+        
+                            &:before {
+                                position: absolute;
+                                bottom: 0;
+                                height: 2px;
+                                right: 2px;
+                                left: 2px;
+                                content: ' ';
+                                background-color: white;
+                            }
+                        }
+
+                        &.tab-content-bg {
+                            a  {
+                                span.title {
+                                    &:before, &:after {
+                                        background-color: @body-bg;
+                                    }
+
+                                    span {
+                                        background-color: @body-bg;
+                                        margin-left: -6px;
+                                        padding-left: 6px;
+                                        margin-right: -6px;
+                                        padding-right: 6px;
+                                        margin-bottom: -6px;
+                                        padding-bottom: 6px;
+                                    }
+                                }
+
+                                &:before {
+                                    background-color: @body-bg;
+                                }
+                            }
                         }
                     }
                 }
@@ -537,8 +631,13 @@ body.breadcrumb-fancy .control-breadcrumb,
             margin-right: 8px;
             background: transparent;
             color: @color-text-grey-1;
+            font-size: @font-size-base;
             font-weight: normal;
             .box-shadow(none);
+
+            &:before {
+                margin-right: 2px;
+            }
 
             &:hover {
                 background: @background-color-focus;

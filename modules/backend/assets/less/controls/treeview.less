@@ -323,18 +323,15 @@
                 > div {
                     background: @color-filelist-active;
 
-                    &:after {
-                        position: absolute;
-                        width: 4px;
-                        left: 0;
-                        top: -1px;
-                        bottom: -1px;
-                        background: @color-filelist-active-border;
-                        display: block;
-                        content: ' ';
+                    > a {
+                        color: @color-treeview-item-active-comment;
+
+                        > span.comment, > span.expand {
+                            color: @color-treeview-item-active-comment;
+                        }
                     }
 
-                    > span.comment, > span.expand {
+                    > span.expand {
                         color: @color-treeview-item-active-comment;
                     }
 
@@ -352,6 +349,14 @@
                         &:before {top: -1px;}
                         &:after {bottom: -1px;}
                     }
+
+                    &:before {
+                        background-position: 0px -80px;
+                    }
+                }
+
+                &.has-subitems > div:before {
+                    background-position: 0px -52px;
                 }
             }
 
@@ -568,14 +573,20 @@ body.dragging .control-treeview {
                     }
                 }
 
-                &.has-subitems > div {
-                    &:before {background-position: 0px -52px;}
-                    &:hover, &.popover-highlight {
+                &.has-subitems {
+                    > div {
+                        &:before {background-position: 0px -52px;}
+                        &:hover, &.popover-highlight {
+                            &:before {background-position: 0px -102px;}
+                        }
+                    }
+
+                    &.active > div {
                         &:before {background-position: 0px -102px;}
                     }
                 }
 
-                &.dragged > div, &.dragged li > div, > div:hover, > div.popover-highlight {
+                &.dragged > div, &.dragged li > div, > div:hover, &.active > div, > div.popover-highlight {
                     &:before {background-position: 0px -129px;}
                 }
 

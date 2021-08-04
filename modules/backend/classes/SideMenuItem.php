@@ -79,6 +79,29 @@ class SideMenuItem
     public $customData = [];
 
     /**
+     * useConfig
+     */
+    public function useConfig(array $data): SideMenuItem
+    {
+        $this->code = $data['code'] ?? $this->code;
+        $this->owner = $data['owner'] ?? $this->owner;
+        $this->label = $data['label'] ?? $this->label;
+        $this->url = $data['url'] ?? $this->url;
+        $this->icon = $data['icon'] ?? $this->icon;
+        $this->iconSvg = $data['iconSvg'] ?? $this->iconSvg;
+        $this->counter = $data['counter'] ?? $this->counter;
+        $this->counterLabel = $data['counterLabel'] ?? $this->counterLabel;
+        $this->attributes = $data['attributes'] ?? $this->attributes;
+        $this->permissions = $data['permissions'] ?? $this->permissions;
+        $this->order = $data['order'] ?? $this->order;
+        $this->itemType = $data['itemType'] ?? $this->itemType;
+        $this->buttonActiveOn = $data['buttonActiveOn'] ?? $this->buttonActiveOn;
+        $this->customData = $data['customData'] ?? $this->customData;
+
+        return $this;
+    }
+
+    /**
      * addAttribute
      * @param null|string|int $attribute
      * @param null|string|array $value
@@ -112,31 +135,5 @@ class SideMenuItem
     public function removePermission(string $permission)
     {
         unset($this->permissions[$permission]);
-    }
-
-    /**
-     * createFromArray
-     * @return static
-     */
-    public static function createFromArray(array $data)
-    {
-        $instance = new static;
-
-        $instance->code = $data['code'];
-        $instance->owner = $data['owner'];
-        $instance->label = $data['label'];
-        $instance->url = $data['url'];
-        $instance->icon = $data['icon'] ?? null;
-        $instance->iconSvg = $data['iconSvg'] ?? null;
-        $instance->counter = $data['counter'] ?? null;
-        $instance->counterLabel = $data['counterLabel'] ?? null;
-        $instance->attributes = $data['attributes'] ?? $instance->attributes;
-        $instance->permissions = $data['permissions'] ?? $instance->permissions;
-        $instance->order = $data['order'] ?? $instance->order;
-        $instance->itemType = $data['itemType'] ?? null;
-        $instance->buttonActiveOn = $data['buttonActiveOn'] ?? null;
-        $instance->customData = $data['customData'] ?? [];
-
-        return $instance;
     }
 }

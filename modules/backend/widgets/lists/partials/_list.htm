@@ -1,8 +1,15 @@
 <?php
     $useRowLink = $this->hasRecordAction();
+
+    $classes = [
+        'list-scrollable',
+    ];
+
+    if ($useRowLink) $classes[] = 'list-rowlink';
+    if (!$showPagination) $classes[] = 'no-pagination';
 ?>
 <div
-    class="control-list list-scrollable <?= $useRowLink ? 'list-rowlink' : '' ?>"
+    class="control-list <?= implode(' ', $classes) ?>"
     data-control="listwidget">
     <table class="table data" <?= $useRowLink ? 'data-control="rowlink"' : '' ?>>
         <thead>

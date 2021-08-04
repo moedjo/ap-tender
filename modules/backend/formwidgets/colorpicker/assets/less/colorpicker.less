@@ -1,8 +1,8 @@
 @import "../../../../assets/less/core/boot.less";
 
 
-@color-colorpicker-border: #cecece;
-@color-colorpicker-active-border: #fff;
+@color-colorpicker-border: rgba(0, 0, 0, 0.1);
+@color-colorpicker-active-border: rgba(255, 255, 255, 0.7);
 @color-colorpicker-active: #5fb6f5;
 
 .field-colorpicker {
@@ -26,6 +26,7 @@
                 width: 25px;
                 height: 25px;
                 border: 1px solid @color-colorpicker-border;
+                border-radius: 100%;
             }
 
             &:hover,

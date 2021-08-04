@@ -43,9 +43,15 @@
             var href = link.attr('href'),
                 onclick = (typeof link.get(0).onclick == "function") ? link.get(0).onclick : null,
                 popup = link.is('[data-control=popup]'),
-                request = link.is('[data-request]');
+                request = link.is('[data-request]'),
+                skipNextBubble = false;
 
             function handleClick(e) {
+                if (skipNextBubble) {
+                    skipNextBubble = false;
+                    return;
+                }
+
                 if ($(document.body).hasClass('drag')) {
                     return;
                 }
@@ -69,15 +75,19 @@
 
             var $row = $(this).not('.' + options.excludeClass)
 
-            $row.find('td').not('.' + options.excludeClass)
-                .click(function(e) {
-                    handleClick(e);
-                })
-                .mousedown(function (e) {
-                    if (e.which == 2) {
-                        window.open(href);
-                    }
-                })
+            $row.on('click', 'td:not(.'+options.excludeClass+') > .'+options.excludeClass, function(e) {
+                skipNextBubble = true;
+            });
+
+            $row.on('click', 'td:not(.'+options.excludeClass+')', function(e) {
+                handleClick(e);
+            })
+
+            $row.on('mousedown', 'td:not(.'+options.excludeClass+')', function(e) {
+                if (e.which == 2) {
+                    window.open(href);
+                }
+            })
 
             $row.on('keypress', function(e) {
                 if (e.key === '(Space character)' || e.key === 'Spacebar' || e.key === ' ') {

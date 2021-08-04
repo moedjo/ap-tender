@@ -44,15 +44,9 @@
             &.active > a {
                 background: @color-filelist-active;
                 position: relative;
-                &:after {
-                    position: absolute;
-                    height: 100%;
-                    width: 4px;
-                    left: 0;
-                    top: 0;
-                    background: @color-filelist-active-border;
-                    display: block;
-                    content: ' ';
+
+                span.title {
+                    color: @color-filelist-active-text;
                 }
             }
 
@@ -299,7 +293,7 @@
                 }
 
                 .checkbox {
-                    top: -2px;
+                    top: -4px;
                     right: 0;
                 }
 
@@ -308,9 +302,7 @@
                         border-bottom: 1px solid @color-filelist-active;
 
                         &:after {
-                            top: -1px;
-                            bottom: -1px;
-                            height: auto;
+                            display: none;
                         }
 
                         > span.borders {
@@ -333,6 +325,14 @@
 
                         &:active > span.borders:before {
                             background-color: @color-filelist-hero-active-bg;
+                        }
+
+                        span.title, span.description {
+                            color: @color-filelist-hero-active-text !important;
+                        }
+            
+                        .list-icon {
+                            color: @color-filelist-hero-active-text !important;
                         }
                     }
                 }
